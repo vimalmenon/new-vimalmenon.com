@@ -20,6 +20,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@types/jest": "^26.0.19",
+    "@types/react": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.9.1",
     "@typescript-eslint/parser": "^4.9.1",
     "babel-loader": "^8.2.2",
@@ -44,6 +45,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@loadable/component": "^5.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",

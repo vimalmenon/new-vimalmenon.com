@@ -76,5 +76,8 @@ module.exports = {
             template: './index.html',
             inject: true,
         }),
-    ]
+    ],
+    resolve: {
+        extensions: [".ts", ".tsx", ".js", ".scss"],
+    }
 };
