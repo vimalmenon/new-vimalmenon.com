@@ -1,10 +1,19 @@
 import React from "react";
 
+import {
+	ThemeProvider,
+	createMuiTheme
+} from "@material-ui/core/styles";
+
 const User:React.FC = () => {
+	const theme = createMuiTheme({
+	});
 	return (
-		<div>
-			This is Home
-		</div>
+		<ThemeProvider theme={theme}>
+			<div>
+				This is Vimal Menon
+			</div>
+		</ThemeProvider>
 	);
 };
 

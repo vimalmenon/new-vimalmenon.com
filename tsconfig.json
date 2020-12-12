@@ -14,6 +14,12 @@
         "types": [
             "@types/jest"
         ],
-        "typeRoots" : ["assets/typings"]
+        "typeRoots" : ["assets/typings"],
+        "paths": {
+            "store": ["assets/store"],
+            "model": ["assets/model"],
+            "utility": ["assets/utility"],
+            "component": ["assets/component"]
+        }
     }
 }
