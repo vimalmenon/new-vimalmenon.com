@@ -1,3 +1,3 @@
-export const setSession = () => {
-
+export const setSession =():void => {
+	console.log("test");
 };
