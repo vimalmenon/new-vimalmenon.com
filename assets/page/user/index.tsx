@@ -5,11 +5,14 @@ import {
 	createMuiTheme
 } from "@material-ui/core/styles";
 
+import {MetaData} from "component";
+
 const User:React.FC = () => {
 	const theme = createMuiTheme({
 	});
 	return (
 		<ThemeProvider theme={theme}>
+			<MetaData />
 			<div>
 				This is Vimal Menon
 			</div>
