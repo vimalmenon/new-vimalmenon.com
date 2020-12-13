@@ -14,13 +14,16 @@ import loadable from "@loadable/component";
 import {palette} from "model";
 
 import User from "./user";
+import { useSelector } from "react-redux";
 
 const Admin = loadable(() => import( /* webpackChunkName: "admin" */ /* webpackMode: "lazy" */ "./admin"));
 
 const Page:React.FC = () => {
+	const type = useSelector<IState,ThemeType>((state) => state.config.themeType);
 	const theme = createMuiTheme({
 		palette : {
-			...palette
+			...palette,
+			type
 		}
 	});
 	return (

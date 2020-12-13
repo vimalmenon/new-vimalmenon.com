@@ -1,7 +1,9 @@
 import session from "./session/session.state";
+import config from "./config/config.state";
 
 const state:IState = {
-	session
+	session,
+	config
 };
 
 export default state;
