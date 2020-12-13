@@ -1,1 +1,1 @@
-# new-vimalmenon.com
+# vimalmenon.com
