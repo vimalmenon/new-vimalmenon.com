@@ -1,22 +1,33 @@
 import React from "react";
 
 import {
-	ThemeProvider,
-	createMuiTheme
+	Theme,
+	makeStyles,
+	createStyles
 } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+
+const useStyles = makeStyles((theme: Theme) => {
+	return createStyles({
+		root: {
+			display: "flex",
+			flexDirection: "column",
+			backgroundColor: theme.palette.background.paper,
+			color: theme.palette.text.primary,
+		},
+	});
+});
 
 import {MetaData} from "component";
 
 const User:React.FC = () => {
-	const theme = createMuiTheme({
-	});
+	const classes = useStyles();
 	return (
-		<ThemeProvider theme={theme}>
+		<div className={classes.root}>
+			<CssBaseline />
 			<MetaData />
-			<div>
-				This is Vimal Menon
-			</div>
-		</ThemeProvider>
+			Website comming soon...
+		</div>
 	);
 };
 
