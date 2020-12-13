@@ -8,6 +8,7 @@ const config = require("./webpack/config");
 module.exports = {
     mode: "development",
     entry: config.entry,
+    devtool: "source-map",
     devServer: {
         publicPath: '/',
         contentBase: path.resolve(__dirname, "/public"),
@@ -83,7 +84,9 @@ module.exports = {
             "store": path.resolve(__dirname, "./assets/store"),
             "model": path.resolve(__dirname, "./assets/model"),
             "utility": path.resolve(__dirname, "./assets/utility"),
-            "component": path.resolve(__dirname, "./assets/component")
+            "component": path.resolve(__dirname, "./assets/component"),
+            "service": path.resolve(__dirname, "./assets/service"),
+            "action": path.resolve(__dirname, "./assets/store/action")
         }
     }
 };

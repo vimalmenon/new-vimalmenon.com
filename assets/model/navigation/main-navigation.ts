@@ -1,9 +1,10 @@
-export const home = {
+export const home:INavigation = {
 	name: "Home",
 	url: "/",
 	title: "Vimal Menon"
 };
 
-export default {
+const mainNavigation:INavigation[] = [
 	home
-};
+];
+export default mainNavigation;

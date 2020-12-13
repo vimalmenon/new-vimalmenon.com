@@ -19,7 +19,9 @@
             "store": ["assets/store"],
             "model": ["assets/model"],
             "utility": ["assets/utility"],
-            "component": ["assets/component"]
+            "component": ["assets/component"],
+            "service": ["assets/service"],
+            "action": ["assets/store/action"]
         }
     }
 }
