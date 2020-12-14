@@ -1,8 +1,7 @@
 import store from "store";
 
 const setSession = ():void => {
-	const session = store.getState().session;
-	console.log(session);
+	store.getState().session;
 };
 
 export default {
