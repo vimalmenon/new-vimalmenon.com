@@ -1,7 +1,9 @@
-import type from "./session.types";
+import type from "./session.type";
 import session from "./session.state";
 
-const reducer = (oldState=session, action):ISession => {
+import {actionTypes} from "./session.action";
+
+const reducer = (oldState=session, action:actionTypes):ISession => {
 	if (action.type === type.SET_SESSION) {
 		return {
 			...action.payload
