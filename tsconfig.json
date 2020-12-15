@@ -21,7 +21,8 @@
             "utility": ["assets/utility"],
             "component": ["assets/component"],
             "service": ["assets/service"],
-            "action": ["assets/store/action"]
+            "action": ["assets/store/action"],
+            "const" : ["assets/const"],
         }
     }
 }
