@@ -5,10 +5,15 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
+import Top from "./top";
+import Bottom from "./bottom";
+
+
 const useStyles = makeStyles(() => {
 	return createStyles({
 		root: {
 			display: "flex",
+			flexDirection: "column"
 		},
 	});
 });
@@ -16,7 +21,8 @@ const Footer:React.FC = () => {
 	const classes = useStyles();
 	return(
 		<footer className={classes.root}>
-			This is Footer
+			<Top />
+			<Bottom />
 		</footer>
 	);
 };

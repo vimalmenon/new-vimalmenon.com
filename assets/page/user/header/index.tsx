@@ -12,6 +12,7 @@ const useStyles = makeStyles(() => {
 	return createStyles({
 		root: {
 			display: "flex",
+			flexDirection: "column"
 		},
 	});
 });

@@ -8,15 +8,15 @@ import {
 const useStyles = makeStyles(() => {
 	return createStyles({
 		root: {
-			display: "flex"
+			display: "flex",
 		},
 	});
 });
 const Bottom:React.FC = () => {
 	const classes = useStyles();
-	return(
+	return (
 		<div className={classes.root}>
-			
+			This is bottom
 		</div>
 	);
 };
