@@ -5,9 +5,6 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
-import Top from "./top";
-import Bottom from "./bottom";
-
 const useStyles = makeStyles(() => {
 	return createStyles({
 		root: {
@@ -15,14 +12,14 @@ const useStyles = makeStyles(() => {
 		},
 	});
 });
-const Header:React.FC = () => {
+
+const Body:React.FC = () => {
 	const classes = useStyles();
-	return (
-		<header className={classes.root}>
-			<Top />
-			<Bottom />
-		</header>
+	return(
+		<section className={classes.root}>
+			Website comming soon...
+		</section>
 	);
 };
 
-export default Header;
+export default Body;

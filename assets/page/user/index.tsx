@@ -13,6 +13,8 @@ import {navigation} from "service";
 import {MetaData} from "component";
 
 import Header from "./header";
+import Body from "./body";
+import Footer from "./footer";
 
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
@@ -39,7 +41,8 @@ const User:React.FC<RouteComponentProps> = ({history, location}) => {
 			<Header />
 			<Link to="/user/test">tesst</Link> 
 			<Link to="/admin">admin</Link> 
-			Website comming soon...
+			<Body />
+			<Footer />
 		</div>
 	);
 };
