@@ -12,23 +12,45 @@ const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
 		root: {
 			display: "flex",
+			background: theme.palette.type==="light"?"#001B34":"#222323",
+			justifyContent : "center",
 			color: "white",
 			flex: "0 0 63px",
-			background: theme.palette.type==="light"?"#001B34":"#222323",
 		},
+		container : {
+			display:"flex",
+			flexDirection:"row",
+			flex:`1 1 100%`,
+			alignItems : "center",
+			margin:theme.spacing(0,1),
+			justifyContent:"space-between",
+			[theme.breakpoints.up("lg")]: {
+				display:"flex",
+				flex: `0 0 ${theme.breakpoints.values.lg}px`,
+			},
+		},
+		footerName : {
+			color:"#FA2B54"
+		},
+		span : {
+			margin: theme.spacing(0,1)
+		}
 	});
 });
 const Bottom:React.FC = () => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			<div>
-				<span>
-					This is bottom
-				</span>
-				<span>
+			<div className={classes.container}>
+				<p>
+					<a href={"/"} className={classes.footerName}>VimalMenon.com</a> 
+					<span className={classes.span}>
+						&copy; All Right Reserved - 2020
+					</span>
+				</p>
+				<p>
 					v{APP_VERSION}
-				</span>
+				</p>
 			</div>
 		</div>
 	);

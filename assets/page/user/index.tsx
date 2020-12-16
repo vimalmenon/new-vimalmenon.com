@@ -7,7 +7,7 @@ import {
 } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import { withRouter , RouteComponentProps, Link} from "react-router-dom";
+import { withRouter , RouteComponentProps} from "react-router-dom";
 
 import {navigation} from "service";
 import {MetaData} from "component";
@@ -39,8 +39,6 @@ const User:React.FC<RouteComponentProps> = ({history, location}) => {
 			<CssBaseline />
 			<MetaData />
 			<Header />
-			<Link to="/user/test">tesst</Link> 
-			<Link to="/admin">admin</Link> 
 			<Body />
 			<Footer />
 		</div>

@@ -16,7 +16,7 @@ const Bottom:React.FC = () => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			This is top
+
 		</div>
 	);
 };
