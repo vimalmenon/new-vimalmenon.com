@@ -12,8 +12,16 @@ interface IConfig {
     loading:boolean;
 }
 
+interface ISocialMedia {
+    id:number;
+    name:string;
+    title:string;
+    type: string;
+    url: string;
+}
+
 interface IMisc {
-    socialMedias:[]
+    socialMedias:ISocialMedia[]
 }
 
 interface IState {

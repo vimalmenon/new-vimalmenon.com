@@ -27,11 +27,6 @@ module.exports = {
     module: {
         rules: [
             {
-                enforce: "pre",
-                test: /\.ts(x?)$/,
-                loader: "source-map-loader"
-            },
-            {
                 test: /\.ts(x?)$/,
                 enforce: 'pre',
                 use: [

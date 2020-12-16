@@ -22,10 +22,16 @@ const Bottom:React.FC = () => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			{APP_VERSION}
-			This is bottom
+			<div>
+				<span>
+					This is bottom
+				</span>
+				<span>
+					v{APP_VERSION}
+				</span>
+			</div>
 		</div>
 	);
 };
 
-export default Bottom;
+export default React.memo(Bottom);
