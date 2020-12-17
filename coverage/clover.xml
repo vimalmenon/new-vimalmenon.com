@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1608171141688" clover="3.2.0">
-  <project timestamp="1608171141688" name="All files">
-    <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2" elements="15" coveredelements="14" complexity="0" loc="11" ncloc="11" packages="2" files="2" classes="2"/>
+<coverage generated="1608171316846" clover="3.2.0">
+  <project timestamp="1608171316846" name="All files">
+    <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2" elements="14" coveredelements="13" complexity="0" loc="10" ncloc="10" packages="2" files="2" classes="2"/>
     <package name="const">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="/Users/vimalmenon/code/java/new-vimalmenon.com/assets/const/index.ts">
@@ -10,19 +10,18 @@
       </file>
     </package>
     <package name="page.user.footer.bottom">
-      <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="index.tsx" path="/Users/vimalmenon/code/java/new-vimalmenon.com/assets/page/user/footer/bottom/index.tsx">
-        <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
         <line num="53" count="1" type="stmt"/>
-        <line num="54" count="1" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
-        <line num="74" count="1" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
       </file>
     </package>
   </project>
