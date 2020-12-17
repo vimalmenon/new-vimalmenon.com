@@ -2,13 +2,16 @@ import "jsdom-global/register";
 import React from "react";
 import renderer from "react-test-renderer";
 import FooterBottom from "./index";
-import {shallow} from "enzyme";
+import {mount, shallow} from "enzyme";
 
 describe("SocialMedia Component", ()=> {
-    it("Snapshot Testing", () => {
+    test("Snapshot Testing", () => {
         const component = renderer.create(<FooterBottom />);
         let tree = component.toJSON();
         expect(tree).toMatchSnapshot();
-        expect(true).toBe(true);
+    });
+    test("Footer : Version testing", () => {
+        let component = mount(<FooterBottom />);
+        expect(component.find('[data-testid="version"]').text()).toEqual("v0.0.0");
     });
 });

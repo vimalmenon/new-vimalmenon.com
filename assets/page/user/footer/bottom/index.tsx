@@ -60,7 +60,7 @@ const Bottom:React.FC = () => {
 					</span>
 				</div>
 				<div className={classes.section}>
-					<span>
+					<span data-testid="version">
 						v{APP_VERSION}
 					</span>
 				</div>

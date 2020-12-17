@@ -17,7 +17,6 @@ const SocialMedia = () => {
 						<IconButton color="inherit">
 							<Icon />
 						</IconButton>
-						
 					</Tooltip>
 				);
 			})}

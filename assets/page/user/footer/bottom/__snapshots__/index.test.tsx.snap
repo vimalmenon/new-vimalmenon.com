@@ -25,7 +25,9 @@ exports[`SocialMedia Component Snapshot Testing 1`] = `
     <div
       className="makeStyles-section-3"
     >
-      <span>
+      <span
+        data-testid="version"
+      >
         v
         0.0.0
       </span>
