@@ -1,6 +1,8 @@
 import React from "react";
 import renderer from "react-test-renderer";
 
+import {mount, shallow} from "enzyme";
+
 import { Provider } from "react-redux";
 import store from "store";
 
