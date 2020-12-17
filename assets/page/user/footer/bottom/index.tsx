@@ -28,6 +28,17 @@ const useStyles = makeStyles((theme: Theme) => {
 				display:"flex",
 				flex: `0 0 ${theme.breakpoints.values.lg}px`,
 			},
+			[theme.breakpoints.down("xs")] : {
+				display:"flex",
+				flexDirection:"column",
+				alignItems : "inherit",
+				justifyContent:"space-around"
+			}
+		},
+		section : {
+			display:"flex",
+			[theme.breakpoints.down("xs")] : {
+			}
 		},
 		footerName : {
 			color:"#FA2B54"
@@ -42,15 +53,17 @@ const Bottom:React.FC = () => {
 	return (
 		<div className={classes.root}>
 			<div className={classes.container}>
-				<p>
+				<div className={classes.section}>
 					<a href={"/"} className={classes.footerName}>VimalMenon.com</a> 
 					<span className={classes.span}>
 						&copy; All Right Reserved - 2020
 					</span>
-				</p>
-				<p>
-					v{APP_VERSION}
-				</p>
+				</div>
+				<div className={classes.section}>
+					<span>
+						v{APP_VERSION}
+					</span>
+				</div>
 			</div>
 		</div>
 	);
