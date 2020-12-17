@@ -4,5 +4,8 @@ module.exports = {
     setupFilesAfterEnv: [
       "<rootDir>/jest.setup.tsx"
     ],
-    resolver: "jest-webpack-resolver"
+    resolver: "jest-webpack-resolver",
+    "globals": {
+      "VERSION": "0.0.0",
+    }
 };
