@@ -8,11 +8,17 @@ export const setLocation = (value:string):IAction<{currentLocation:string}> => {
 		}
 	};
 };
-export const toggleTheme = (value:ThemeType):IAction<{themeType:ThemeType}> => {
+export const toggleTheme = ():IAction<null> => {
 	return {
 		type:type.TOGGLE_THEME_TYPE,
+		payload:null
+	};
+};
+export const setTheme = (themeType:ThemeType):IAction<{themeType:ThemeType}> => {
+	return {
+		type:type.SET_THEME_TYPE,
 		payload:{
-			themeType:value
+			themeType
 		}
 	};
 };

@@ -1,16 +1,18 @@
 import {storage} from "service";
-import {THEME} from "const";
+import {THEME, DEFAULT_THEME} from "const";
 
-const getTheme = () => {
-    const storageValue = storage.setLocalStorage().getValue();
-    return storageValue[THEME];
+import {config} from "action";
+
+const setTheme = () => {
+	const storageValue = storage.setLocalStorage().getValue();
+	const theme:ThemeType = storageValue[THEME]||DEFAULT_THEME;
+	config.setTheme(theme);
 };
 const toggleTheme = () => {
-    
+	config.toggleTheme();
 };
 
-
 export default {
-    getTheme,
-    toggleTheme
+	setTheme,
+	toggleTheme
 };

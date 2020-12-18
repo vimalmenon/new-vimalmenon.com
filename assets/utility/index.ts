@@ -1,5 +1,5 @@
 import theme from "./theme";
 
-export default {
+export {
 	theme
 };

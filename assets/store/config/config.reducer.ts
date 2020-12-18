@@ -7,7 +7,12 @@ const reducer = (oldState:IConfig=config, actions:actionTypes):IConfig => {
 	case type.TOGGLE_THEME_TYPE:
 		return {
 			...oldState,
-			themeType: (actions.payload.themeType ==="light")?"dark":"light"
+			themeType: (oldState.themeType ==="light")?"dark":"light"
+		};
+	case type.SET_THEME_TYPE:
+		return {
+			...oldState,
+			themeType: actions.payload.themeType 
 		};
 	case type.SET_LOCATION:
 		return {
