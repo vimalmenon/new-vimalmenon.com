@@ -1,0 +1,3 @@
+interface IStorage {
+    theme?:ThemeType;
+}
