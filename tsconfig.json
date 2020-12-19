@@ -23,6 +23,7 @@
             "service": ["assets/service"],
             "action": ["assets/store/action"],
             "const" : ["assets/const"],
+            "images":["assets/images/"],
         }
     }
 }

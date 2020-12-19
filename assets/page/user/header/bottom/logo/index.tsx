@@ -7,8 +7,8 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
-import dark from "../../../../../images/logo/dark.png";
-import light from "../../../../../images/logo/light.jpg";
+import dark from "images/logo/dark.png";
+import light from "images/logo/light.jpg";
 
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) => {
 			display: "flex",
 			background : "white",
 			height: "50px",
-			flex: "0 0 182px",
+			flex: "0 0 172px",
 			backgroundColor:(theme.palette.type==="light")?theme.palette.background.default:"#121212"
 		},
 		logo : {
