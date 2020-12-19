@@ -7,8 +7,8 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
-import dark from "images/logo/dark.png";
-import light from "images/logo/light.jpg";
+import dark from "image/logo/dark.png";
+import light from "image/logo/light.jpg";
 
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({

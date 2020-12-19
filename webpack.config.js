@@ -105,7 +105,7 @@ module.exports = {
             "service": path.resolve(__dirname, "./assets/service"),
             "action": path.resolve(__dirname, "./assets/store/action"),
             "const" : path.resolve(__dirname, "./assets/const"),
-            "images": path.resolve(__dirname, "./assets/images/"),
+            "image": path.resolve(__dirname, "./assets/image/"),
         }
     }
 };
