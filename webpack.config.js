@@ -60,6 +60,23 @@ module.exports = {
                     }
                 ]
             },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg|jpe?g|png|gif|svg|jpg|pdf)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'fonts/'
+                        }
+                    }
+                ]
+            },
+            {
+                enforce: "pre",
+                test: /\.ts(x?)$/,
+                loader: "source-map-loader"
+            },
         ]
     },
     plugins: [

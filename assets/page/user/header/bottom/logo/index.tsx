@@ -7,6 +7,9 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
+import dark from "../../../../../images/logo/dark.png";
+import light from "../../../../../images/logo/light.jpg";
+
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
 		root: {
@@ -27,7 +30,7 @@ const Logo:React.FC = () => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			<img src={themeType==="light"? "":" "} className={classes.logo} alt={"Vimal Menon"} />
+			<img src={themeType==="light"?light:dark} className={classes.logo} alt={"Vimal Menon"} />
 		</div>
 	);
 };
