@@ -7,5 +7,7 @@ module.exports = {
     resolver: "jest-webpack-resolver",
     "globals": {
       "VERSION": "0.0.0",
+      "localStorage":"localStorage",
+      "sessionStorage":"sessionStorage"
     }
 };

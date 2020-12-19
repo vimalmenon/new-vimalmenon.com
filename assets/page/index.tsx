@@ -18,6 +18,8 @@ import { useSelector } from "react-redux";
 
 const Admin = loadable(() => import( /* webpackChunkName: "admin" */ /* webpackMode: "lazy" */ "./admin"));
 
+import {init} from "./index.service";
+
 const Page:React.FC = () => {
 	const type = useSelector<IState,ThemeType>((state) => state.config.themeType);
 	const theme = createMuiTheme({
@@ -26,6 +28,9 @@ const Page:React.FC = () => {
 			type
 		}
 	});
+	React.useEffect(() => {
+		init();
+	}, []);
 	return (
 		<ThemeProvider theme={theme}>
 			<Router>
