@@ -6,7 +6,8 @@ import {
 	Theme
 } from "@material-ui/core/styles";
 
-import {SocialMedia} from "component";
+import {SocialMedia, ToggleTheme} from "component";
+
 
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
@@ -39,6 +40,7 @@ const Top:React.FC = () => {
 		<div className={classes.root}>
 			<div className={classes.container}>
 				<SocialMedia />
+				<ToggleTheme />
 			</div>
 		</div>
 	);

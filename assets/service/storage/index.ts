@@ -16,7 +16,7 @@ class StorageService {
 	}
 	addValue(valueToAdd:IStorage):IStorage {
 		const value = this.getValue();
-		this.storage.setItem(STORAGE, JSON.stringify({...value, valueToAdd}));
+		this.storage.setItem(STORAGE, JSON.stringify({...value, ...valueToAdd}));
 		return this.getValue();
 	}
 	getValue():IStorage {
