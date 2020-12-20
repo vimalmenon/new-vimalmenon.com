@@ -10,22 +10,24 @@ import {
 } from "@material-ui/core/styles";
 
 import loadable from "@loadable/component";
+import { useSelector } from "react-redux";
 
 import {palette} from "model";
 
 import User from "./user";
-import { useSelector } from "react-redux";
-
 const Admin = loadable(() => import( /* webpackChunkName: "admin" */ /* webpackMode: "lazy" */ "./admin"));
 
+
+import {Loading} from "component";
 import {init} from "./index.service";
 
 const Page:React.FC = () => {
-	const type = useSelector<IState,ThemeType>((state) => state.config.themeType);
+	const config = useSelector<IState, IConfig>((state) => state.config);
+	const {loading, themeType} = config;
 	const theme = createMuiTheme({
 		palette : {
 			...palette,
-			type
+			type:themeType
 		}
 	});
 	React.useEffect(() => {
@@ -33,12 +35,15 @@ const Page:React.FC = () => {
 	}, []);
 	return (
 		<ThemeProvider theme={theme}>
-			<Router>
-				<Switch>
-					<Route path="/admin" component={Admin} />
-					<Route path="/" component={User} />
-				</Switch>
-			</Router>
+			{loading? 
+				<Loading />	:
+				<Router>
+					<Switch>
+						<Route path="/admin" component={Admin} />
+						<Route path="/" component={User} />
+					</Switch>
+				</Router>
+			}
 		</ThemeProvider>
 	);
 };
