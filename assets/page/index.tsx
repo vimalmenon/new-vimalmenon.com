@@ -18,8 +18,10 @@ import User from "./user";
 const Admin = loadable(() => import( /* webpackChunkName: "admin" */ /* webpackMode: "lazy" */ "./admin"));
 
 
-import {Loading} from "component";
+import {Loading, ComingSoon} from "component";
 import {init} from "./index.service";
+
+import { envCheck } from "utility";
 
 const Page:React.FC = () => {
 	const config = useSelector<IState, IConfig>((state) => state.config);
@@ -37,12 +39,14 @@ const Page:React.FC = () => {
 		<ThemeProvider theme={theme}>
 			{loading? 
 				<Loading />	:
-				<Router>
-					<Switch>
-						<Route path="/admin" component={Admin} />
-						<Route path="/" component={User} />
-					</Switch>
-				</Router>
+				envCheck() ?
+					<ComingSoon />:
+					<Router>
+						<Switch>
+							<Route path="/admin" component={Admin} />
+							<Route path="/" component={User} />
+						</Switch>
+					</Router>
 			}
 		</ThemeProvider>
 	);

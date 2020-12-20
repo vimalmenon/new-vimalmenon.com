@@ -11,9 +11,6 @@ import {
 	Switch,
 } from "react-router-dom";
 
-import { envCheck } from "utility";
-import {ComingSoon} from "component";
-
 import Home from "./home";
 import PageNotFound from "./page-not-found";
 
@@ -31,8 +28,7 @@ const Body:React.FC = () => {
 	return(
 		<section className={classes.root}>
 			<Switch>
-				<Route exact path="/" component={envCheck(Home)} />
-				<Route path="/coming-soon" component={ComingSoon} />
+				<Route exact path="/" component={Home} />
 				<Route component={PageNotFound} />
 			</Switch>
 		</section>
