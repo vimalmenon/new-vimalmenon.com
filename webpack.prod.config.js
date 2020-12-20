@@ -92,6 +92,7 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             'VERSION' : `'${packageJson.version}'`,
+            'ENV' : `'PROD'`
         })
     ],
     resolve: {

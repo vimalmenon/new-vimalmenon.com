@@ -7,6 +7,7 @@ import {
 } from "@material-ui/core/styles";
 
 import Logo from "./logo";
+import Navigation from "./navigation";
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
@@ -34,6 +35,7 @@ const Bottom:React.FC = () => {
 		<div className={classes.root}>
 			<div className={classes.container}>
 				<Logo />
+				<Navigation />
 			</div>
 		</div>
 	);

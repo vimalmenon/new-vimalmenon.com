@@ -8,6 +8,7 @@ module.exports = {
     "globals": {
       "VERSION": "0.0.0",
       "localStorage":"localStorage",
-      "sessionStorage":"sessionStorage"
+      "sessionStorage":"sessionStorage",
+      "ENV":"TEST"
     }
 };

@@ -1,10 +1,36 @@
 export const home:INavigation = {
 	name: "Home",
 	url: "/",
-	title: "Vimal Menon"
+	title: "Vimal Menon",
+	inPage:false
 };
-
+export const aboutMe:INavigation= {
+	name: "AboutMe",
+	url: "#about-me",
+	title: "About Me | Vimal Menon",
+	inPage:true
+};
+export const tutorials:INavigation ={
+	name: "Tutorials", 
+	url: "#tutorials",
+	title: "Tutorials | Vimal Menon",
+	inPage:true
+};
+export const contactUs:INavigation = {
+	name: "ContactUs",
+	url: "#contact-us",
+	title: "Contact Us | Vimal Menon",
+	inPage:true
+};
+export const pageNotFound:INavigation = {
+	name: "PageNotFound",
+	url : "/page-not-found",
+	title: "Page Not Found | Vimal Menon",
+	inPage:false
+};
 const mainNavigation:INavigation[] = [
-	home
+	aboutMe,
+	tutorials,
+	contactUs
 ];
 export default mainNavigation;

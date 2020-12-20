@@ -1,4 +1,4 @@
-import {APP_VERSION, STORAGE, THEME, DEFAULT_THEME} from "./index";
+import {APP_VERSION, STORAGE, THEME, DEFAULT_THEME, APP_ENV} from "./index";
 
 describe("Const", () => {
     test("APP_VERSION testing", () => {
@@ -12,5 +12,8 @@ describe("Const", () => {
     });
     test("DEFAULT_THEME testing", () => {
         expect(DEFAULT_THEME).toBe("dark");
+    });
+    test("APP_ENV testing", () => {
+        expect(APP_ENV).toBe("TEST");
     });
 });
