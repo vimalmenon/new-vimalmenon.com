@@ -27,6 +27,11 @@ const useStyles = makeStyles((theme:Theme) => {
 				flex: `0 0 ${theme.breakpoints.values.lg}px`,
 			},
 		},
+		navigation : {
+			display: "flex",
+			justifyContent :"flex-end",
+			flex: "1 1 auto"
+		}
 	});
 });
 const Bottom:React.FC = () => {
@@ -35,7 +40,9 @@ const Bottom:React.FC = () => {
 		<div className={classes.root}>
 			<div className={classes.container}>
 				<Logo />
-				<Navigation />
+				<div className={classes.navigation}>
+					<Navigation />
+				</div>
 			</div>
 		</div>
 	);

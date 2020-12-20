@@ -1,5 +1,5 @@
 declare const VERSION:string;
-declare const ENV:string;
+declare const ENV:EnvType;
 
 export const APP_VERSION = VERSION;
 export const STORAGE="VimalMenon";

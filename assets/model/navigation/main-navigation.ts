@@ -5,7 +5,7 @@ export const home:INavigation = {
 	inPage:false
 };
 export const aboutMe:INavigation= {
-	name: "AboutMe",
+	name: "About Me",
 	url: "#about-me",
 	title: "About Me | Vimal Menon",
 	inPage:true
@@ -17,13 +17,13 @@ export const tutorials:INavigation ={
 	inPage:true
 };
 export const contactUs:INavigation = {
-	name: "ContactUs",
+	name: "Contact Us",
 	url: "#contact-us",
 	title: "Contact Us | Vimal Menon",
 	inPage:true
 };
 export const pageNotFound:INavigation = {
-	name: "PageNotFound",
+	name: "Page Not Found",
 	url : "/page-not-found",
 	title: "Page Not Found | Vimal Menon",
 	inPage:false

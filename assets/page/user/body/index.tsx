@@ -12,9 +12,9 @@ import {
 } from "react-router-dom";
 
 import { envCheck } from "utility";
+import {ComingSoon} from "component";
 
-
-
+import Home from "./home";
 import PageNotFound from "./page-not-found";
 
 const useStyles = makeStyles((theme: Theme) => {
@@ -31,14 +31,10 @@ const Body:React.FC = () => {
 	return(
 		<section className={classes.root}>
 			<Switch>
-				<Route exact path="/">
-					<div>
-						Website comming soon...
-					</div>
-				</Route>
+				<Route exact path="/" component={envCheck(Home)} />
+				<Route path="/coming-soon" component={ComingSoon} />
 				<Route component={PageNotFound} />
 			</Switch>
-			
 		</section>
 	);
 };
