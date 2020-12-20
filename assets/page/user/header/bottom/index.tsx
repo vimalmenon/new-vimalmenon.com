@@ -6,6 +6,9 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+
 import Logo from "./logo";
 import Navigation from "./navigation";
 
@@ -31,7 +34,13 @@ const useStyles = makeStyles((theme:Theme) => {
 			display: "flex",
 			justifyContent :"flex-end",
 			flex: "1 1 auto"
-		}
+		},
+		navigationButton : {
+			display: "none",
+			[theme.breakpoints.down("sm")]:{
+				display: "flex",
+			}
+		},
 	});
 });
 const Bottom:React.FC = () => {
@@ -39,6 +48,9 @@ const Bottom:React.FC = () => {
 	return(
 		<div className={classes.root}>
 			<div className={classes.container}>
+				<IconButton className={classes.navigationButton}>
+					<MenuIcon />
+				</IconButton>
 				<Logo />
 				<div className={classes.navigation}>
 					<Navigation />
