@@ -1,15 +1,33 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
+import {
+	makeStyles,
+	createStyles
+} from "@material-ui/core/styles";
+
+import {Entitlement} from "component";
+
+import Login from "./login";
+import Dashboard from "./dashboard";
+
+const useStyles = makeStyles(() => {
+	return createStyles({
+		root: {
+			display: "flex"
+		},
+	});
+});
 
 const Admin:React.FC = () => {
+	const classes = useStyles();
 	return (
-		<div>
-			This is admin
-
-			<Link to="/admin/test">tesst</Link> 
-			<Link to="/admin/page">pagex</Link> 
-			<Link to="/admin/read">read</Link> 
-			<Link to="/">Home</Link> 
+		<div className={classes.root}>
+			<Entitlement
+				name="login"
+				Component={Login} />
+			<Entitlement
+				name="dashboard"
+				Component={Dashboard} />
 		</div>
 	);
 };
