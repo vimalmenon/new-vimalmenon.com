@@ -37,7 +37,11 @@ const useStyles = makeStyles((theme: Theme) => {
 		},
 		section : {
 			display:"flex",
+		},
+		version:{
+			display:"flex",
 			[theme.breakpoints.down("xs")] : {
+				display:"none",
 			}
 		},
 		footerName : {
@@ -60,7 +64,7 @@ const Bottom:React.FC = () => {
 						&copy; 2020
 					</span>
 				</div>
-				<div className={classes.section}>
+				<div className={classes.version}>
 					<span data-testid="version">
 						v{APP_VERSION}
 					</span>

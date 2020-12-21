@@ -10,5 +10,8 @@ module.exports = {
       "localStorage":"localStorage",
       "sessionStorage":"sessionStorage",
       "ENV":"TEST"
+    },
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|svg)$": "<rootDir>/fileMock.js"
     }
 };

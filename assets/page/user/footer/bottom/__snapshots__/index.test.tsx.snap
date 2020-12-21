@@ -11,19 +11,19 @@ exports[`SocialMedia Component Snapshot Testing 1`] = `
       className="makeStyles-section-3"
     >
       <a
-        className="makeStyles-footerName-4"
+        className="makeStyles-footerName-5"
         href="/"
       >
         Vimal Menon
       </a>
       <span
-        className="makeStyles-span-5"
+        className="makeStyles-span-6"
       >
         © 2020
       </span>
     </div>
     <div
-      className="makeStyles-section-3"
+      className="makeStyles-version-4"
     >
       <span
         data-testid="version"

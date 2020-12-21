@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialMedia Component Snapshot Testing 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    <img
+      alt="Vimal Menon"
+      className="makeStyles-logo-2"
+      src="test-file-stub"
+    />
+  </a>
+</div>
+`;

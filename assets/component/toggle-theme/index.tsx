@@ -1,7 +1,7 @@
 import React from "react";
 
-import Brightness1Icon from "@material-ui/icons/Brightness1";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
+import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
 
 import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
@@ -15,7 +15,7 @@ const ToggleTheme:React.FC = () => {
 	let titleLabel="Dark mode";
 	let Icon = Brightness3Icon;
 	if (themeType ==="dark") {
-		Icon = Brightness1Icon;
+		Icon = BrightnessHighIcon;
 		titleLabel="Light mode";
 	}
 	return (
