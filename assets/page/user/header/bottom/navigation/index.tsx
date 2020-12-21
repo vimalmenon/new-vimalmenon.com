@@ -14,6 +14,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
+import {APP_VERSION} from "const";
 import {navigation} from "model";
 
 import Logo from "../logo";
@@ -107,7 +108,8 @@ const useStyles = makeStyles((theme: Theme) => {
 		},
 		list: {
 			display:"flex",
-			flexDirection:"column"
+			flexDirection:"column",
+			flex:"1 1 100%"
 		},
 		mobileLogo : {
 			display:"flex",
@@ -116,6 +118,21 @@ const useStyles = makeStyles((theme: Theme) => {
 			justifyContent:"center",
 			alignItems:"center",
 			marginBottom:theme.spacing(1)
+		},
+		mobileNavigation : {
+			display:"flex",
+			flexDirection:"column",
+			flex: "1 1 auto"
+		},
+		mobileFooter : {
+			display:"flex",
+			flex: "0 0 50px",
+			background: theme.palette.type==="light"?"#001B34":"#222323",
+			color:"white",
+			justifyContent:"center",
+			alignItems:"center",
+			alignSelf:"flex-end",
+			width:"100%"
 		},
 		"@keyframes myEffect": {
 			"0%": {
@@ -145,11 +162,11 @@ const Navigation:React.FC<{open:boolean, setOpen:(value:boolean) => void}> = ({o
 					ModalProps={{
 						keepMounted: true,
 					}}>
-					<div>
-						<List component="div" disablePadding className={classes.list}>
-							<div className={classes.mobileLogo}>
-								<Logo />
-							</div>
+					<List component="div" disablePadding className={classes.list}>
+						<div className={classes.mobileLogo}>
+							<Logo />
+						</div>
+						<div className={classes.mobileNavigation}>
 							{navigation.mainNavigation.map((value, key) => {
 								return (							
 									<ListItem 
@@ -161,8 +178,11 @@ const Navigation:React.FC<{open:boolean, setOpen:(value:boolean) => void}> = ({o
 									</ListItem>
 								);
 							})}
-						</List>
-					</div>
+						</div>
+						<div className={classes.mobileFooter}>
+							v{APP_VERSION}
+						</div>
+					</List>
 				</Drawer>
 			</Hidden>
 			<Hidden smDown implementation="css">

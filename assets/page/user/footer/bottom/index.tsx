@@ -55,7 +55,7 @@ const Bottom:React.FC = () => {
 		<div className={classes.root}>
 			<div className={classes.container}>
 				<div className={classes.section}>
-					<a href={"/"} className={classes.footerName}>VimalMenon</a> 
+					<a href={"/"} className={classes.footerName}>Vimal Menon</a> 
 					<span className={classes.span}>
 						&copy; 2020
 					</span>
