@@ -14,12 +14,12 @@ exports[`SocialMedia Component Snapshot Testing 1`] = `
         className="makeStyles-footerName-4"
         href="/"
       >
-        VimalMenon.com
+        VimalMenon
       </a>
       <span
         className="makeStyles-span-5"
       >
-        © All Right Reserved - 2020
+        © 2020
       </span>
     </div>
     <div

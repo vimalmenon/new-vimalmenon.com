@@ -2,19 +2,26 @@ import React from "react";
 
 import {
 	Theme,
+	useTheme,
 	makeStyles,
 	createStyles
 } from "@material-ui/core/styles";
 
+import Hidden from "@material-ui/core/Hidden";
+import Drawer from "@material-ui/core/Drawer";
+
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+
 import {navigation} from "model";
+
+import Logo from "../logo";
 
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
 		root:{
 			display: "flex",
-			[theme.breakpoints.down("sm")]:{
-				display: "none",
-			}
 		},
 		navigationItem:{
 			display:"flex",
@@ -53,6 +60,63 @@ const useStyles = makeStyles((theme: Theme) => {
 				},
 			},
 		},
+		mobileNavigationItem :{
+			display:"flex",
+			justifyContent:"center",
+			alignItems:"center",
+			fontSize:"1rem",
+			flexDirection:"column",
+			height:"63px",
+			"&::after" : {
+				content: "''",
+				display:"inline-block",
+				width:"100%",
+				height:"2px",
+			},
+			"&:hover" : {
+				"&::after" : {
+					content: "''",
+					display:"inline-block",
+					width:"100%",
+					height:"2px",
+					background: "#FA2B54",
+					animation: `$myEffect 300ms ${theme.transitions.easing.easeInOut}`,
+				},
+			},
+			"&.active" : {
+				//backgroundColor:"#19191A",
+				color:(theme.palette.type==="light")?"black":"white",
+				"&::after" : {
+					content: "''",
+					display:"inline-block",
+					width:"100%",
+					height:"2px",
+					background: "#FA2B54",
+					animation: `$myEffect 300ms ${theme.transitions.easing.easeInOut}`,
+				},
+			},
+		},
+		mobileSidebar : {
+			display: "flex",
+			[theme.breakpoints.up("md")]: {
+				display: "none",    
+			}
+		},
+		drawerPaper: {
+			width: 240,
+		},
+		list: {
+			display:"flex",
+			flexDirection:"column"
+		},
+		mobileLogo : {
+			display:"flex",
+			backgroundColor:(theme.palette.type==="light")?"#fff":"#121212",
+			flex: "0 0 63px",
+			justifyContent:"center",
+			alignItems:"center",
+			marginBottom:theme.spacing(1)
+		},
 		"@keyframes myEffect": {
 			"0%": {
 				width:"0%"
@@ -63,18 +127,56 @@ const useStyles = makeStyles((theme: Theme) => {
 		},
 	});
 });
-const Navigation:React.FC = () => {
+const Navigation:React.FC<{open:boolean, setOpen:(value:boolean) => void}> = ({open, setOpen}) => {
 	const classes = useStyles();
+	const theme = useTheme();
 	return (
-		<div className={classes.root}>
-			{navigation.mainNavigation.map((value, key) => {
-				return (
-					<div key={key} className={classes.navigationItem}>
-						{value.name}
+		<React.Fragment>
+			<Hidden smUp implementation="css">
+				<Drawer
+					variant="temporary"
+					anchor={theme.direction === "rtl" ? "right" : "left"}
+					open={open}
+					onClose={() => setOpen(!open)}
+					className={classes.mobileSidebar}
+					classes={{
+						paper: classes.drawerPaper,
+					}}
+					ModalProps={{
+						keepMounted: true,
+					}}>
+					<div>
+						<List component="div" disablePadding className={classes.list}>
+							<div className={classes.mobileLogo}>
+								<Logo />
+							</div>
+							{navigation.mainNavigation.map((value, key) => {
+								return (							
+									<ListItem 
+										key={key}
+										button 
+										className={classes.mobileNavigationItem}
+										selected={false}>
+										<ListItemText primary={value.name} />
+									</ListItem>
+								);
+							})}
+						</List>
 					</div>
-				);
-			})}
-		</div>
+				</Drawer>
+			</Hidden>
+			<Hidden smDown implementation="css">
+				<div className={classes.root}>
+					{navigation.mainNavigation.map((value, key) => {
+						return (
+							<div key={key} className={classes.navigationItem}>
+								{value.name}
+							</div>
+						);
+					})}
+				</div>
+			</Hidden>
+		</React.Fragment>
 	);
 };
 

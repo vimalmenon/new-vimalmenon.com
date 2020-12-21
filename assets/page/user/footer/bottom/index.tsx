@@ -41,10 +41,11 @@ const useStyles = makeStyles((theme: Theme) => {
 			}
 		},
 		footerName : {
-			color:"#FA2B54"
+			color:"#FA2B54",
+			textDecoration:"none"
 		},
 		span : {
-			margin: theme.spacing(0,1)
+			margin: theme.spacing(0,0.5)
 		}
 	});
 });
@@ -54,9 +55,9 @@ const Bottom:React.FC = () => {
 		<div className={classes.root}>
 			<div className={classes.container}>
 				<div className={classes.section}>
-					<a href={"/"} className={classes.footerName}>VimalMenon.com</a> 
+					<a href={"/"} className={classes.footerName}>VimalMenon</a> 
 					<span className={classes.span}>
-						&copy; All Right Reserved - 2020
+						&copy; 2020
 					</span>
 				</div>
 				<div className={classes.section}>

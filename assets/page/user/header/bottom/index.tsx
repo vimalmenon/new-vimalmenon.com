@@ -45,15 +45,18 @@ const useStyles = makeStyles((theme:Theme) => {
 });
 const Bottom:React.FC = () => {
 	const classes = useStyles();
+	const [open, setOpen] = React.useState<boolean>(false);
 	return(
 		<div className={classes.root}>
 			<div className={classes.container}>
-				<IconButton className={classes.navigationButton}>
+				<IconButton className={classes.navigationButton} onClick={() =>setOpen(!open)}>
 					<MenuIcon />
 				</IconButton>
 				<Logo />
 				<div className={classes.navigation}>
-					<Navigation />
+					<Navigation 
+						open={open}
+						setOpen={setOpen}/>
 				</div>
 			</div>
 		</div>
