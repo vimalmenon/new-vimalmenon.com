@@ -1,7 +1,7 @@
 import React from "react";
 
 import Brightness3Icon from "@material-ui/icons/Brightness3";
-import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
+import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
 
 import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";

@@ -4,7 +4,7 @@ import Worker from "worker-loader!../../worker/core.worker.ts";
 class WorkerClass {
 	private worker:Worker;
 	private id:number;
-	private map:Map<number,any>;
+	private map;
 	constructor () {
 		this.id=0;
 		this.worker = new Worker();
