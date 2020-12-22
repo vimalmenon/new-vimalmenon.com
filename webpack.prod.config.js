@@ -42,6 +42,15 @@ module.exports = {
                 ]
             },
             {
+                test: /\.core.worker\.ts$/,
+                use: { 
+                    loader: "worker-loader",
+                    options :{
+                        filename: 'worker.js',
+                    }
+                },
+            },
+            {
                 test: /\.ts(x?)$/,
                 exclude: /node_modules/,
                 use: [

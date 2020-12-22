@@ -77,6 +77,15 @@ module.exports = {
                 test: /\.ts(x?)$/,
                 loader: "source-map-loader"
             },
+            {
+                test: /\.core.worker\.ts$/,
+                use: { 
+                    loader: "worker-loader",
+                    options :{
+                        filename: 'worker.js',
+                    }
+                },
+            },
         ]
     },
     plugins: [
