@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) => {
 			display: "flex",
 			flexDirection: "column",
 			backgroundColor: theme.palette.background.paper,
-			color: theme.palette.text.primary,
+			color: theme.palette.text.primary
 		},
 	});
 });

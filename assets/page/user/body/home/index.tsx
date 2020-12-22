@@ -1,11 +1,14 @@
 import React from "react";
 
+import Hero from "./hero";
+
 
 const Home:React.FC = ()=> {
 	return (
-		<section>
+		<div>
+			<Hero />
 			This is home page
-		</section>
+		</div>
 	);
 };
 
