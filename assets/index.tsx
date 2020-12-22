@@ -6,8 +6,14 @@ import { Provider } from "react-redux";
 import store from "store";
 
 import Page from "./page";
-
 import "./index.scss";
+
+import {Workbox} from "workbox-window";
+
+if ("serviceWorker" in navigator) {
+	const wb = new Workbox('/sw.js');
+	wb.register();
+}
 
 ReactDOM.render(
 	<Provider store={store}>
