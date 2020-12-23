@@ -9,9 +9,10 @@ module.exports = {
       "VERSION": "0.0.0",
       "localStorage":"localStorage",
       "sessionStorage":"sessionStorage",
-      "ENV":"TEST"
+      "ENV":"TEST",
     },
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|svg)$": "<rootDir>/fileMock.js"
+      "\\.(jpg|jpeg|png|svg)$": "<rootDir>/assets/__mocks__/fileMock.js",
+      "\\.worker.ts":"<rootDir>/assets/__mocks__/workerMock.js"
     }
 };

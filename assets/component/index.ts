@@ -4,6 +4,7 @@ import SocialMedia from "./social-media";
 import ToggleTheme from "./toggle-theme";
 import ComingSoon from "./coming-soon";
 import Entitlement from "./entitlement";
+import Status from "./status";
 
 export {
 	Entitlement,
@@ -11,5 +12,6 @@ export {
 	ToggleTheme,
 	SocialMedia,
 	MetaData,
-	Loading
+	Loading,
+	Status
 };

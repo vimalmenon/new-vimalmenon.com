@@ -9,7 +9,8 @@ const useStyles = makeStyles(() => {
 	return createStyles({
 		root: {
 			display: "flex",
-			flexDirection:"column"
+			flexDirection:"column",
+			flex:"1 1 600px"
 		},
 	});
 });
@@ -21,7 +22,6 @@ const Home:React.FC = ()=> {
 	return (
 		<div className={classes.root}>
 			<Hero />
-			This is home page
 		</div>
 	);
 };

@@ -24,11 +24,10 @@ class WorkerClass {
 	public success ({data}) {
 		if(data.status === "success") {
 			this.map.get(data.id).resolve(data.data);
-			this.map.delete(data.id);
 		} else {
 			this.map.get(data.id).reject();
-			this.map.delete(data.id);
-		}	
+		}
+		this.map.delete(data.id);
 	}
 }
 

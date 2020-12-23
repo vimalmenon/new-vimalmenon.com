@@ -1,6 +1,6 @@
 const config:IConfig = {
 	currentLocation:null,
-	themeType:"light",
+	themeType:"dark",
 	loading:false
 };
 export default config;
