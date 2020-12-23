@@ -8,10 +8,15 @@ import store from "store";
 import Page from "./page";
 import "./index.scss";
 
+
+import "./manifest.webmanifest";
+
+import "./image/192x192.png";
+
 import {Workbox} from "workbox-window";
 
 if ("serviceWorker" in navigator) {
-	const wb = new Workbox('/sw.js');
+	const wb = new Workbox("/sw.js");
 	wb.register();
 }
 
