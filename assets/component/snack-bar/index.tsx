@@ -14,7 +14,7 @@ const SnackBar:React.FC = () => {
 				horizontal: "left",
 			}}
 			open={notificatons?true:false}
-			autoHideDuration={2000}
+			autoHideDuration={6000}
 			onClose={notification.removeMessage}
 			message={notificatons}
 			action={

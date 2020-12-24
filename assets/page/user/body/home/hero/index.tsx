@@ -4,8 +4,6 @@ import "react-animated-slider/build/horizontal.css";
 
 import {page} from "model";
 
-import {notification} from "utility"
-
 import {
 	Theme,
 	makeStyles,
@@ -95,9 +93,6 @@ const useStyles = makeStyles((theme:Theme) => {
 
 const Hero:React.FC = () => {
 	const classes = useStyles();
-	React.useEffect(() => {
-		notification.addMessage("test");
-	});
 	return (
 		<div className={classes.root}>
 			<Slider className={classes.sliderWrapper}>

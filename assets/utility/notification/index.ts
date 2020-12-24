@@ -7,10 +7,10 @@ const useInit = () => {
 	setMessage=setNotifications;
 	return {notificatons};
 };
-const addMessage = (msg) => {
+const addMessage = (msg:string) => {
 	setMessage(msg);
 };
-const removeMessage = () => {
+const removeMessage = ():void => {
 	setMessage(null);
 };
 
