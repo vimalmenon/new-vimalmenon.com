@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 declare const VERSION:string;
 
 const version = `v${VERSION}`;
@@ -8,7 +10,15 @@ const cacheList = [
 	"/main.js",
 	"/fonts/dark.png",
 	"/fonts/light.jpg",
-	"/core.worker.worker.js"
+	"/core.worker.worker.js",
+	"/fonts/image1.jpg",
+	"/fonts/image2.jpg",
+	"/fonts/image5.jpg"
+];
+
+const whiteListed = [
+	"/admin.js",
+	"/api"
 ];
 
 self.addEventListener("install", (event:any) => {

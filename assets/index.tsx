@@ -8,9 +8,9 @@ import store from "store";
 import Page from "./page";
 import "./index.scss";
 
+import {SnackBar} from "component";
 
 import "./manifest.webmanifest";
-
 import "./image/192x192.png";
 
 import {Workbox} from "workbox-window";
@@ -22,6 +22,7 @@ if ("serviceWorker" in navigator) {
 
 ReactDOM.render(
 	<Provider store={store}>
+		<SnackBar />
 		<Page />
 	</Provider>,
 	document.getElementById("main"),

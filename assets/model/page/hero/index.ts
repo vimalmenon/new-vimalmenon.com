@@ -1,19 +1,29 @@
 import image1 from "../../../image/image1.jpg";
 import image2 from "../../../image/image2.jpg";
-import image3 from "../../../../../image/image3.jpg";
-import image4 from "../../../../../image/image4.jpg";
-import image5 from "../../../../../image/image5.jpg";
+//import image3 from "../../../../../image/image3.jpg";
+//import image4 from "../../../../../image/image4.jpg";
+import image5 from "../../../image/image5.jpg";
 
-const slide1 = {
-	image:image1
+const aboutMe = {
+	image:image1,
+	buttonName:"About Me",
+	link:""
 };
-const slide2 = {
-	image:image2
+const tutorials = {
+	image:image2,
+	buttonName:"Tutorials",
+	link:""
+};
+const contactUs = {
+	image:image5,
+	buttonName:"Contact Us",
+	link:""
 };
 
 const sliders = [
-	slide1,
-	slide2
+	aboutMe,
+	tutorials,
+	contactUs
 ];
 
 export default {

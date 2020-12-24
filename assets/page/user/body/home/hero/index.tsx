@@ -4,6 +4,8 @@ import "react-animated-slider/build/horizontal.css";
 
 import {page} from "model";
 
+import {notification} from "utility"
+
 import {
 	Theme,
 	makeStyles,
@@ -11,7 +13,6 @@ import {
 } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme:Theme) => {
-	console.log(theme);
 	return createStyles({
 		root: {
 			display: "flex",
@@ -94,11 +95,13 @@ const useStyles = makeStyles((theme:Theme) => {
 
 const Hero:React.FC = () => {
 	const classes = useStyles();
+	React.useEffect(() => {
+		notification.addMessage("test");
+	});
 	return (
 		<div className={classes.root}>
 			<Slider className={classes.sliderWrapper}>
 				{page.hero.sliders.map((slider, key) => {
-					console.log(slider);
 					return (
 						<div 
 							key={key}
@@ -107,7 +110,7 @@ const Hero:React.FC = () => {
 							<div className={classes.inner}>
 								<h1 className={classes.header}>test</h1>
 								<p className={classes.p}>reading</p>
-								<button>Move</button>
+								<button>{slider.buttonName}</button>
 							</div>
 						</div>
 					);

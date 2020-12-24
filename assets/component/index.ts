@@ -5,12 +5,14 @@ import ToggleTheme from "./toggle-theme";
 import ComingSoon from "./coming-soon";
 import Entitlement from "./entitlement";
 import Status from "./status";
+import SnackBar from "./snack-bar";
 
 export {
 	Entitlement,
 	ComingSoon,
 	ToggleTheme,
 	SocialMedia,
+	SnackBar,
 	MetaData,
 	Loading,
 	Status
