@@ -5,21 +5,21 @@ const misc:IMisc = {
 			name:"GitHub",
 			title:"GitHub",
 			type: "SocialMedias",
-			url: ""
+			url: "https://github.com/vimalsmenon"
 		},
 		{
 			id:2,
 			name:"YouTube",
 			title:"YouTube",
 			type: "SocialMedias",
-			url: ""
+			url: "https://www.youtube.com/channel/UCjNZaCFrHPmgmYRmEud7f_A"
 		},
 		{
 			id:3,
 			name:"Instagram",
 			title:"Instagram",
 			type: "SocialMedias",
-			url: ""
+			url: "https://www.instagram.com/vimal.s.menon"
 		}
 	],
 };
