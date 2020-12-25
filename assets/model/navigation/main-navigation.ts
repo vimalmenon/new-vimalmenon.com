@@ -6,19 +6,19 @@ export const home:INavigation = {
 };
 export const aboutMe:INavigation= {
 	name: "About Me",
-	url: "#about-me",
+	url: "about-me",
 	title: "About Me | Vimal Menon",
 	inPage:true
 };
 export const tutorials:INavigation ={
 	name: "Tutorials", 
-	url: "#tutorials",
+	url: "tutorials",
 	title: "Tutorials | Vimal Menon",
 	inPage:true
 };
 export const contactUs:INavigation = {
 	name: "Contact Us",
-	url: "#contact-us",
+	url: "contact-us",
 	title: "Contact Us | Vimal Menon",
 	inPage:true
 };

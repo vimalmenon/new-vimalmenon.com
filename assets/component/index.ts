@@ -6,12 +6,14 @@ import ComingSoon from "./coming-soon";
 import Entitlement from "./entitlement";
 import Status from "./status";
 import SnackBar from "./snack-bar";
+import Container from "./container";
 
 export {
 	Entitlement,
 	ComingSoon,
 	ToggleTheme,
 	SocialMedia,
+	Container,
 	SnackBar,
 	MetaData,
 	Loading,

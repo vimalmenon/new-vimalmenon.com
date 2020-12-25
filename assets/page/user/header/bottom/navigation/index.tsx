@@ -19,6 +19,8 @@ import {navigation} from "model";
 
 import Logo from "../logo";
 
+import {Link} from "react-scroll";
+import {Events} from "react-scroll";
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
 		root:{
@@ -146,6 +148,14 @@ const useStyles = makeStyles((theme: Theme) => {
 const Navigation:React.FC<{open:boolean, setOpen:(value:boolean) => void}> = ({open, setOpen}) => {
 	const classes = useStyles();
 	const theme = useTheme();
+	React.useEffect(() => {
+		Events.scrollEvent.register('begin', function(to, element) {
+			console.log('begin', to, element);
+		});
+		Events.scrollEvent.register('end', function(to, element) {
+			console.log('end', to, element);
+		});	  
+	}, []);
 	return (
 		<React.Fragment>
 			<Hidden smUp implementation="css">
@@ -167,6 +177,7 @@ const Navigation:React.FC<{open:boolean, setOpen:(value:boolean) => void}> = ({o
 						</div>
 						<div className={classes.mobileNavigation}>
 							{navigation.mainNavigation.map((value, key) => {
+								console.log(value)
 								return (							
 									<ListItem 
 										key={key}
@@ -188,9 +199,9 @@ const Navigation:React.FC<{open:boolean, setOpen:(value:boolean) => void}> = ({o
 				<div className={classes.root}>
 					{navigation.mainNavigation.map((value, key) => {
 						return (
-							<div key={key} className={classes.navigationItem}>
+							<Link key={key} activeClass="active" to={value.url} spy={true} smooth={true} offset={50} duration={500} className={classes.navigationItem}>
 								{value.name}
-							</div>
+							</Link>
 						);
 					})}
 				</div>

@@ -7,10 +7,10 @@ const useInit = ():{notifications:string} => {
 	setMessage=setNotifications;
 	return {notifications};
 };
-const addMessage = (msg:string) => {
+const addMessage:IVoidOneParamMethod<string> = (msg) => {
 	setMessage(msg);
 };
-const removeMessage = ():void => {
+const removeMessage:IVoidNoParamMethod = () => {
 	setMessage(null);
 };
 

@@ -76,15 +76,15 @@ const useStyles = makeStyles((theme:Theme) => {
 			zIndex:0,
 			...createChild()
 		},
-		span : {
+		center : {
 			position:"absolute",
-			top: `20%`,
-			left: `40%`,
 			color: "#666",
-			fontSize:"72px",
+			fontSize:"7rem",
 			textShadow: "0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7)",
 			zIndex:0,
-			fontWeight:"bold"
+			fontWeight:"bold",
+			textAlign:"center",
+			width:"100%"
 		},
 		"@keyframes apparition": {
 			from:{
@@ -139,9 +139,7 @@ const PageNotFound:React.FC = () => {
 					{[...Array(80).keys()].map((value) => {
 						return (<span key={value}>{tags[value%tags.length]}</span>);
 					})}
-					<div>
-						<p className={classes.span}>HTTP : 404</p>
-					</div>
+					<p className={classes.center}>HTTP : 404</p>
 				</div>
 			</div>
 		</section>

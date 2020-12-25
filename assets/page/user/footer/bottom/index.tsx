@@ -69,9 +69,9 @@ const Bottom:React.FC = () => {
 					<span data-testid="version">
 						v{APP_VERSION}
 					</span>
-					<span>
+					{/*<span>
 						<Status />
-					</span>
+					</span>*/}
 				</div>
 			</div>
 		</div>

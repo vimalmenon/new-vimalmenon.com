@@ -36,7 +36,7 @@ const User:React.FC<RouteComponentProps> = ({history, location}) => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			<CssBaseline />
+			<CssBaseline />			
 			<MetaData />
 			<Header />
 			<Body />
