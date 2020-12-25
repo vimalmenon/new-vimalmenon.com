@@ -6,17 +6,17 @@ import CloseIcon from "@material-ui/icons/Close";
 import {notification} from "utility";
 
 const SnackBar:React.FC = () => {
-	const {notificatons} = notification.useInit();	
+	const {notifications} = notification.useInit();	
 	return (
 		<Snackbar	
 			anchorOrigin={{
 				vertical: "bottom",
 				horizontal: "left",
 			}}
-			open={notificatons?true:false}
+			open={notifications?true:false}
 			autoHideDuration={6000}
 			onClose={notification.removeMessage}
-			message={notificatons}
+			message={notifications}
 			action={
 				<IconButton size="small" aria-label="close" color="inherit" onClick={notification.removeMessage}>
 					<CloseIcon fontSize="small" />

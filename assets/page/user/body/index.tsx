@@ -19,7 +19,8 @@ const useStyles = makeStyles((theme: Theme) => {
 		root: {
 			display:"flex",
 			margin:theme.spacing(3,0),
-			flexDirection:"column"
+			flexDirection:"column",
+			flex:"1 1 auto"
 		},
 	});
 });

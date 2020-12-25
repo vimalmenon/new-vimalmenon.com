@@ -2,10 +2,10 @@ import React from "react";
 
 let setMessage;
 
-const useInit = () => {
-	const [notificatons, setNotifications] = React.useState(null);
+const useInit = ():{notifications:string} => {
+	const [notifications, setNotifications] = React.useState<string>("");
 	setMessage=setNotifications;
-	return {notificatons};
+	return {notifications};
 };
 const addMessage = (msg:string) => {
 	setMessage(msg);
