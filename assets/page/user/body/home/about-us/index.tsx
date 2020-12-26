@@ -4,7 +4,7 @@ import {
 	makeStyles,
 	createStyles
 } from "@material-ui/core/styles";
-import {Container} from "component";
+import {Container, PageTitle} from "component";
 import {Element} from "react-scroll";
 
 
@@ -21,6 +21,7 @@ const AboutUs:React.FC<{dark:boolean}> = ({dark}) => {
 	return (
 		<Element name="about-me" className={classes.element}>
 			<Container dark={dark}>
+				<PageTitle title="About Me" />
 				<div>
 					this is about us
 				</div>

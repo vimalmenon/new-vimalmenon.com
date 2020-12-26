@@ -1,6 +1,6 @@
 import React from "react";
 
-import {Container} from "component";
+import {Container, PageTitle} from "component";
 import {Element} from "react-scroll";
 
 import {
@@ -23,6 +23,7 @@ const ContactUs:React.FC<{dark:boolean}> = ({dark}) => {
 	return (
 		<Element name="contact-us" className={classes.element}>
 			<Container dark={dark}>
+				<PageTitle title="Contact Us" />
 				<section>
 					this is contact us
 				</section>
