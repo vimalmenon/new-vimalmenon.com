@@ -13,7 +13,8 @@ const cacheList = [
 	"/core.worker.worker.js",
 	"/fonts/image1.jpg",
 	"/fonts/image2.jpg",
-	"/fonts/image5.jpg"
+	"/fonts/image5.jpg",
+	"/fonts/manifest.webmanifest"
 ];
 
 const whiteListed = [

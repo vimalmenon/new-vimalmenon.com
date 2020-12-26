@@ -7,15 +7,18 @@ import Entitlement from "./entitlement";
 import Status from "./status";
 import SnackBar from "./snack-bar";
 import Container from "./container";
+import PageTitle from "./page-title";
 
 export {
 	Entitlement,
-	ComingSoon,
 	ToggleTheme,
 	SocialMedia,
+	ComingSoon,
+	PageTitle,
 	Container,
 	SnackBar,
 	MetaData,
 	Loading,
-	Status
+	Status,
+
 };

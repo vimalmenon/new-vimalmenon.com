@@ -1,7 +1,6 @@
 import React from "react";
 
 import {
-	Theme,
 	makeStyles,
 	createStyles
 } from "@material-ui/core/styles";
@@ -9,7 +8,7 @@ import {Container} from "component";
 import {Element} from "react-scroll";
 
 
-const useStyles = makeStyles((theme: Theme) => {
+const useStyles = makeStyles(() => {
 	return createStyles({
 		element: {
 			display: "flex",
