@@ -13,6 +13,7 @@ import {navigation} from "service";
 import {MetaData} from "component";
 
 import Header from "./header";
+import HeaderScrollable from "./header/scrollable";
 import Body from "./body";
 import Footer from "./footer";
 
@@ -39,6 +40,7 @@ const User:React.FC<RouteComponentProps> = ({history, location}) => {
 			<CssBaseline />			
 			<MetaData />
 			<Header />
+			<HeaderScrollable />
 			<Body />
 			<Footer />
 		</div>

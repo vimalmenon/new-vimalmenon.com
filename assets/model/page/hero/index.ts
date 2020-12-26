@@ -6,18 +6,19 @@ import image5 from "../../../image/image5.jpg";
 
 const aboutMe = {
 	image:image1,
+	title: "",
 	buttonName:"About Me",
-	link:""
+	url:"about-me"
 };
 const tutorials = {
 	image:image2,
 	buttonName:"Tutorials",
-	link:""
+	url:"tutorials"
 };
 const contactUs = {
 	image:image5,
 	buttonName:"Contact Us",
-	link:""
+	url:"contact-us"
 };
 
 const sliders = [

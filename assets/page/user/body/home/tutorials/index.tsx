@@ -22,7 +22,7 @@ const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 	return (
 		<Element name="tutorials" className={classes.element}>
 			<Container dark={dark}>
-				<PageTitle title="Contact Us" />
+				<PageTitle title="Tutorials" />
 				<section>
 					this is tutorials
 				</section>

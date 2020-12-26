@@ -170,14 +170,13 @@ const Navigation:React.FC<{open:boolean, setOpen:(value:boolean) => void}> = ({o
 						</div>
 						<div className={classes.mobileNavigation}>
 							{navigation.mainNavigation.map((value, key) => {
-								return (							
-									<ListItem 
-										key={key}
-										button 
-										className={classes.mobileNavigationItem}
-										selected={false}>
-										<ListItemText primary={value.name} />
-									</ListItem>
+								return (
+									<Link key={key} activeClass="active" to={value.url} spy={true} smooth={true} offset={-100} duration={500} className={classes.mobileNavigationItem}>
+										<ListItem 
+											button>
+											<ListItemText primary={value.name} />
+										</ListItem>
+									</Link>
 								);
 							})}
 						</div>
@@ -191,7 +190,7 @@ const Navigation:React.FC<{open:boolean, setOpen:(value:boolean) => void}> = ({o
 				<div className={classes.root}>
 					{navigation.mainNavigation.map((value, key) => {
 						return (
-							<Link key={key} activeClass="active" to={value.url} spy={true} smooth={true} offset={50} duration={500} className={classes.navigationItem}>
+							<Link key={key} activeClass="active" to={value.url} spy={true} smooth={true} offset={-100} duration={500} className={classes.navigationItem}>
 								{value.name}
 							</Link>
 						);

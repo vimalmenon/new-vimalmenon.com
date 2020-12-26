@@ -2,13 +2,16 @@ import React from "react";
 import Slider from "react-animated-slider";
 import "react-animated-slider/build/horizontal.css";
 
-import {page} from "model";
 
 import {
 	Theme,
 	makeStyles,
 	createStyles
 } from "@material-ui/core/styles";
+
+import {Link} from "react-scroll";
+
+import {page} from "model";
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
@@ -105,7 +108,9 @@ const Hero:React.FC = () => {
 							<div className={classes.inner}>
 								<h1 className={classes.header}>test</h1>
 								<p className={classes.p}>reading</p>
-								<button>{slider.buttonName}</button>
+								<Link to={slider.url} smooth={true} offset={50} duration={500}>
+									<button>{slider.buttonName}</button>
+								</Link>
 							</div>
 						</div>
 					);
