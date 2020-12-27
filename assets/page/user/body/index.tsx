@@ -1,7 +1,6 @@
 import React from "react";
 
 import {
-	Theme,
 	makeStyles,
 	createStyles
 } from "@material-ui/core/styles";
@@ -14,7 +13,7 @@ import {
 import Home from "./home";
 import PageNotFound from "./page-not-found";
 
-const useStyles = makeStyles((theme: Theme) => {
+const useStyles = makeStyles(() => {
 	return createStyles({
 		root: {
 			display:"flex",

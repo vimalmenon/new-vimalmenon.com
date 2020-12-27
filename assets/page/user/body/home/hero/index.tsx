@@ -62,13 +62,17 @@ const useStyles = makeStyles((theme:Theme) => {
 			textAlign: "center"
 		},
 		inner : {
+			display:"flex",
+			justifyContent:"space-around",
+			flexDirection:"column",
 			padding: "0 70px",
 			boxSizing: "border-box",
 			position: "absolute",
 			width: "100%",
 			top: "50%",
 			left: "50%",
-			"transform": "translate(-50%, -50%)"
+			transform: "translate(-50%, -50%)",
+			height:"100%"
 		},
 		header : {
 			fontWeight: 900,
@@ -106,8 +110,8 @@ const Hero:React.FC = () => {
 							className={classes.sliderContent}
 							style={{ background: `url('${slider.image}') no-repeat center center` }}>
 							<div className={classes.inner}>
-								<h1 className={classes.header}>test</h1>
-								<p className={classes.p}>reading</p>
+								<h1 className={classes.header}>{slider.title}</h1>
+								<p className={classes.p}>{slider.description}</p>
 								<Link to={slider.url} smooth={true} offset={50} duration={500}>
 									<button>{slider.buttonName}</button>
 								</Link>
