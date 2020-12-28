@@ -1,5 +1,5 @@
 const aboutMe = {
-	video: "Wb1uty_bc3c",
+	videoId: "Wb1uty_bc3c",
 	title:"About Me",
 	description: [
 		`
