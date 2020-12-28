@@ -24,30 +24,6 @@ const Home:React.FC = ()=> {
 	return (
 		<div className={classes.root}>
 			<Hero />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
 			<AboutUs dark={false}/>
 			<br />
 			<br />

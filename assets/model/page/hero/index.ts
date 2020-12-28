@@ -16,14 +16,14 @@ const freeTutorials = {
 const aboutMe = {
 	image:image3,
 	title: "About Me",
-	description:"My name is Vimal Menon. I am self taught developer. I have experinace working on ",
+	description:"My name is Vimal Menon. I am self taught developer. I am very passionate about development and learning new stuff.  ",
 	buttonName:"About Me",
 	url:"about-me"
 };
 const contactUs = {
 	image:image5,
 	title: "Contact me",
-	description:"If you have some idea to share, I would like to hear.",
+	description:"If you have some idea to share, I would like to hear it from you. ",
 	buttonName:"Contact Us",
 	url:"contact-us"
 };

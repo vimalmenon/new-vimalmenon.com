@@ -11,6 +11,8 @@ import {
 
 import {Link} from "react-scroll";
 
+import Button from "./button";
+
 import {page} from "model";
 
 const useStyles = makeStyles((theme:Theme) => {
@@ -113,7 +115,7 @@ const Hero:React.FC = () => {
 								<h1 className={classes.header}>{slider.title}</h1>
 								<p className={classes.p}>{slider.description}</p>
 								<Link to={slider.url} smooth={true} offset={50} duration={500}>
-									<button>{slider.buttonName}</button>
+									<Button lable={slider.buttonName} />
 								</Link>
 							</div>
 						</div>

@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme: Theme) => {
 			flex: "1 1 100%",
 			margin:theme.spacing(1,1),
 			padding:theme.spacing(3,0),
+			flexDirection:"column",
 			[theme.breakpoints.up("lg")]: {
 				display:"flex",
 				flex: `0 0 ${theme.breakpoints.values.lg}px`,

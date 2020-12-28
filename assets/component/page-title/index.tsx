@@ -38,14 +38,12 @@ const useStyles = makeStyles((theme: Theme) => {
 const PageTitle:React.FC<IPageTitle> = ({title}) => {
 	const classes = useStyles();
 	return (
-		<div>
-			<div className={classes.root}>
-				<div className={classes.title}>
-					{title}
-				</div>
-				<div className={classes.divider}>
-					<span className={classes.stroke}></span>
-				</div>
+		<div className={classes.root}>
+			<div className={classes.title}>
+				{title}
+			</div>
+			<div className={classes.divider}>
+				<span className={classes.stroke}></span>
 			</div>
 		</div>
 	);
