@@ -14,8 +14,8 @@ const useStyles = makeStyles(() => {
 			flexDirection: "column",
 			position:"fixed",
 			width:"100%",
-			top:"0px"
-			//height:"0px"
+			top:"0px",
+			zIndex:0
 		},
 	});
 });

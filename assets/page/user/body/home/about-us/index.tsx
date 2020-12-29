@@ -19,7 +19,10 @@ const useStyles = makeStyles(() => {
 			display:"flex"
 		},
 		content : {
-
+			display:"flex"
+		},
+		footer : {
+			display:"flex"
 		}
 	});
 });
@@ -43,6 +46,9 @@ const AboutUs:React.FC<{dark:boolean}> = ({dark}) => {
 							);
 						})}
 					</div>
+				</div>
+				<div className={classes.footer}>
+
 				</div>
 			</Container>
 		</Element>

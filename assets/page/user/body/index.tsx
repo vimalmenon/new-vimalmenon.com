@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 
 import Home from "./home";
+import Tutorials from "./tutorials";
 import PageNotFound from "./page-not-found";
 
 const useStyles = makeStyles(() => {
@@ -29,6 +30,7 @@ const Body:React.FC = () => {
 		<section className={classes.root}>
 			<Switch>
 				<Route exact path="/" component={Home} />
+				<Route exact path="/tutorials" component={Tutorials} />
 				<Route component={PageNotFound} />
 			</Switch>
 		</section>

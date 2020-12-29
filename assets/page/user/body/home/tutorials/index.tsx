@@ -8,6 +8,7 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
+import {page} from "model";
 
 const useStyles = makeStyles(() => {
 	return createStyles({
@@ -15,17 +16,48 @@ const useStyles = makeStyles(() => {
 			display: "flex",
 			flexDirection:"column",
 		},
+		title : {
+			display: "flex",
+		},
+		content : {
+
+		}
 	});
 });
 const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 	const classes = useStyles();
+	const tutorials = page.tutorials;
 	return (
 		<Element name="tutorials" className={classes.element}>
 			<Container dark={dark}>
-				<PageTitle title="Tutorials" />
-				<section>
-					this is tutorials
-				</section>
+				<div className={classes.title}>
+					<PageTitle title="Tutorials" />
+				</div>
+				<div className={classes.content}>
+					{tutorials.map((tutorial, key) => {
+						return (
+							<div key={key}>
+								<div>
+									{tutorial.title}
+								</div>
+								<div>
+									{tutorial.videos.map((video, innerKey) => {
+										return (
+											<div key={innerKey}>
+												<div>
+													{video.videoId}
+												</div>
+												<div>
+													{video.name}
+												</div>
+											</div>
+										);
+									})}
+								</div>
+							</div>
+						);
+					})}
+				</div>
 			</Container>
 		</Element>
 	);

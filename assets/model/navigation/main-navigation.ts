@@ -28,6 +28,13 @@ export const pageNotFound:INavigation = {
 	title: "Page Not Found | Vimal Menon",
 	inPage:false
 };
+
+export const tutorialsPage = {
+	name: "Page Not Found",
+	url : "/tutorials",
+	title: "Tutorials | Vimal Menon",
+	inPage:false
+};
 const mainNavigation:INavigation[] = [
 	aboutMe,
 	tutorials,
