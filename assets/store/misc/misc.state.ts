@@ -20,6 +20,13 @@ const misc:IMisc = {
 			title:"Instagram",
 			type: "SocialMedias",
 			url: "https://www.instagram.com/vimal.s.menon"
+		},
+		{
+			id:4,
+			name:"Twitter",
+			title:"Twitter",
+			type: "SocialMedias",
+			url:"https://twitter.com/VimalMenon13"
 		}
 	],
 };
