@@ -7,7 +7,9 @@ import {
 import {Container, PageTitle} from "component";
 import {Element} from "react-scroll";
 
-import {page} from "model";
+
+import Message from "./message";
+import Video from "./video";
 
 const useStyles = makeStyles(() => {
 	return createStyles({
@@ -28,7 +30,6 @@ const useStyles = makeStyles(() => {
 });
 const AboutUs:React.FC<{dark:boolean}> = ({dark}) => {
 	const classes = useStyles();
-	const aboutMe = page.aboutMe;
 	return (
 		<Element name="about-me" className={classes.element}>
 			<Container dark={dark}>
@@ -36,16 +37,8 @@ const AboutUs:React.FC<{dark:boolean}> = ({dark}) => {
 					<PageTitle title="About Me" />
 				</div>
 				<div className={classes.content}>
-					<div></div>
-					<div>
-						{aboutMe.description.map((value, key) => {
-							return (
-								<div key={key}>
-									{value}
-								</div>
-							);
-						})}
-					</div>
+					<Video />
+					<Message />
 				</div>
 				<div className={classes.footer}>
 

@@ -8,11 +8,13 @@ import Status from "./status";
 import SnackBar from "./snack-bar";
 import Container from "./container";
 import PageTitle from "./page-title";
+import TextFormat from "./text-format";
 
 export {
 	Entitlement,
 	ToggleTheme,
 	SocialMedia,
+	TextFormat,
 	ComingSoon,
 	PageTitle,
 	Container,
