@@ -10,6 +10,7 @@ import {
 
 
 import Form from "./form";
+import Message from "./message";
 
 const useStyles = makeStyles(() => {
 	return createStyles({
@@ -22,7 +23,7 @@ const useStyles = makeStyles(() => {
 		},
 		content : {
 			display: "flex",
-		}
+		},
 	});
 });
 
@@ -35,9 +36,7 @@ const ContactUs:React.FC<{dark:boolean}> = ({dark}) => {
 					<PageTitle title="Contact Us" />
 				</div>
 				<div className={classes.content}>
-					<div>
-						this is contact us
-					</div>
+					<Message />
 					<Form />
 				</div>
 			</Container>
