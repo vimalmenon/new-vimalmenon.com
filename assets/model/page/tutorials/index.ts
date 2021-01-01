@@ -25,7 +25,7 @@ const tutorials = [
 		]
 	},
 	{
-		title:"Unlisted",
+		title:"Others",
 		videos : [
 			{
 				name: "Web development Introduction & Basic Concepts",

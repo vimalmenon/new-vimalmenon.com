@@ -1,11 +1,9 @@
-import hero from "./hero";
-import aboutMe from "./about-me";
 import tutorials from "./tutorials";
-import contactUs from "./contact-us";
+import release from "./release";
+import home from "./home";
 
 export default {
 	tutorials,
-	contactUs,
-	aboutMe,
-	hero
+	release,
+	home
 };

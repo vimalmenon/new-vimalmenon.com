@@ -31,7 +31,7 @@ const Message:React.FC = () => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			{page.aboutMe.description.map((value, key) => {
+			{page.home.aboutMe.description.map((value, key) => {
 				return (
 					<div key={key} className={classes.items}>
 						<TextFormat text={value} />

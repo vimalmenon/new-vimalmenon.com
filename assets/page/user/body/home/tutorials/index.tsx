@@ -37,6 +37,16 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		contentVideos :{
 			display:"flex",
+		},
+		contentVideo :{
+			display:"flex",
+			flexDirection:"column",
+			flex:"1 1 100%",
+			margin:theme.spacing(1)
+		},
+		videoDetail :{
+			display:"flex",
+			justifyContent:"space-between"
 		}
 	});
 });
@@ -60,12 +70,17 @@ const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 									{tutorial.videos.map((video, innerKey) => {
 										if(innerKey<3) {
 											return (
-												<div key={innerKey}>
+												<div key={innerKey} className={classes.contentVideo}>
 													<div>
 														<Video videoId={video.videoId}/>
 													</div>
-													<div>
-														{video.name}
+													<div className={classes.videoDetail}>
+														<span>
+															{video.name}
+														</span>
+														<span>
+															{video.publishedDate}
+														</span>
 													</div>
 												</div>
 											);

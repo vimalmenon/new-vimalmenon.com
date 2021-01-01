@@ -14,6 +14,8 @@ import {Link} from "react-scroll";
 import Button from "./button";
 
 import {page} from "model";
+import { Pages } from "@material-ui/icons";
+import Page from "assets/page";
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
@@ -105,7 +107,7 @@ const Hero:React.FC = () => {
 	return (
 		<div className={classes.root}>
 			<Slider className={classes.sliderWrapper}>
-				{page.hero.sliders.map((slider, key) => {
+				{page.home.hero.sliders.map((slider, key) => {
 					return (
 						<div 
 							key={key}
