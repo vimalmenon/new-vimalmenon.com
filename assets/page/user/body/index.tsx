@@ -13,6 +13,7 @@ import {
 import Home from "./home";
 import Tutorials from "./tutorials";
 import PageNotFound from "./page-not-found";
+import Release from "./release";
 
 const useStyles = makeStyles(() => {
 	return createStyles({
@@ -31,6 +32,7 @@ const Body:React.FC = () => {
 			<Switch>
 				<Route exact path="/" component={Home} />
 				<Route exact path="/tutorials" component={Tutorials} />
+				<Route exact path="/release" component={Release} />
 				<Route component={PageNotFound} />
 			</Switch>
 		</section>

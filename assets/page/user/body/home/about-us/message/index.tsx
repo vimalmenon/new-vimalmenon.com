@@ -19,9 +19,10 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		items: {
 			display:"flex",
-			textIndent: "50px",
+			textIndent: "5em",
 			margin:theme.spacing(2,0),
-			fontSize:"1em"
+			fontSize:"1.2em",
+			lineHeight:"2em"
 		}
 	});
 });

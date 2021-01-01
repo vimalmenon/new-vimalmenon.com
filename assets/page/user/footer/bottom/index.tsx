@@ -6,7 +6,7 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
-import {APP_VERSION} from "const";
+import {APP_VERSION, ALPHA} from "const";
 
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
@@ -67,6 +67,7 @@ const Bottom:React.FC = () => {
 				<div className={classes.version}>
 					<span data-testid="version">
 						v{APP_VERSION}
+						<span>{ALPHA?".a":""}</span>
 					</span>
 				</div>
 			</div>
