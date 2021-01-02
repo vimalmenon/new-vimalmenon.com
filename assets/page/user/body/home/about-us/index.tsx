@@ -2,7 +2,8 @@ import React from "react";
 
 import {
 	makeStyles,
-	createStyles
+	createStyles,
+	Theme
 } from "@material-ui/core/styles";
 import {Container, PageTitle} from "component";
 import {Element} from "react-scroll";
@@ -11,7 +12,7 @@ import {Element} from "react-scroll";
 import Message from "./message";
 import Video from "./video";
 
-const useStyles = makeStyles(() => {
+const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		element: {
 			display: "flex",
@@ -21,7 +22,10 @@ const useStyles = makeStyles(() => {
 			display:"flex"
 		},
 		content : {
-			display:"flex"
+			display:"flex",
+			[theme.breakpoints.down("md")]: {
+				flexDirection:"column",
+			},
 		},
 		footer : {
 			display:"flex"

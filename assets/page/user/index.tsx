@@ -16,6 +16,7 @@ import Header from "./header";
 import HeaderScrollable from "./header/scrollable";
 import Body from "./body";
 import Footer from "./footer";
+import EarlyRelease from "./early-release";
 
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
@@ -37,7 +38,8 @@ const User:React.FC<RouteComponentProps> = ({history, location}) => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			<CssBaseline />			
+			<CssBaseline />
+			<EarlyRelease />
 			<MetaData />
 			<Header />
 			<HeaderScrollable />

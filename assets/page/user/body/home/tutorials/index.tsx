@@ -37,17 +37,20 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		contentVideos :{
 			display:"flex",
+			[theme.breakpoints.down("md")]: {
+				flexDirection:"column",
+			},
 		},
 		contentVideo :{
 			display:"flex",
 			flexDirection:"column",
-			flex:"1 1 100%",
-			margin:theme.spacing(1)
+			flex:"1 1 50%",
+			margin:theme.spacing(1),
 		},
 		videoDetail :{
 			display:"flex",
 			justifyContent:"space-between"
-		}
+		},
 	});
 });
 const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {

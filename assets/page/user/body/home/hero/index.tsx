@@ -14,8 +14,6 @@ import {Link} from "react-scroll";
 import Button from "./button";
 
 import {page} from "model";
-import { Pages } from "@material-ui/icons";
-import Page from "assets/page";
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({

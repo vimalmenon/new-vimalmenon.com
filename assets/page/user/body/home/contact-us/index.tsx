@@ -5,14 +5,15 @@ import {Element} from "react-scroll";
 
 import {
 	makeStyles,
-	createStyles
+	createStyles,
+	Theme
 } from "@material-ui/core/styles";
 
 
 import Form from "./form";
 import Message from "./message";
 
-const useStyles = makeStyles(() => {
+const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		element: {
 			display: "flex",
@@ -23,6 +24,9 @@ const useStyles = makeStyles(() => {
 		},
 		content : {
 			display: "flex",
+			[theme.breakpoints.down("md")]: {
+				flexDirection:"column",
+			},
 		},
 	});
 });

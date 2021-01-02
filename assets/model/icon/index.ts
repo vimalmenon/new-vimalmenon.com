@@ -10,6 +10,8 @@ import EmailIcon from "@material-ui/icons/Email";
 import HomeIcon from "@material-ui/icons/Home";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import TwitterIcon from "@material-ui/icons/Twitter";
+import CloseIcon from "@material-ui/icons/Close";
+import WarningIcon from "@material-ui/icons/Warning";
 
 const icon = {
 	Add:AddIcon,
@@ -22,6 +24,8 @@ const icon = {
 	Email:EmailIcon,
 	Home:HomeIcon,
 	ArrowForward:ArrowForwardIosIcon,
-	Twitter:TwitterIcon
+	Twitter:TwitterIcon,
+	Close:CloseIcon,
+	Warning:WarningIcon
 };
 export default icon;

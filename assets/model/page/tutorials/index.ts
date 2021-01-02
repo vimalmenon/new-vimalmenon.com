@@ -4,7 +4,7 @@ const tutorials = [
 		videos : [
 			{
 				name: "04 - HTML Table",
-				videoId: "SncHYzpL5o",
+				videoId: "_SncHYzpL5o",
 				publishedDate: "Jan 1, 2021"
 			},
 			{
