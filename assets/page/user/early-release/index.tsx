@@ -37,6 +37,7 @@ const EarlyRelease:React.FC = () => {
 	const classes = useStyles();
 	const {Close} = icon;
 	const [show, setShow] = React.useState<boolean>(true);
+	setTimeout(() => setShow(false),20000);
 	if (show) {
 		return (
 			<section className={classes.root}>

@@ -18,7 +18,7 @@ const Video:React.FC = () => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-
+			Comming Soon
 		</div>
 	);
 };

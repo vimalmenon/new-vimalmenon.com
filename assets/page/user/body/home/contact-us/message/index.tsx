@@ -18,7 +18,7 @@ const Message:React.FC = () => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			this is contact us
+			Comming Soon
 		</div>
 	);
 };
