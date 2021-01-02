@@ -47,7 +47,8 @@ const Form:React.FC = ()=> {
 					fullWidth={true}
 					name="name"
 					value={form.name}
-					onChange={onUpdate}/>
+					onChange={onUpdate}
+					inputProps={{"aria-label": "Email"}}/>
 			</div>
 			<div className={classes.field}>
 				<TextField
@@ -56,7 +57,8 @@ const Form:React.FC = ()=> {
 					fullWidth={true}
 					name="email"
 					value={form.email}
-					onChange={onUpdate}/>
+					onChange={onUpdate}
+					inputProps={{"aria-label": "Your Name"}}/>
 			</div>
 			<div className={classes.field}>
 				<TextField
@@ -66,7 +68,8 @@ const Form:React.FC = ()=> {
 					fullWidth={true}
 					name="subject"
 					value={form.subject}
-					onChange={onUpdate}/>
+					onChange={onUpdate}
+					inputProps={{"aria-label": "Subject"}}/>
 			</div>
 			<div className={classes.field}>
 				<TextField 
@@ -78,7 +81,8 @@ const Form:React.FC = ()=> {
 					rows={10}
 					name="message"
 					value={form.message}
-					onChange={onUpdate}/>
+					onChange={onUpdate}
+					inputProps={{"aria-label": "Message"}}/>
 			</div>
 			<div className={classes.field}>
 				<Button 

@@ -5,6 +5,7 @@ const misc:IMisc = {
 			name:"GitHub",
 			title:"GitHub",
 			type: "SocialMedias",
+			label:"Link to GitHub",
 			url: "https://github.com/vimalsmenon"
 		},
 		{
@@ -12,6 +13,7 @@ const misc:IMisc = {
 			name:"YouTube",
 			title:"YouTube",
 			type: "SocialMedias",
+			label:"Link to YouTube",
 			url: "https://www.youtube.com/channel/UCjNZaCFrHPmgmYRmEud7f_A"
 		},
 		{
@@ -19,6 +21,7 @@ const misc:IMisc = {
 			name:"Instagram",
 			title:"Instagram",
 			type: "SocialMedias",
+			label:"Link to Instagram",
 			url: "https://www.instagram.com/vimal.s.menon"
 		},
 		{
@@ -26,6 +29,7 @@ const misc:IMisc = {
 			name:"Twitter",
 			title:"Twitter",
 			type: "SocialMedias",
+			label:"Link to Twitter",
 			url:"https://twitter.com/VimalMenon13"
 		}
 	],

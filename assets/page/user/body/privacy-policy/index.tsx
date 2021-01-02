@@ -7,12 +7,10 @@ import {TextFormat, Container} from "component";
 const PrivacyPolicyPage:React.FC = () => {
 	const {PrivacyPolicy} = page;
 	return (
-		<div>
-			<Container dark={false}>
-				<TextFormat 
-					text={PrivacyPolicy} />
-			</Container>
-		</div>
+		<Container dark={false}>
+			<TextFormat 
+				text={PrivacyPolicy} />
+		</Container>
 	);
 };
 
