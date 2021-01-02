@@ -34,21 +34,12 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.scss$/,
+                test: /\.(scss|css)$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader'
                 ]
-            },
-            {
-                test: /\.core.worker\.ts$/,
-                use: { 
-                    loader: "worker-loader",
-                    options :{
-                        filename: 'worker.js',
-                    }
-                },
             },
             {
                 test: /\.ts(x?)$/,
@@ -63,7 +54,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(woff(2)?|ttf|eot|svg|jpe?g|png|gif|svg|jpg)(\?v=\d+\.\d+\.\d+)?$/,
+                test: /\.(woff(2)?|ttf|eot|svg|jpe?g|png|gif|svg|jpg|pdf|webmanifest)(\?v=\d+\.\d+\.\d+)?$/,
                 use: [
                     {
                         loader: 'file-loader',
@@ -78,6 +69,15 @@ module.exports = {
                 enforce: "pre",
                 test: /\.ts(x?)$/,
                 loader: "source-map-loader"
+            },
+            {
+                test: /\.core.worker\.ts$/,
+                use: { 
+                    loader: "worker-loader",
+                    options :{
+                        filename: 'worker.js',
+                    }
+                },
             },
         ]
     },
@@ -101,7 +101,6 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             'VERSION' : `'${packageJson.version}'`,
-            'ENV' : `'PROD'`
         })
     ],
     resolve: {
