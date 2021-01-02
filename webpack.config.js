@@ -101,8 +101,7 @@ module.exports = {
             inject: true,
         }),
         new webpack.DefinePlugin({
-            'VERSION' : `'${packageJson.version}'`,
-            'ENV' : `'DEV'`
+            'VERSION' : `'${packageJson.version}'`
         })
     ],
     resolve: {
