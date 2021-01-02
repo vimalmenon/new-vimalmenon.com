@@ -5,9 +5,12 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = require("./webpack/config");
 
+const packageJson = require("./package.json");
+
 module.exports = {
     mode: "development",
     entry: config.entry,
+    devtool: "source-map",
     devServer: {
         publicPath: '/',
         contentBase: path.resolve(__dirname, "/public"),
@@ -24,11 +27,6 @@ module.exports = {
     module: {
         rules: [
             {
-                enforce: "pre",
-                test: /\.ts(x?)$/,
-                loader: "source-map-loader"
-            },
-            {
                 test: /\.ts(x?)$/,
                 enforce: 'pre',
                 use: [
@@ -43,7 +41,7 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.scss$/,
+                test: /\.(scss|css)$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
@@ -62,6 +60,32 @@ module.exports = {
                     }
                 ]
             },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg|jpe?g|png|gif|svg|jpg|pdf|webmanifest)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'fonts/'
+                        }
+                    }
+                ]
+            },
+            {
+                enforce: "pre",
+                test: /\.ts(x?)$/,
+                loader: "source-map-loader"
+            },
+            {
+                test: /\.core.worker\.ts$/,
+                use: { 
+                    loader: "worker-loader",
+                    options :{
+                        filename: 'worker.js',
+                    }
+                },
+            },
         ]
     },
     plugins: [
@@ -76,6 +100,10 @@ module.exports = {
             template: './index.html',
             inject: true,
         }),
+        new webpack.DefinePlugin({
+            'VERSION' : `'${packageJson.version}'`,
+            'ENV' : `'DEV'`
+        })
     ],
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".scss"],
@@ -83,7 +111,11 @@ module.exports = {
             "store": path.resolve(__dirname, "./assets/store"),
             "model": path.resolve(__dirname, "./assets/model"),
             "utility": path.resolve(__dirname, "./assets/utility"),
-            "component": path.resolve(__dirname, "./assets/component")
+            "component": path.resolve(__dirname, "./assets/component"),
+            "service": path.resolve(__dirname, "./assets/service"),
+            "action": path.resolve(__dirname, "./assets/store/action"),
+            "const" : path.resolve(__dirname, "./assets/const"),
+            "image": path.resolve(__dirname, "./assets/image/"),
         }
     }
 };

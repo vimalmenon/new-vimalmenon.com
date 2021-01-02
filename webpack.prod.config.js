@@ -8,6 +8,8 @@ const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 
 const config = require("./webpack/config");
 
+const packageJson = require("./package.json");
+
 module.exports = {
     mode: "production",
     entry: config.entry,
@@ -17,11 +19,6 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                enforce: "pre",
-                test: /\.ts(x?)$/,
-                loader: "source-map-loader"
-            },
             {
                 test: /\.ts(x?)$/,
                 enforce: 'pre',
@@ -37,7 +34,7 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.scss$/,
+                test: /\.(scss|css)$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
@@ -55,6 +52,32 @@ module.exports = {
                         loader: "ts-loader",
                     }
                 ]
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg|jpe?g|png|gif|svg|jpg|pdf|webmanifest)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'fonts/'
+                        }
+                    }
+                ]
+            },
+            {
+                enforce: "pre",
+                test: /\.ts(x?)$/,
+                loader: "source-map-loader"
+            },
+            {
+                test: /\.core.worker\.ts$/,
+                use: { 
+                    loader: "worker-loader",
+                    options :{
+                        filename: 'worker.js',
+                    }
+                },
             },
         ]
     },
@@ -76,6 +99,9 @@ module.exports = {
             protectWebpackAssets: false,
             cleanOnceBeforeBuildPatterns: ['**/*']
         }),
+        new webpack.DefinePlugin({
+            'VERSION' : `'${packageJson.version}'`,
+        })
     ],
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".scss"],
@@ -83,7 +109,11 @@ module.exports = {
             "store": path.resolve(__dirname, "./assets/store"),
             "model": path.resolve(__dirname, "./assets/model"),
             "utility": path.resolve(__dirname, "./assets/utility"),
-            "component": path.resolve(__dirname, "./assets/component")
+            "component": path.resolve(__dirname, "./assets/component"),
+            "service": path.resolve(__dirname, "./assets/service"),
+            "action": path.resolve(__dirname, "./assets/store/action"),
+            "const" : path.resolve(__dirname, "./assets/const"),
+            "image": path.resolve(__dirname, "./assets/image/"),
         }
     }
 };

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialMedia Component Snapshot Testing 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <div
+    className="makeStyles-container-2"
+  >
+    <div
+      className="makeStyles-section-3"
+    >
+      <a
+        className="makeStyles-footerName-5"
+        href="/"
+      >
+        Vimal Menon
+      </a>
+      <span
+        className="makeStyles-span-6"
+      >
+        © 2020
+      </span>
+    </div>
+    <div
+      className="makeStyles-version-4"
+    >
+      <span
+        data-testid="version"
+      >
+        v
+        0.0.0
+      </span>
+    </div>
+  </div>
+</div>
+`;

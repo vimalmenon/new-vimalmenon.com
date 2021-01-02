@@ -14,12 +14,22 @@
         "types": [
             "@types/jest"
         ],
+        "lib": [
+            "ES6",
+            "DOM",
+            "ES2015.Promise",
+            "webworker"
+        ],
         "typeRoots" : ["assets/typings"],
         "paths": {
             "store": ["assets/store"],
             "model": ["assets/model"],
             "utility": ["assets/utility"],
-            "component": ["assets/component"]
+            "component": ["assets/component"],
+            "service": ["assets/service"],
+            "action": ["assets/store/action"],
+            "const" : ["assets/const"],
+            "image":["assets/image/"],
         }
     }
 }

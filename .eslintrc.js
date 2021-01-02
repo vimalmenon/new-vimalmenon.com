@@ -21,7 +21,8 @@ module.exports =  {
         "location":"readonly",
         "VERSION":"readonly",
         "setTimeout":"readonly",
-        "window":"readonly"
+        "window":"readonly",
+        "self":"readonly"
     },
     rules:  {
       "no-console": 1,
