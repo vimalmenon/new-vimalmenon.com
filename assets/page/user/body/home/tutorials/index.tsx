@@ -1,6 +1,6 @@
 import React from "react";
 
-import {Container, PageTitle} from "component";
+import {Container, PageTitle, YTPlayer} from "component";
 import {Element} from "react-scroll";
 
 import {
@@ -10,8 +10,6 @@ import {
 } from "@material-ui/core/styles";
 
 import {page} from "model";
-
-import Video from "./video";
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
@@ -75,7 +73,7 @@ const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 											return (
 												<div key={innerKey} className={classes.contentVideo}>
 													<div>
-														<Video videoId={video.videoId}/>
+														<YTPlayer videoId={video.videoId} videoName={video.name} />
 													</div>
 													<div className={classes.videoDetail}>
 														<span>
