@@ -1,12 +1,12 @@
 import type from "./session.type";
 
-export const setSession =():IAction<{sesssion:any}> => {
+export const setSession = (session:ISessionState):IAction<{session:ISessionState}> => {
 	return {
 		type : type.SET_SESSION,
 		payload : {
-			sesssion:null
+			session
 		}
 	};
 };
 
-export type actionTypes = IAction<{sesssion:any}>;
+export type actionTypes = IAction<{sesssion?:ISessionState}>;

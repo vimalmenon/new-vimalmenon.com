@@ -149,6 +149,7 @@ const useStyles = makeStyles((theme: Theme) => {
 const Navigation:React.FC<{open:boolean, setOpen:(value:boolean) => void}> = ({open, setOpen}) => {
 	const classes = useStyles();
 	const theme = useTheme();
+	const offSet=-20;
 	return (
 		<React.Fragment>
 			<Hidden smUp implementation="css">
@@ -171,7 +172,7 @@ const Navigation:React.FC<{open:boolean, setOpen:(value:boolean) => void}> = ({o
 						<div className={classes.mobileNavigation}>
 							{navigation.mainNavigation.map((value, key) => {
 								return (
-									<Link key={key} activeClass="active" to={value.url} spy={true} smooth={true} offset={-100} duration={500} className={classes.mobileNavigationItem}>
+									<Link key={key} activeClass="active" to={value.url} spy={true} smooth={true} offset={offSet} duration={500} className={classes.mobileNavigationItem}>
 										<ListItem 
 											button>
 											<ListItemText primary={value.name} />
@@ -190,7 +191,7 @@ const Navigation:React.FC<{open:boolean, setOpen:(value:boolean) => void}> = ({o
 				<div className={classes.root}>
 					{navigation.mainNavigation.map((value, key) => {
 						return (
-							<Link key={key} activeClass="active" to={value.url} spy={true} smooth={true} offset={-100} duration={500} className={classes.navigationItem}>
+							<Link key={key} activeClass="active" to={value.url} spy={true} smooth={true} offset={offSet} duration={500} className={classes.navigationItem}>
 								{value.name}
 							</Link>
 						);
