@@ -1,8 +1,6 @@
 import React from "react";
 
 import {Element} from "react-scroll";
-import Hidden from "@material-ui/core/Hidden";
-
 
 import {Container, PageTitle, YTPlayer} from "component";
 
@@ -52,6 +50,16 @@ const useStyles = makeStyles((theme:Theme) => {
 			display:"flex",
 			justifyContent:"space-between"
 		},
+		youTubePlayerContainer: {
+			display:"flex",
+		},
+		youTubePlayer : {
+			height:"54vh",
+			width:"94vh",
+			[theme.breakpoints.down("md")]: {
+				width:"100%",
+			},
+		}
 	});
 });
 const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
@@ -72,30 +80,11 @@ const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 								</div>
 								<div className={classes.contentVideos}>
 									{tutorial.videos.map((video, innerKey) => {
-										if(innerKey<3) {
-											if (innerKey === 2) {
-												return (
-													<Hidden mdDown key={innerKey}>
-														<div className={classes.contentVideo}>
-															<div>
-																<YTPlayer videoId={video.videoId} videoName={video.name} />
-															</div>
-															<div className={classes.videoDetail}>
-																<span>
-																	{video.name}
-																</span>
-																<span>
-																	{video.publishedDate}
-																</span>
-															</div>
-														</div>
-													</Hidden>
-												);
-											}
+										if(innerKey<2) {
 											return (
 												<div key={innerKey} className={classes.contentVideo}>
-													<div>
-														<YTPlayer videoId={video.videoId} videoName={video.name} />
+													<div className={classes.youTubePlayerContainer}>
+														<YTPlayer videoId={video.videoId} videoName={video.name} className={classes.youTubePlayer}/>
 													</div>
 													<div className={classes.videoDetail}>
 														<span>

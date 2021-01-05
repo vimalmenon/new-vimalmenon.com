@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) => {
 			color:"white",
 			flex: "0 0 63px",
 			position:"relative",
-			zIndex:10
+			zIndex:20
 		},
 		container : {
 			display:"flex",

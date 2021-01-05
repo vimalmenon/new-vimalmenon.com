@@ -28,4 +28,4 @@ const Scrollable:React.FC = () => {
 	);
 };
 
-export default Scrollable;
+export default React.memo(Scrollable);

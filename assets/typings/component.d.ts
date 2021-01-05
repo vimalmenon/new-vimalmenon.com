@@ -14,3 +14,9 @@ interface IContainer {
 interface IPageTitle {
     title:string;
 }
+
+interface IYTPlayer {
+    videoId:string; 
+    videoName:string; 
+    className:string
+}
