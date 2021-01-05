@@ -48,14 +48,16 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		videoDetail :{
 			display:"flex",
-			justifyContent:"space-between"
+			justifyContent:"space-between",
+			margin:theme.spacing(1,0)
 		},
 		youTubePlayerContainer: {
 			display:"flex",
+			justifyContent:"center"
 		},
 		youTubePlayer : {
-			height:"54vh",
-			width:"94vh",
+			height:"46vh",
+			width:"80vh",
 			[theme.breakpoints.down("md")]: {
 				width:"100%",
 			},
