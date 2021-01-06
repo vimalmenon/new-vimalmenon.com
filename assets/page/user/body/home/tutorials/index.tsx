@@ -10,7 +10,7 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
-import {page, others} from "model";
+import {page, others, icon} from "model";
 
 const useStyles = makeStyles((theme:Theme) => {
 	const {xl} = others.yTPlayerSizes.small;
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		contentVideos :{
 			display:"flex",
-			[theme.breakpoints.down("md")]: {
+			[theme.breakpoints.down("sm")]: {
 				flexDirection:"column",
 			},
 		},
@@ -59,15 +59,16 @@ const useStyles = makeStyles((theme:Theme) => {
 		youTubePlayer : {
 			height:xl.height,
 			width:xl.width,
-			[theme.breakpoints.down("md")]: {
+			/*[theme.breakpoints.down("md")]: {
 				width:"100%",
-			},
+			},*/
 		}
 	});
 });
 const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 	const classes = useStyles();
 	const tutorials = page.tutorials;
+	const {View} = icon;
 	return (
 		<Element name="tutorials" className={classes.element}>
 			<Container dark={dark}>
@@ -105,6 +106,11 @@ const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 							</div>
 						);
 					})}
+				</div>
+				<div>
+					<span>
+						View all tutorials <View />
+					</span>
 				</div>
 			</Container>
 		</Element>

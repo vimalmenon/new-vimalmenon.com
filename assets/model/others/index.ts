@@ -6,6 +6,8 @@ const yTPlayerSizes = {
 		},
 		lg : {
 		},
+		md :{
+		},
 		sm : {
 		},
 		xs : {
@@ -17,6 +19,8 @@ const yTPlayerSizes = {
 			width:"600px"
 		},
 		lg : {
+		},
+		md :{
 		},
 		sm : {
 		},

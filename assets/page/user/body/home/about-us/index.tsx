@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		content : {
 			display:"flex",
-			[theme.breakpoints.down("md")]: {
+			[theme.breakpoints.down("sm")]: {
 				flexDirection:"column",
 			},
 		},

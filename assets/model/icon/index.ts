@@ -12,6 +12,7 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import CloseIcon from "@material-ui/icons/Close";
 import WarningIcon from "@material-ui/icons/Warning";
+import VisibilityIcon from "@material-ui/icons/Visibility";
 
 const icon = {
 	Add:AddIcon,
@@ -26,6 +27,7 @@ const icon = {
 	ArrowForward:ArrowForwardIosIcon,
 	Twitter:TwitterIcon,
 	Close:CloseIcon,
-	Warning:WarningIcon
+	Warning:WarningIcon,
+	View:VisibilityIcon
 };
 export default icon;

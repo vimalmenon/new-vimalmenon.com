@@ -1,8 +1,8 @@
 import image1 from "../../../../image/image1.jpg";
-//import image2 from "../../../image/image2.jpg";
+import image2 from "../../../../image/image2.jpg";
 import image3 from "../../../../image/image3.jpg";
-//import image4 from "../../image/image4.jpg";
-import image5 from "../../../../image/image5.jpg";
+//import image4 from "../../../../image/image4.jpg";
+//import image5 from "../../../../image/image5.jpg";
 
 
 const freeTutorials = {
@@ -14,14 +14,14 @@ const freeTutorials = {
 	url:"tutorials"
 };
 const aboutMe = {
-	image:image3,
+	image:image2,
 	title: "About Me",
 	description:"My name is Vimal Menon. I am self taught developer. I am very passionate about development and learning new stuff.  ",
 	buttonName:"About Me",
 	url:"about-me"
 };
 const contactUs = {
-	image:image5,
+	image:image3,
 	title: "Contact me",
 	description:"If you have some idea to share, I would like to hear it from you. ",
 	buttonName:"Contact Us",
