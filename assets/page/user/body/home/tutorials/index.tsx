@@ -10,9 +10,10 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
-import {page} from "model";
+import {page, others} from "model";
 
 const useStyles = makeStyles((theme:Theme) => {
+	const {xl} = others.yTPlayerSizes.small;
 	return createStyles({
 		element: {
 			display: "flex",
@@ -56,8 +57,8 @@ const useStyles = makeStyles((theme:Theme) => {
 			justifyContent:"center"
 		},
 		youTubePlayer : {
-			height:"46vh",
-			width:"80vh",
+			height:xl.height,
+			width:xl.width,
 			[theme.breakpoints.down("md")]: {
 				width:"100%",
 			},
