@@ -1,16 +1,22 @@
 import React from "react";
 
-import {Element} from "react-scroll";
-
-import {Container, PageTitle, YTPlayer} from "component";
-
 import {
 	Theme,
 	makeStyles,
 	createStyles
 } from "@material-ui/core/styles";
 
+import {Element} from "react-scroll";
+import { useHistory } from "react-router-dom";
+
+
+import {Container, PageTitle, YTPlayer} from "component";
+
+
 import {page, others, icon} from "model";
+
+const tutorials = page.tutorials;
+const {View} = icon;
 
 const useStyles = makeStyles((theme:Theme) => {
 	const {xl} = others.yTPlayerSizes.small;
@@ -25,6 +31,20 @@ const useStyles = makeStyles((theme:Theme) => {
 		content : {
 			display: "flex",
 			flexDirection:"column",	
+		},
+		footer : {
+			display:"flex",
+			justifyContent:"flex-end"
+		},
+		footerText : {
+			cursor:"pointer",
+			"& svg":{
+				marginBottom:"-4px",
+				fontSize:"20px"
+			},
+			"& span": {
+				padding:"7px"
+			},
 		},
 		contentItem :{
 			display:"flex",
@@ -67,8 +87,8 @@ const useStyles = makeStyles((theme:Theme) => {
 });
 const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 	const classes = useStyles();
-	const tutorials = page.tutorials;
-	const {View} = icon;
+	const {push} = useHistory();
+	const onViewAll = () => push("/tutorials");
 	return (
 		<Element name="tutorials" className={classes.element}>
 			<Container dark={dark}>
@@ -107,9 +127,12 @@ const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 						);
 					})}
 				</div>
-				<div>
-					<span>
-						View all tutorials <View />
+				<div className={classes.footer}>
+					<span className={classes.footerText} onClick={onViewAll}>
+						<View />
+						<span>
+							View all 
+						</span>
 					</span>
 				</div>
 			</Container>

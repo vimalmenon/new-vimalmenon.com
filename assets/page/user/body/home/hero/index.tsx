@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme:Theme) => {
 			height: "70vh",
 			maxHeight:"500px",
 			overflow: "hidden",
+			zIndex:10,
 			"& .slide": {
 				height: "70vh",
 				maxHeight:"500px",

@@ -45,8 +45,11 @@ const useStyles = makeStyles((theme: Theme) => {
 			}
 		},
 		footerName : {
-			color:"#FA2B54",
-			textDecoration:"none"
+			color:"#f3637f",
+			textDecoration:"none",
+			"&:hover": {
+				color:"#FA2B54",
+			}
 		},
 		span : {
 			margin: theme.spacing(0,0.5)
