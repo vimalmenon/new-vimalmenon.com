@@ -8,7 +8,7 @@ const release = [
 	},
 	{
 		versionNo:"v0.0.1.a",
-		buildDate:"02 Jan 2021",
+		buildDate:"N/A",
 		details:[
 			
 		]

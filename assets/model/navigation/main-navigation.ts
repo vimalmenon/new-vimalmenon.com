@@ -46,4 +46,12 @@ const mainNavigation:INavigation[] = [
 	tutorials,
 	contactUs
 ];
-export default mainNavigation;
+const otherNavigation:INavigation[] = [
+	home,
+	tutorialsPage
+];
+
+export {
+	mainNavigation,
+	otherNavigation
+};
