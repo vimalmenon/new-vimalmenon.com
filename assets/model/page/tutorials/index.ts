@@ -3,6 +3,11 @@ const tutorials = [
 		title: "HTML Tutorial",
 		videos : [
 			{
+				name: "05 - HTML Form and Form Elements Part I",
+				videoId: "6W7j9jIbZOg",
+				publishedDate: "Jan 8, 2021"
+			},
+			{
 				name: "04 - HTML Table",
 				videoId: "_SncHYzpL5o",
 				publishedDate: "Jan 1, 2021"
