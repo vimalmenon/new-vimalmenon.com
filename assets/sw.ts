@@ -8,6 +8,7 @@ const cacheList = [
 	"/",
 	"/main.css",
 	"/main.js",
+	"/fonts/favicon.ico",
 	"/fonts/dark.png",
 	"/fonts/light.jpg",
 	"/core.worker.worker.js",

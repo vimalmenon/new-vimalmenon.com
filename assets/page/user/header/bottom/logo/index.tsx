@@ -12,7 +12,8 @@ import {
 } from "react-router-dom";
 
 import dark from "image/logo/dark.png";
-import light from "image/logo/light.jpg";
+import light from "image/logo/light.png";
+
 
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({

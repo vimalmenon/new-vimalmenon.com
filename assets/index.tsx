@@ -12,6 +12,7 @@ import {SnackBar} from "component";
 
 import "./manifest.webmanifest";
 import "./image/192x192.png";
+import "./image/favicon.ico";
 
 import {Workbox} from "workbox-window";
 
