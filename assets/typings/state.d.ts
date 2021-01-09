@@ -7,7 +7,7 @@ interface IAdmin {
 }
 
 interface IConfig {
-	currentLocation:string|null;
+	currentLocation:string;
 	themeType:ThemeType;
 	loading:boolean;
 }

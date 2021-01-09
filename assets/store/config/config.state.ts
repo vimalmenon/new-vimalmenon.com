@@ -1,5 +1,5 @@
 const config:IConfig = {
-	currentLocation:null,
+	currentLocation:"",
 	themeType:"dark",
 	loading:false
 };
