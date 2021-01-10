@@ -1,7 +1,13 @@
 const release = [
 	{
-		versionNo:"v0.0.2.a",
+		versionNo:"v0.0.3.a",
 		buildDate:"02 Jan 2021",
+		details:[
+		]
+	},
+	{
+		versionNo:"v0.0.2.a",
+		buildDate:"10 Jan 2021",
 		details:[
 			"Introduced Service worker",
 			"PWA feature",
@@ -16,7 +22,7 @@ const release = [
 	},
 	{
 		versionNo:"v0.0.1.a",
-		buildDate:null,
+		buildDate:"02 Jan 2021",
 		details:[
 			"Website hosted",
 			"Added basic page",
@@ -25,7 +31,11 @@ const release = [
 	},
 ];
 const bugs = [
-	"YouTube Player should be adjusted to media screen : Currently supporting larger screens only"
+	"YouTube Player should be adjusted to media screen : Currently supporting larger screens only",
+	"PWA not working in mobile versions",
+	"Rendering very bad on the mobiles",
+	"Issue with carousel on the home page",
+	"Routes don't work on Refresh"
 ];
 const features = [
 	"Navigation Section : Animation should be different in Hover and active elements",
