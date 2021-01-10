@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => {
 			position:"fixed",
 			width:"100%",
 			top:"0px",
-			zIndex:0
+			zIndex:5
 		},
 	});
 });
@@ -28,4 +28,4 @@ const Scrollable:React.FC = () => {
 	);
 };
 
-export default Scrollable;
+export default React.memo(Scrollable);

@@ -61,7 +61,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(woff(2)?|ttf|eot|svg|jpe?g|png|gif|svg|jpg|pdf|webmanifest)(\?v=\d+\.\d+\.\d+)?$/,
+                test: /\.(woff(2)?|ttf|eot|svg|jpe?g|png|gif|svg|jpg|pdf|ico|webmanifest)(\?v=\d+\.\d+\.\d+)?$/,
                 use: [
                     {
                         loader: 'file-loader',
@@ -101,8 +101,7 @@ module.exports = {
             inject: true,
         }),
         new webpack.DefinePlugin({
-            'VERSION' : `'${packageJson.version}'`,
-            'ENV' : `'DEV'`
+            'VERSION' : `'${packageJson.version}'`
         })
     ],
     resolve: {

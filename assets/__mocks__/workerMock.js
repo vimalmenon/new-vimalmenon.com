@@ -1,1 +1,3 @@
-module.exports = Object.create(null);
+module.exports = function () {
+    return Object.create(null);
+}

@@ -24,9 +24,12 @@ const useStyles = makeStyles((theme:Theme) => {
 		sliderWrapper : {
 			position: "relative",
 			height: "70vh",
+			maxHeight:"500px",
 			overflow: "hidden",
+			zIndex:10,
 			"& .slide": {
 				height: "70vh",
+				maxHeight:"500px",
 				backgroundSize: "cover !important",
 				"&::before" : {
 					content: "''",
@@ -43,7 +46,7 @@ const useStyles = makeStyles((theme:Theme) => {
 				display: "flex",
 				position: "absolute",
 				top:"50%",
-				left:"50px",
+				left:"1.5em",
 				zIndex:"50",
 				"& polygon" :{
 					fill:"#FA2B54"
@@ -53,7 +56,7 @@ const useStyles = makeStyles((theme:Theme) => {
 				display: "flex",
 				position: "absolute",
 				top: "50%",
-				right: "50px",
+				right: "1.5em",
 				zIndex:"50",
 				"& polygon" :{
 					fill:"#FA2B54"
@@ -67,7 +70,7 @@ const useStyles = makeStyles((theme:Theme) => {
 			display:"flex",
 			justifyContent:"space-around",
 			flexDirection:"column",
-			padding: "0 70px",
+			padding: theme.spacing(0,6),
 			boxSizing: "border-box",
 			position: "absolute",
 			width: "100%",

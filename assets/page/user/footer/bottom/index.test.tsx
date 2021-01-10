@@ -12,6 +12,6 @@ describe("SocialMedia Component", ()=> {
     });
     test("Footer : Version testing", () => {
         let component = mount(<FooterBottom />);
-        expect(component.find('[data-testid="version"]').text()).toEqual("v0.0.0");
+        expect(component.find('[data-testid="version"]').text()).toEqual("v0.0.0.a");
     });
 });

@@ -30,6 +30,9 @@ exports[`SocialMedia Component Snapshot Testing 1`] = `
       >
         v
         0.0.0
+        <span>
+          .a
+        </span>
       </span>
     </div>
   </div>

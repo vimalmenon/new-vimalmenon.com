@@ -1,7 +1,7 @@
 {
-    "short_name": "Weather",
-    "name": "Weather: Do I need an umbrella?",
-    "description": "Weather forecast information",
+    "short_name": "Vimal Menon",
+    "name": "Vimal Menon | Free programming video tutorials",
+    "description": "Website for Free tutorials for developers",
     "icons": [
       {
         "src": "/fonts/192x192.png",
@@ -13,5 +13,5 @@
     "background_color": "#3367D6",
     "display": "standalone",
     "scope": "/",
-    "theme_color": "#3367D6"
+    "theme_color": "#28235D"
 }

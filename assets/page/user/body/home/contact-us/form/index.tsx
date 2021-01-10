@@ -34,6 +34,7 @@ const Form:React.FC = ()=> {
 		subject:"",
 		message:""
 	});
+	const [disabled]= React.useState<boolean>(true);
 	const onUpdate = (e) => setForm({...form, [e.target.name]:e.target.value});
 	const classes = useStyles();
 	return (
@@ -46,7 +47,8 @@ const Form:React.FC = ()=> {
 					fullWidth={true}
 					name="name"
 					value={form.name}
-					onChange={onUpdate}/>
+					onChange={onUpdate}
+					inputProps={{"aria-label": "Email"}}/>
 			</div>
 			<div className={classes.field}>
 				<TextField
@@ -55,7 +57,8 @@ const Form:React.FC = ()=> {
 					fullWidth={true}
 					name="email"
 					value={form.email}
-					onChange={onUpdate}/>
+					onChange={onUpdate}
+					inputProps={{"aria-label": "Your Name"}}/>
 			</div>
 			<div className={classes.field}>
 				<TextField
@@ -65,7 +68,8 @@ const Form:React.FC = ()=> {
 					fullWidth={true}
 					name="subject"
 					value={form.subject}
-					onChange={onUpdate}/>
+					onChange={onUpdate}
+					inputProps={{"aria-label": "Subject"}}/>
 			</div>
 			<div className={classes.field}>
 				<TextField 
@@ -77,12 +81,14 @@ const Form:React.FC = ()=> {
 					rows={10}
 					name="message"
 					value={form.message}
-					onChange={onUpdate}/>
+					onChange={onUpdate}
+					inputProps={{"aria-label": "Message"}}/>
 			</div>
 			<div className={classes.field}>
 				<Button 
 					variant="contained" 
-					color="secondary" >
+					color="secondary" 
+					disabled={disabled}>
 					Send Message
 					<ArrowForwardIcon className={classes.arrowIcon}/>					
 				</Button>

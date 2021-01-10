@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) => {
 			display: "flex",
 			position:"absolute",
 			justifyContent : "center",
-			zIndex:20,
+			zIndex:30,
 			width:"100%",
 			backgroundColor:"orange",
 			opacity:0.9

@@ -1,6 +1,8 @@
 import admin from "./admin.state";
 
-const reducer = (oldState=admin, actions):IAdmin => {
+import {actionTypes} from "./admin.action";
+
+const reducer = (oldState=admin, actions:actionTypes):IAdmin => {
 	switch(actions.type) {
 	default:
 		return oldState;

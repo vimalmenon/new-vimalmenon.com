@@ -2,23 +2,38 @@ import React from "react";
 
 import {
 	makeStyles,
-	createStyles
+	createStyles,
+	Theme
 } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(() => {
+import {TextFormat, SocialMedia} from "component";
+import {page} from "model";
+
+const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		root :{
 			display: "flex",
-			flex:"1 1 50%"
+			flex:"1 1 50%",
+			margin:theme.spacing(1),
+			flexDirection:"column"
 		}
 	});
 });
 
 const Message:React.FC = () => {
+	const {contactUs} = page.home;
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			Comming Soon
+			{contactUs.map((data, key) => {
+				return (
+					<TextFormat text={data} key={key} />
+				);
+			})}
+			<div>
+				<SocialMedia />
+			</div>
+			
 		</div>
 	);
 };

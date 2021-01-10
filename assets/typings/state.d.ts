@@ -7,26 +7,31 @@ interface IAdmin {
 }
 
 interface IConfig {
-    currentLocation:string|null;
-    themeType:ThemeType;
-    loading:boolean;
+	currentLocation:string;
+	themeType:ThemeType;
+	loading:boolean;
 }
-
+interface ISessionState {
+	id?: number;
+	user?:string;
+	group?: string;
+}
 interface ISocialMedia {
-    id:number;
-    name:string;
-    title:string;
-    type: string;
-    url: string;
+	id:number;
+	name:string;
+	title:string;
+	label:string;
+	type: string;
+	url: string;
 }
 
 interface IMisc {
-    socialMedias:ISocialMedia[]
+	socialMedias:ISocialMedia[]
 }
 
 interface IState {
-    session:ISession;
-    config:IConfig;
-    admin:IAdmin;
-    misc:IMisc;
+	session:ISession;
+	config:IConfig;
+	admin:IAdmin;
+	misc:IMisc;
 }

@@ -23,8 +23,8 @@ const SocialMedia = () => {
 				const Icon = icon[name];
 				return(
 					<Tooltip title={rest.title} aria-label={name} key={id}>
-						<Link href={rest.url} target="_blank" color="inherit">
-							<IconButton color="inherit">
+						<Link href={rest.url} target="_blank" color="inherit" rel="noreferrer">
+							<IconButton color="inherit" aria-label={rest.label}>
 								<Icon />
 							</IconButton>
 						</Link>
@@ -32,7 +32,7 @@ const SocialMedia = () => {
 				);
 			})}
 			<Tooltip title={"support@vimalmenon.com"} aria-label={"support@vimalmenon.com"}>
-				<IconButton color="inherit" onClick={() => copy("support@vimalmenon.com")}>
+				<IconButton color="inherit" onClick={() => copy("support@vimalmenon.com")} aria-label="Copy email">
 					<EmailIcon/> 
 				</IconButton>
 			</Tooltip>

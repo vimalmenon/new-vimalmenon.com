@@ -18,6 +18,9 @@ import Body from "./body";
 import Footer from "./footer";
 import EarlyRelease from "./early-release";
 
+import * as Scroll from "react-scroll";
+const scroll = Scroll.animateScroll;
+
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
 		root: {
@@ -35,6 +38,9 @@ const User:React.FC<RouteComponentProps> = ({history, location}) => {
 		const unSubscribe = history.listen(navigation.init);
 		return unSubscribe;
 	}, []);
+	React.useEffect(() => {
+		scroll.scrollToTop();
+	}, [location]);
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>

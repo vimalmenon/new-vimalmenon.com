@@ -7,6 +7,10 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
+import {
+	NavLink
+} from "react-router-dom";
+
 import Hidden from "@material-ui/core/Hidden";
 import Drawer from "@material-ui/core/Drawer";
 
@@ -20,6 +24,7 @@ import {navigation} from "model";
 import Logo from "../logo";
 
 import {Link} from "react-scroll";
+import { useSelector } from "react-redux";
 
 
 const useStyles = makeStyles((theme: Theme) => {
@@ -35,6 +40,7 @@ const useStyles = makeStyles((theme: Theme) => {
 			padding: theme.spacing(0,0.5),
 			fontSize:"1rem",
 			flexDirection:"column",
+			textDecoration:"none",
 			"&::after" : {
 				content: "''",
 				display:"inline-block",
@@ -63,6 +69,10 @@ const useStyles = makeStyles((theme: Theme) => {
 					animation: `$myEffect 300ms ${theme.transitions.easing.easeInOut}`,
 				},
 			},
+			"&:visited, &:link, &:active":{
+				textDecorationColor: theme.palette.text.primary,
+				color:theme.palette.text.primary,
+			}
 		},
 		mobileNavigationItem :{
 			display:"flex",
@@ -71,6 +81,7 @@ const useStyles = makeStyles((theme: Theme) => {
 			fontSize:"1rem",
 			flexDirection:"column",
 			height:"63px",
+			textDecoration:"none",
 			"&::after" : {
 				content: "''",
 				display:"inline-block",
@@ -98,6 +109,10 @@ const useStyles = makeStyles((theme: Theme) => {
 					animation: `$myEffect 300ms ${theme.transitions.easing.easeInOut}`,
 				},
 			},
+			"&:visited, &:link, &:active":{
+				textDecorationColor: theme.palette.text.primary,
+				color:theme.palette.text.primary,
+			}
 		},
 		mobileSidebar : {
 			display: "flex",
@@ -149,6 +164,12 @@ const useStyles = makeStyles((theme: Theme) => {
 const Navigation:React.FC<{open:boolean, setOpen:(value:boolean) => void}> = ({open, setOpen}) => {
 	const classes = useStyles();
 	const theme = useTheme();
+	const offSet=-20;
+	const location = useSelector<IState, string>((state)=>state.config.currentLocation);
+	let selectedNavigation = navigation.otherNavigation;
+	if (location === "/") {
+		selectedNavigation = navigation.mainNavigation;
+	}
 	return (
 		<React.Fragment>
 			<Hidden smUp implementation="css">
@@ -169,14 +190,24 @@ const Navigation:React.FC<{open:boolean, setOpen:(value:boolean) => void}> = ({o
 							<Logo />
 						</div>
 						<div className={classes.mobileNavigation}>
-							{navigation.mainNavigation.map((value, key) => {
+							{selectedNavigation.map((value, key) => {
+								if (value.inPage) {
+									return (
+										<Link key={key} activeClass="active" to={value.url} spy={true} smooth={true} offset={offSet} duration={500} className={classes.mobileNavigationItem}>
+											<ListItem 
+												button>
+												<ListItemText primary={value.name} />
+											</ListItem>
+										</Link>
+									);
+								}
 								return (
-									<Link key={key} activeClass="active" to={value.url} spy={true} smooth={true} offset={-100} duration={500} className={classes.mobileNavigationItem}>
+									<NavLink exact key={key} activeClassName="active" to={value.url} className={classes.mobileNavigationItem}>
 										<ListItem 
 											button>
 											<ListItemText primary={value.name} />
 										</ListItem>
-									</Link>
+									</NavLink>
 								);
 							})}
 						</div>
@@ -188,11 +219,21 @@ const Navigation:React.FC<{open:boolean, setOpen:(value:boolean) => void}> = ({o
 			</Hidden>
 			<Hidden smDown implementation="css">
 				<div className={classes.root}>
-					{navigation.mainNavigation.map((value, key) => {
+					{selectedNavigation.map((value, key) => {
+						if (value.inPage) {
+							return (
+								<Link key={key} activeClass="active" to={value.url} spy={true} smooth={true} offset={offSet} duration={500} className={classes.navigationItem}>
+									{value.name}
+								</Link>
+							);	
+						}
 						return (
-							<Link key={key} activeClass="active" to={value.url} spy={true} smooth={true} offset={-100} duration={500} className={classes.navigationItem}>
-								{value.name}
-							</Link>
+							<NavLink exact key={key} activeClassName="active" to={value.url} className={classes.navigationItem}>
+								<ListItem 
+									button>
+									<ListItemText primary={value.name} />
+								</ListItem>
+							</NavLink>
 						);
 					})}
 				</div>

@@ -1,19 +1,25 @@
 import React from "react";
 
-import {Container, PageTitle} from "component";
-import {Element} from "react-scroll";
-
 import {
 	Theme,
 	makeStyles,
 	createStyles
 } from "@material-ui/core/styles";
 
-import {page} from "model";
+import {Element} from "react-scroll";
+import { useHistory } from "react-router-dom";
 
-import Video from "./video";
+
+import {Container, PageTitle, YTPlayer} from "component";
+
+
+import {page, others, icon} from "model";
+
+const tutorials = page.tutorials;
+const {View} = icon;
 
 const useStyles = makeStyles((theme:Theme) => {
+	const {xl} = others.yTPlayerSizes.small;
 	return createStyles({
 		element: {
 			display: "flex",
@@ -26,6 +32,20 @@ const useStyles = makeStyles((theme:Theme) => {
 			display: "flex",
 			flexDirection:"column",	
 		},
+		footer : {
+			display:"flex",
+			justifyContent:"flex-end"
+		},
+		footerText : {
+			cursor:"pointer",
+			"& svg":{
+				marginBottom:"-4px",
+				fontSize:"20px"
+			},
+			"& span": {
+				padding:"7px"
+			},
+		},
 		contentItem :{
 			display:"flex",
 			margin:theme.spacing(2,0),
@@ -37,7 +57,7 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		contentVideos :{
 			display:"flex",
-			[theme.breakpoints.down("md")]: {
+			[theme.breakpoints.down("sm")]: {
 				flexDirection:"column",
 			},
 		},
@@ -49,13 +69,26 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		videoDetail :{
 			display:"flex",
-			justifyContent:"space-between"
+			justifyContent:"space-between",
+			margin:theme.spacing(1,0)
 		},
+		youTubePlayerContainer: {
+			display:"flex",
+			justifyContent:"center"
+		},
+		youTubePlayer : {
+			height:xl.height,
+			width:xl.width,
+			/*[theme.breakpoints.down("md")]: {
+				width:"100%",
+			},*/
+		}
 	});
 });
 const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 	const classes = useStyles();
-	const tutorials = page.tutorials;
+	const {push} = useHistory();
+	const onViewAll = () => push("/tutorials");
 	return (
 		<Element name="tutorials" className={classes.element}>
 			<Container dark={dark}>
@@ -71,11 +104,11 @@ const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 								</div>
 								<div className={classes.contentVideos}>
 									{tutorial.videos.map((video, innerKey) => {
-										if(innerKey<3) {
+										if(innerKey<2) {
 											return (
 												<div key={innerKey} className={classes.contentVideo}>
-													<div>
-														<Video videoId={video.videoId}/>
+													<div className={classes.youTubePlayerContainer}>
+														<YTPlayer videoId={video.videoId} videoName={video.name} className={classes.youTubePlayer}/>
 													</div>
 													<div className={classes.videoDetail}>
 														<span>
@@ -93,6 +126,14 @@ const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 							</div>
 						);
 					})}
+				</div>
+				<div className={classes.footer}>
+					<span className={classes.footerText} onClick={onViewAll}>
+						<View />
+						<span>
+							View all 
+						</span>
+					</span>
 				</div>
 			</Container>
 		</Element>
