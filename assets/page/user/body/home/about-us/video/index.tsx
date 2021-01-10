@@ -23,9 +23,9 @@ const useStyles = makeStyles((theme:Theme) => {
 			display:"flex",
 			height:xl.height,
 			width:xl.width,
-			/*[theme.breakpoints.down("md")]: {
+			[theme.breakpoints.down("xs")]: {
 				width:"100%",
-			},*/
+			},
 		}
 	});
 });

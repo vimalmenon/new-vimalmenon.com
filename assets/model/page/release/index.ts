@@ -1,8 +1,11 @@
 const release = [
 	{
 		versionNo:"v0.0.3.a",
-		buildDate:"02 Jan 2021",
+		buildDate:"17 Jan 2021",
 		details:[
+			"GZip enabled",
+			"Other Meta tag added",
+			"Bug Fixes"
 		]
 	},
 	{

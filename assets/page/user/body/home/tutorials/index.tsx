@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		contentVideos :{
 			display:"flex",
-			[theme.breakpoints.down("sm")]: {
+			[theme.breakpoints.down("md")]: {
 				flexDirection:"column",
 			},
 		},
@@ -79,9 +79,9 @@ const useStyles = makeStyles((theme:Theme) => {
 		youTubePlayer : {
 			height:xl.height,
 			width:xl.width,
-			/*[theme.breakpoints.down("md")]: {
+			[theme.breakpoints.down("xs")]: {
 				width:"100%",
-			},*/
+			},
 		}
 	});
 });

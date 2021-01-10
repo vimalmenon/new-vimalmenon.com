@@ -32,17 +32,25 @@ const useStyles = makeStyles((theme:Theme) => {
 			flexWrap:"wrap",
 		},
 		tutorialContainer : {
-			dislay:"flex",
+			display:"flex",
 			flexDirection:"column",
-			margin:theme.spacing(2)
+			margin:theme.spacing(2),
+			[theme.breakpoints.down("md")]: {
+				flexDirection:"column",
+				flex:"1 1 100%",
+			},
 		},
 		tutorialPlayerContainer : {
-			display:"flex"
+			display:"flex",
+			justifyContent:"center"
 		},
 		tutorialPlayer : {
 			display:"flex",
 			height:small.xl.height,
-			width:small.xl.width
+			width:small.xl.width,
+			[theme.breakpoints.down("xs")]: {
+				width:"100%",
+			},
 		},
 		tutorialDescription : {
 			display:"flex",
