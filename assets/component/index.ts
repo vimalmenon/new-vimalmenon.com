@@ -8,6 +8,7 @@ import Container from "./container";
 import PageTitle from "./page-title";
 import TextFormat from "./text-format";
 import YTPlayer from "./yt-player";
+import useMap from "./map";
 
 export {
 	Entitlement,
@@ -20,4 +21,5 @@ export {
 	YTPlayer,
 	MetaData,
 	Loading,
+	useMap
 };

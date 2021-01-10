@@ -10,7 +10,7 @@ const cacheList = [
 	"/main.js",
 	"/fonts/favicon.ico",
 	"/fonts/dark.png",
-	"/fonts/light.jpg",
+	"/fonts/light.png",
 	"/core.worker.worker.js",
 	"/fonts/image1.jpg",
 	"/fonts/image2.jpg",

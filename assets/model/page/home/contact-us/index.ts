@@ -1,8 +1,8 @@
 const contactUs = [
 	`
-		If you have some interesting ideas or projects, and looking for a way to execute them. 
-		I would love to hear about them and can help to get them executed. 
-		If you want to get in touch with me. You can either drop us an email @ support@vimalmenon.com or connect to me on one of the below social media.  
+		<p>If you guys have some interesting ideas or projects and you are looking for a way to execute them. 
+		I would love to hear about them and can help you to get them executed. </p>
+		<p>You guys can get in touch with me by either dropping me an email at support@vimalmenon.com or connect with me on one of my below social media. </p>
 	`
 ];
 

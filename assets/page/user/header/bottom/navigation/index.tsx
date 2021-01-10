@@ -70,8 +70,8 @@ const useStyles = makeStyles((theme: Theme) => {
 				},
 			},
 			"&:visited, &:link, &:active":{
-				textDecorationColor:"white",
-				color:"white"
+				textDecorationColor: theme.palette.text.primary,
+				color:theme.palette.text.primary,
 			}
 		},
 		mobileNavigationItem :{
@@ -110,8 +110,8 @@ const useStyles = makeStyles((theme: Theme) => {
 				},
 			},
 			"&:visited, &:link, &:active":{
-				textDecorationColor:"white",
-				color:"white"
+				textDecorationColor: theme.palette.text.primary,
+				color:theme.palette.text.primary,
 			}
 		},
 		mobileSidebar : {

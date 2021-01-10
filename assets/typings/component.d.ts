@@ -7,7 +7,7 @@ interface IEntitlement<T> {
 }
 
 interface IContainer {
-    dark:boolean; 
+    dark?:boolean; 
     children:ChilderenType
 }
 
