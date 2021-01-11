@@ -28,7 +28,21 @@ const yTPlayerSizes = {
 		}
 	}
 };
-
+const HeroSizes = {
+	xl : {
+		height:"341px",
+		width:"600px"
+	},
+	lg : {
+	},
+	md :{
+	},
+	sm : {
+	},
+	xs : {
+	}
+};
 export default {
-	yTPlayerSizes
+	yTPlayerSizes,
+	HeroSizes
 };
