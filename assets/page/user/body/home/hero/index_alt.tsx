@@ -11,7 +11,7 @@ import {
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
-import clsx from "clsx"
+import clsx from "clsx";
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
@@ -22,10 +22,9 @@ const useStyles = makeStyles((theme:Theme) => {
 			position:"relative",
 			zIndex:20
 		},
-		slider:{
-			display:"flex",
-			flexDirection:"column",
+		sliders:{
 			position:"relative",
+			height:"70vh",
 			"&::before":{
 				left: "0",
 				right: "0",
@@ -41,11 +40,17 @@ const useStyles = makeStyles((theme:Theme) => {
 				},
 			}
 		},
+		slider :{
+			display:"flex",
+			height:"70vh",
+			width:"100%",
+		},
 		image : {
 			backgroundSize: "100% 100% !important",
 			width:"100%",
 			backgroundRepeat: "no-repeat, repeat",
-			height:"65vh"
+			height:"75vh",
+			margin: "0 auto"
 		},
 		navigationButton :{
 			position:"absolute",
@@ -62,6 +67,26 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		forwardButton : {
 			right:"0"
+		},
+		offsets:{
+			marginTop:"-15px"
+		},
+		sliderContainer :{
+			width:"80%",
+			height:"70vh",
+			margin: "0 auto",
+			display:"flex",
+			flexDirection:"column"
+		},
+		dotGroup :{
+			display:"flex",
+			position:"absolute",
+			bottom:"10px",
+			width:"100%",
+			justifyContent:"center",
+			"& button":{
+				width:"100px"
+			}
 		}
 	});
 });
@@ -78,9 +103,8 @@ const HeroAlt:React.FC = () => {
 			naturalSlideHeight={125}
 			totalSlides={3} 
 			className={classes.root}>
-			<Slider className={classes.slider}>
+			<Slider className={classes.offsets}>
 				{sliders.map((slider, key) => {
-					console.log(slider);
 					return (
 						<Slide index={key} key={key}>
 							<Image
@@ -89,13 +113,15 @@ const HeroAlt:React.FC = () => {
 								isBgImage={true}
 								hasMasterSpinner={true}
 								className={classes.image}>
-								<h1>
-									{slider.title}
-								</h1>
-								<h2>
-									{slider.description}
-								</h2>
-								<div>
+								<div className={classes.sliderContainer}>
+									<h1>
+										{slider.title}
+									</h1>
+									<h2>
+										{slider.description}
+									</h2>
+									<div>
+									</div>
 								</div>
 							</Image>
 						</Slide>
@@ -105,7 +131,7 @@ const HeroAlt:React.FC = () => {
 			</Slider>
 			<ButtonBack className={clsx(classes.navigationButton, classes.backButton)}><ArrowBackIosIcon /></ButtonBack>
 			<ButtonNext className={clsx(classes.navigationButton, classes.forwardButton)}><ArrowForwardIosIcon /></ButtonNext>
-			<DotGroup />
+			<DotGroup className={classes.dotGroup}/>
 		</CarouselProvider>
 	);
 };

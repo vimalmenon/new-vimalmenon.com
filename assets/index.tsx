@@ -13,6 +13,7 @@ import {SnackBar} from "component";
 import "./manifest.webmanifest";
 import "./image/192x192.png";
 import "./image/favicon.ico";
+import "./image/apple-touch-icon.png";
 
 import {Workbox} from "workbox-window";
 
