@@ -68,9 +68,6 @@ const useStyles = makeStyles((theme:Theme) => {
 		forwardButton : {
 			right:"0"
 		},
-		offsets:{
-			marginTop:"-15px"
-		},
 		sliderContainer :{
 			width:"80%",
 			height:"70vh",
@@ -103,7 +100,7 @@ const HeroAlt:React.FC = () => {
 			naturalSlideHeight={125}
 			totalSlides={3} 
 			className={classes.root}>
-			<Slider className={classes.offsets}>
+			<Slider>
 				{sliders.map((slider, key) => {
 					return (
 						<Slide index={key} key={key}>
