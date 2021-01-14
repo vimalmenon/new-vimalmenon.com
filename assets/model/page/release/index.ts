@@ -3,14 +3,18 @@ const release = [
 		versionNo:"v0.0.3.a",
 		buildDate:"17 Jan 2021",
 		details:[
+			"New Logo design",
+			"New Favicon",
 			"GZip enabled",
-			"Other Meta tag added",
-			"Bug Fixes"
+			"More Meta tag added",
+			"Fixed lighthouse issues",
+			"Bug Fixes",
 		]
 	},
 	{
 		versionNo:"v0.0.2.a",
 		buildDate:"10 Jan 2021",
+		show:false,
 		details:[
 			"Introduced Service worker",
 			"PWA feature",
@@ -19,13 +23,14 @@ const release = [
 			"Pages: Release page",
 			"Pages: Tutorials page",
 			"YouTube videos support",
-			"Lighthouse issues",
+			"Fixed lighthouse issues",
 			"Bug fixes"
 		]
 	},
 	{
 		versionNo:"v0.0.1.a",
 		buildDate:"02 Jan 2021",
+		show:false,
 		details:[
 			"Website hosted",
 			"Added basic page",

@@ -12,6 +12,7 @@ const cacheList = [
 	"/fonts/dark.png",
 	"/fonts/light.png",
 	"/core.worker.worker.js",
+	"/fonts/192x192.png",
 	"/fonts/image1.jpg",
 	"/fonts/image2.jpg",
 	"/fonts/image3.jpg",

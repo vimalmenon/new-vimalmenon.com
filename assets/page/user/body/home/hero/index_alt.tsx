@@ -1,17 +1,19 @@
 import React from "react";
 
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Image, DotGroup} from "pure-react-carousel";
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Image} from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
 import {
-	Theme,
 	makeStyles,
-	createStyles
+	createStyles,
+	Theme
 } from "@material-ui/core/styles";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 import clsx from "clsx";
+
+import Button from "./button";
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
@@ -25,25 +27,6 @@ const useStyles = makeStyles((theme:Theme) => {
 		sliders:{
 			position:"relative",
 			height:"70vh",
-			"&::before":{
-				left: "0",
-				right: "0",
-				bottom: "0",
-				top:"0",
-				content: "''",
-				display: "block",
-				position: "absolute",
-				background: "linear-gradient(transparent,50%,rgba(0, 0, 0, 0.9))",
-				zIndex:25,
-				[theme.breakpoints.down("md")]: {
-					//background: "linear-gradient(transparent, 70%, rgba(0, 0, 0, 0.5))"
-				},
-			}
-		},
-		slider :{
-			display:"flex",
-			height:"70vh",
-			width:"100%",
 		},
 		image : {
 			backgroundSize: "100% 100% !important",
@@ -52,7 +35,7 @@ const useStyles = makeStyles((theme:Theme) => {
 			height:"75vh",
 			margin: "0 auto"
 		},
-		navigationButton :{
+		imageNavigationButton :{
 			position:"absolute",
 			background:"transparent",
 			borderColor: "transparent",
@@ -73,17 +56,20 @@ const useStyles = makeStyles((theme:Theme) => {
 			height:"70vh",
 			margin: "0 auto",
 			display:"flex",
-			flexDirection:"column"
+			flexDirection:"column",
+			color:"white",
+			justifyContent:"space-around"
 		},
-		dotGroup :{
-			display:"flex",
-			position:"absolute",
-			bottom:"10px",
-			width:"100%",
-			justifyContent:"center",
-			"& button":{
-				width:"100px"
-			}
+		sliderHeader : {
+			fontSize:"4em",
+			textAlign:"center",
+			margin:theme.spacing(2,0)
+		},
+		sliderNavigationContent :{
+			textIndent:"80px"
+		},
+		sliderNavigationButton :{
+			textAlign:"center"
 		}
 	});
 });
@@ -111,24 +97,23 @@ const HeroAlt:React.FC = () => {
 								hasMasterSpinner={true}
 								className={classes.image}>
 								<div className={classes.sliderContainer}>
-									<h1>
+									<h1 className={classes.sliderHeader}>
 										{slider.title}
 									</h1>
-									<h2>
+									<h2 className={classes.sliderNavigationContent}>
 										{slider.description}
 									</h2>
-									<div>
+									<div className={classes.sliderNavigationButton}>
+										<Button lable={slider.buttonName} />
 									</div>
 								</div>
 							</Image>
 						</Slide>
-						
 					);
 				})}
 			</Slider>
-			<ButtonBack className={clsx(classes.navigationButton, classes.backButton)}><ArrowBackIosIcon /></ButtonBack>
-			<ButtonNext className={clsx(classes.navigationButton, classes.forwardButton)}><ArrowForwardIosIcon /></ButtonNext>
-			<DotGroup className={classes.dotGroup}/>
+			<ButtonBack className={clsx(classes.imageNavigationButton, classes.backButton)}><ArrowBackIosIcon /></ButtonBack>
+			<ButtonNext className={clsx(classes.imageNavigationButton, classes.forwardButton)}><ArrowForwardIosIcon /></ButtonNext>
 		</CarouselProvider>
 	);
 };
