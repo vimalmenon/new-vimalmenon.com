@@ -20,3 +20,8 @@ interface IYTPlayer {
     videoName:string; 
     className:string
 }
+
+interface ITextFormat{
+    text:string;
+    className?:string;
+}

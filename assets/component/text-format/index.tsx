@@ -1,11 +1,13 @@
 import React from "react";
 
-const TextFormat:React.FC<{text:string}> = ({text}) => {
+const TextFormat:React.FC<ITextFormat> = ({text, className}) => {
 	const createMarkup = (html) => {
 		return {__html: html.trim()};
 	};
 	return(
-		<span dangerouslySetInnerHTML={createMarkup(text)} />
+		<div 
+			className={className} 
+			dangerouslySetInnerHTML={createMarkup(text)} />
 	);
 };
 

@@ -6,7 +6,7 @@ import {
 	Theme
 } from "@material-ui/core/styles";
 
-import {SocialMedia, ToggleTheme} from "component";
+import {SocialMedia, SocialMediaMoble, ToggleTheme} from "component";
 
 
 const useStyles = makeStyles((theme: Theme) => {
@@ -42,6 +42,7 @@ const Top:React.FC = () => {
 		<div className={classes.root}>
 			<div className={classes.container}>
 				<SocialMedia />
+				<SocialMediaMoble />
 				<ToggleTheme />
 			</div>
 		</div>
