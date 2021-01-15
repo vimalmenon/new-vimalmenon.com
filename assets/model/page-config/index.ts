@@ -1,7 +1,13 @@
 import common from "./common";
-import header from "./header";
 import home from "./home";
-import footer from "./footer";
+
+
+const header = {
+	height:"63px"
+};
+const footer = {
+	height:"63px"
+};
 
 const pageConfig = {
 	common,

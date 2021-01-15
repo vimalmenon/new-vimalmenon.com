@@ -38,9 +38,9 @@ const User:React.FC<RouteComponentProps> = ({history, location}) => {
 		const unSubscribe = history.listen(navigation.init);
 		return unSubscribe;
 	}, []);
-	React.useEffect(() => {
+	/*React.useEffect(() => {
 		scroll.scrollToTop();
-	}, [location]);
+	}, [location]);*/
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
