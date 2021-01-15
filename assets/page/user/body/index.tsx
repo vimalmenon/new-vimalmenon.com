@@ -15,6 +15,7 @@ import Tutorials from "./tutorials";
 import PageNotFound from "./page-not-found";
 import Release from "./release";
 import PrivacyPolicy from "./privacy-policy";
+import Announcements from "./announcements";
 
 const useStyles = makeStyles(() => {
 	return createStyles({
@@ -35,6 +36,7 @@ const Body:React.FC = () => {
 				<Route exact path="/tutorials" component={Tutorials} />
 				<Route exact path="/release" component={Release} />
 				<Route exact path="/privacy-policy" component={PrivacyPolicy} />
+				<Route exact path="/announcements" component={Announcements} />
 				<Route component={PageNotFound} />
 			</Switch>
 		</section>

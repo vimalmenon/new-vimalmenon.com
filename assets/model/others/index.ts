@@ -30,7 +30,7 @@ const yTPlayerSizes = {
 };
 const HeroSizes = {
 	xl : {
-		height:"341px",
+		height:"70vh",
 		width:"600px"
 	},
 	lg : {
