@@ -12,17 +12,17 @@ import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import clsx from "clsx";
 
-import {others} from "model";
+import {pageConfig} from "model";
 import Button from "./button";
 
-const {HeroSizes}=others;
+const {hero}=pageConfig.home;
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		root: {
 			display: "flex",
 			flexDirection: "column",
-			height:HeroSizes.xl.height,
+			height:hero.xl.height,
 			position:"relative",
 			zIndex:20
 		},
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme:Theme) => {
 			backgroundSize: "100% 100% !important",
 			width:"100%",
 			backgroundRepeat: "no-repeat, repeat",
-			height:HeroSizes.xl.height,
+			height:hero.xl.height,
 			margin: "0 auto"
 		},
 		imageNavigationButton :{

@@ -1,10 +1,28 @@
 import React from "react";
 
+import {
+	makeStyles,
+	createStyles,
+	Theme
+} from "@material-ui/core/styles";
+import { Container } from "component";
 
-const Announcements = () => {
+const useStyles = makeStyles((theme:Theme) => {
+	return createStyles({
+		root: {
+			display: "flex",
+			flexDirection: "column"
+		},
+	});
+});
+
+const Announcements:React.FC = () => {
+	const classes = useStyles();
 	return (
-		<div>
-			
+		<div className={classes.root}>
+			<Container>
+				
+			</Container>
 		</div>
 	);
 };

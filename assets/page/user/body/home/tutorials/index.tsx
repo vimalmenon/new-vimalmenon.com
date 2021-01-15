@@ -11,15 +11,15 @@ import { useHistory } from "react-router-dom";
 
 
 import {Container, PageTitle, YTPlayer} from "component";
+import {page, pageConfig, icon} from "model";
 
-
-import {page, others, icon} from "model";
+const {xl} = pageConfig.common.youTube.small;
 
 const tutorials = page.tutorials;
 const {View} = icon;
 
 const useStyles = makeStyles((theme:Theme) => {
-	const {xl} = others.yTPlayerSizes.small;
+	
 	return createStyles({
 		element: {
 			display: "flex",

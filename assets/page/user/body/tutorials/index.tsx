@@ -5,9 +5,9 @@ import {
 	createStyles,
 	Theme
 } from "@material-ui/core/styles";
-import {page, others} from "model";
+import {page, pageConfig} from "model";
 import {Container, YTPlayer} from "component";
-const {small} = others.yTPlayerSizes;
+const {small} = pageConfig.common.youTube;
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
