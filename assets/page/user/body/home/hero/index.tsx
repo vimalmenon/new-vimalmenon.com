@@ -1,131 +1,166 @@
 import React from "react";
-import Slider from "react-animated-slider";
-import "react-animated-slider/build/horizontal.css";
 
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Image} from "pure-react-carousel";
+import "pure-react-carousel/dist/react-carousel.es.css";
 
 import {
-	Theme,
 	makeStyles,
-	createStyles
+	createStyles,
+	Theme
 } from "@material-ui/core/styles";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import clsx from "clsx";
 
-import {Link} from "react-scroll";
-
+import {pageConfig} from "model";
 import Button from "./button";
 
 import {page} from "model";
+import {scroller} from "react-scroll";
+
+const {xl, xs, md}=pageConfig.home.hero;
+const {sliders} = page.home.hero;
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		root: {
 			display: "flex",
-			flexDirection: "column"
-		},
-		sliderWrapper : {
-			position: "relative",
-			height: "70vh",
-			maxHeight:"500px",
-			overflow: "hidden",
-			zIndex:10,
-			"& .slide": {
-				height: "70vh",
-				maxHeight:"500px",
-				backgroundSize: "cover !important",
-				"&::before" : {
-					content: "''",
-					display: "block",
-					position: "absolute",
-					width: "100%",
-					height: "100%",
-					background: "linear-gradient(transparent, rgba(0, 0, 0, 0.9))",
-					bottom: 0,
-					left: 0,
-				}
-			},
-			"& .previousButton":{
-				display: "flex",
-				position: "absolute",
-				top:"50%",
-				left:"1.5em",
-				zIndex:"50",
-				"& polygon" :{
-					fill:"#FA2B54"
-				}
-			},
-			"& .nextButton":{
-				display: "flex",
-				position: "absolute",
-				top: "50%",
-				right: "1.5em",
-				zIndex:"50",
-				"& polygon" :{
-					fill:"#FA2B54"
-				}
-			}
-		},
-		sliderContent : {
-			textAlign: "center"
-		},
-		inner : {
-			display:"flex",
-			justifyContent:"space-around",
-			flexDirection:"column",
-			padding: theme.spacing(0,6),
-			boxSizing: "border-box",
-			position: "absolute",
-			width: "100%",
-			top: "50%",
-			left: "50%",
-			transform: "translate(-50%, -50%)",
-			height:"100%"
-		},
-		header : {
-			fontWeight: 900,
-			margin: "0 auto",
-			maxWidth: "840px",
-			color: "#FFFFFF",
-			fontSize: "64px",
-			lineHeight: 1,
+			flexDirection: "column",
+			height:xl.image.height,
+			position:"relative",
+			zIndex:20,
 			[theme.breakpoints.down("sm")]: {
-				fontSize: "32px"
+				height:xs.root.height,
 			},
-			"@media (max-height: 600px)" : {
-				fontSize: "32px"
+		},
+		sliders:{
+			position:"relative",
+			height:"70vh",
+		},
+		image : {
+			backgroundSize: "100% 100% !important",
+			width:"100%",
+			backgroundRepeat: "no-repeat, repeat",
+			height:xl.image.height,
+			margin: "0 auto",
+			[theme.breakpoints.down("sm")]: {
+				height:xs.image.height,
+			},
+		},
+		imageNavigationButton :{
+			position:"absolute",
+			background:"transparent",
+			borderColor: "transparent",
+			top:"50%",
+			zIndex:30,
+			"& svg" : {
+				color:"red"
 			}
 		},
-		p : {
-			color: "#FFFFFF",
-			fontSize: "14px",
-			lineHeight: 1.5,
-			margin: "20px auto 30px",
-			maxWidth: "640px"
+		backButton: {
+			left:"0"
+		},
+		forwardButton : {
+			right:"0"
+		},
+		sliderContainer :{
+			width:"80%",
+			height:xl.image.height,
+			margin: "0 auto",
+			display:"flex",
+			flexDirection:"column",
+			color:"white",
+			justifyContent:"space-around",
+			[theme.breakpoints.down("sm")]: {
+				width:"80%",
+				height:md.image.height,
+			},
+			[theme.breakpoints.down("xs")]: {
+				width:"80%",
+				height:xs.image.height,
+			},
+		},
+		sliderHeader : {
+			fontSize:xl.title.fontSize,
+			textAlign:"center",
+			margin:theme.spacing(2,0),
+			textShadow:xl.description.textShadow,
+			[theme.breakpoints.down("sm")]: {
+				textShadow:md.description.textShadow,
+				fontSize:md.title.fontSize,
+			},
+			[theme.breakpoints.down("xs")]: {
+				textShadow:xs.description.textShadow,
+				fontSize:xs.title.fontSize,
+			},
+		},
+		sliderNavigationContent :{
+			textIndent:xl.description.textIndent,
+			textShadow:xl.description.textShadow,
+			fontSize:xl.description.fontSize,
+			[theme.breakpoints.down("sm")]: {
+				textShadow:md.description.textShadow,
+				textIndent:md.description.textIndent,
+				fontSize:md.description.fontSize,
+			},
+			[theme.breakpoints.down("xs")]: {
+				textShadow:xs.description.textShadow,
+				textIndent:xs.description.textIndent,
+				fontSize:xs.description.fontSize,
+			},
+		},
+		sliderNavigationButton :{
+			textAlign:"center",
 		}
 	});
 });
 
-const Hero:React.FC = () => {
+
+const HeroAlt:React.FC = () => {
 	const classes = useStyles();
-	return (
-		<div className={classes.root}>
-			<Slider className={classes.sliderWrapper}>
-				{page.home.hero.sliders.map((slider, key) => {
+	const onNavigate = (url) => {
+		scroller.scrollTo(url, {
+			duration:500,
+			smooth: true,
+			offset:50
+		});
+	};
+	return(
+		<CarouselProvider
+			naturalSlideWidth={100}
+			naturalSlideHeight={125}
+			totalSlides={3} 
+			className={classes.root}>
+			<Slider>
+				{sliders.map((slider, key) => {
 					return (
-						<div 
-							key={key}
-							className={classes.sliderContent}
-							style={{ background: `url('${slider.image}') no-repeat center center` }}>
-							<div className={classes.inner}>
-								<h1 className={classes.header}>{slider.title}</h1>
-								<p className={classes.p}>{slider.description}</p>
-								<Link to={slider.url} smooth={true} offset={50} duration={500}>
-								</Link>
-							</div>
-						</div>
+						<Slide index={key} key={key}>
+							<Image
+								src={slider.image} 
+								tag={"section"}
+								isBgImage={true}
+								hasMasterSpinner={true}
+								className={classes.image}>
+								<div className={classes.sliderContainer}>
+									<h1 className={classes.sliderHeader}>
+										{slider.title}
+									</h1>
+									<h2 className={classes.sliderNavigationContent}>
+										{slider.description}
+									</h2>
+									<div className={classes.sliderNavigationButton}>
+										<Button lable={slider.buttonName} onClick={() =>onNavigate(slider.url)}/>
+									</div>
+								</div>
+							</Image>
+						</Slide>
 					);
 				})}
 			</Slider>
-		</div>
+			<ButtonBack className={clsx(classes.imageNavigationButton, classes.backButton)}><ArrowBackIosIcon /></ButtonBack>
+			<ButtonNext className={clsx(classes.imageNavigationButton, classes.forwardButton)}><ArrowForwardIosIcon /></ButtonNext>
+		</CarouselProvider>
 	);
 };
 
-export default Hero;
+export default HeroAlt;

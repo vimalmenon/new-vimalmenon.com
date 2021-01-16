@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => {
 	});
 });
 
-import HeroAlt from "./hero/index_alt";
+import Hero from "./hero";
 import AboutUs from "./about-us";
 import Tutorials from "./tutorials";
 import ContactUs from "./contact-us";
@@ -23,7 +23,7 @@ const Home:React.FC = ()=> {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			<HeroAlt />
+			<Hero />
 			<AboutUs dark={false}/>
 			<Tutorials dark={true}/>
 			<ContactUs dark={false}/>
