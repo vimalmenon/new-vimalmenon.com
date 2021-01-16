@@ -13,7 +13,7 @@ import { useHistory } from "react-router-dom";
 import {Container, PageTitle, YTPlayer, ReadMore} from "component";
 import {page, pageConfig} from "model";
 
-const {xl} = pageConfig.common.youTube;
+const {xl, xs} = pageConfig.common.youTube;
 
 const tutorials = page.tutorials;
 
@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme:Theme) => {
 			height:xl.small.height,
 			width:xl.small.width,
 			[theme.breakpoints.down("xs")]: {
-				width:"100%",
+				width:xs.small.width,
 			},
 		}
 	});

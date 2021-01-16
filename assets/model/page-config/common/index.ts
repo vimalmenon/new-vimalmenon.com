@@ -7,7 +7,7 @@ const common = {
 			},
 			small:{
 				height:"341px",
-				width:"100%"
+				width:"600px"
 			}
 		},
 		lg : {
@@ -17,6 +17,14 @@ const common = {
 		sm : {
 		},
 		xs : {
+			large:{
+				height:"200px",
+				width:"100%"
+			},
+			small:{
+				width:"100%"
+			}
+
 		}
 	}
 };
