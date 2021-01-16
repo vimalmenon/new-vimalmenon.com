@@ -1,12 +1,43 @@
 import React from "react";
 
-import {Container} from "component";
+import {
+	makeStyles,
+	createStyles,
+	Theme
+} from "@material-ui/core/styles";
+import { Container, TextFormat } from "component";
+
+import {page} from "model";
+
+const {aboutMe} = page;
+const useStyles = makeStyles((theme:Theme ) => {
+	return createStyles({
+		root: {
+			display: "flex",
+			flexDirection: "column"
+		},
+		items: {
+			display:"flex",
+			textIndent: "5em",
+			margin:theme.spacing(2,0),
+			fontSize:"1.2em",
+			lineHeight:"2em"
+		}
+	});
+});
 
 const AboutMe:React.FC = () => {
+	const classes = useStyles();
 	return(		
 		<Container>
-			<div>
-				Comming Soon
+			<div className={classes.root}>
+				{aboutMe.description.map((value, key) => {
+					return (
+						<div key={key} className={classes.items}>
+							<TextFormat text={value} />
+						</div>
+					);
+				})}
 			</div>
 		</Container>
 	);

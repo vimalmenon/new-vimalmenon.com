@@ -9,9 +9,9 @@ const aboutMe = {
 			So if you guys want to make a carrier in software development without any degree. I will show you guys everything you need to know to get into this industry.  I am going to start from very basic like how I started and will show you a path to take to get a job as a software engineer.     
 		`
 	],
+	updatedDate:"Jan 16, 2021",
 	short: [],
 	long:[]
 };
-
 
 export default aboutMe;

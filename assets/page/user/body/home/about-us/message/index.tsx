@@ -10,6 +10,7 @@ import {page} from "model";
 
 import {TextFormat} from "component";
 
+const {aboutMe} = page;
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		root : {
@@ -31,7 +32,7 @@ const Message:React.FC = () => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			{page.home.aboutMe.description.map((value, key) => {
+			{aboutMe.description.map((value, key) => {
 				return (
 					<div key={key} className={classes.items}>
 						<TextFormat text={value} />

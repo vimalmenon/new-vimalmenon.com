@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme:Theme) => {
 });
 const Video:React.FC = () => {
 	const classes = useStyles();
-	const {aboutMe} = page.home;
+	const {aboutMe} = page;
 	return (
 		<div className={classes.root}>
 			<YTPlayer 
