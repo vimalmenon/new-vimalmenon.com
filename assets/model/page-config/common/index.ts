@@ -1,32 +1,22 @@
 const common = {
 	youTube :{
-		large : {
-			xl : {
+		xl : {
+			large:{
 				height:"200px",
-				width:"300px"
+				width:"100%"
 			},
-			lg : {
-			},
-			md :{
-			},
-			sm : {
-			},
-			xs : {
+			small:{
+				height:"341px",
+				width:"100%"
 			}
 		},
-		small : {
-			xl : {
-				height:"341px",
-				width:"600px"
-			},
-			lg : {
-			},
-			md :{
-			},
-			sm : {
-			},
-			xs : {
-			}
+		lg : {
+		},
+		md :{
+		},
+		sm : {
+		},
+		xs : {
 		}
 	}
 };

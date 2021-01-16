@@ -3,10 +3,19 @@ import home from "./home";
 
 
 const header = {
-	height:"63px"
+	top:{
+		height:"63px"
+	},
+	bottom:{
+		height:"63px"
+	}
 };
 const footer = {
-	height:"63px"
+	top :{
+	},
+	bottom :{
+		height:"63px"
+	}
 };
 
 const pageConfig = {

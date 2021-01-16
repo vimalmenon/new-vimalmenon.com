@@ -8,6 +8,9 @@ import {
 
 import {SocialMedia, SocialMediaMoble, ToggleTheme} from "component";
 
+import {pageConfig} from "model";
+const {height} = pageConfig.header.top;
+
 
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
@@ -17,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) => {
 			background : "#00172B",
 			justifyContent : "center",	
 			color:"white",
-			flex: "0 0 63px",
+			flex:`0 0 ${height}`,
 			position:"relative",
 			zIndex:20
 		},

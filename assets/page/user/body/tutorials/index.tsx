@@ -7,7 +7,7 @@ import {
 } from "@material-ui/core/styles";
 import {page, pageConfig} from "model";
 import {Container, YTPlayer} from "component";
-const {small} = pageConfig.common.youTube;
+const {xl} = pageConfig.common.youTube;
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
@@ -46,8 +46,8 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		tutorialPlayer : {
 			display:"flex",
-			height:small.xl.height,
-			width:small.xl.width,
+			height:xl.small.height,
+			width:xl.small.width,
 			[theme.breakpoints.down("xs")]: {
 				width:"100%",
 			},

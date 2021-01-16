@@ -25,3 +25,7 @@ interface ITextFormat{
     text:string;
     className?:string;
 }
+interface IReadMore {
+    text:string;
+    onReadMore:()=>void
+}

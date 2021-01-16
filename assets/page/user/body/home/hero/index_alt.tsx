@@ -15,14 +15,14 @@ import clsx from "clsx";
 import {pageConfig} from "model";
 import Button from "./button";
 
-const {hero}=pageConfig.home;
+const {xl}=pageConfig.home.hero;
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		root: {
 			display: "flex",
 			flexDirection: "column",
-			height:hero.xl.height,
+			height:xl.image.height,
 			position:"relative",
 			zIndex:20
 		},
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme:Theme) => {
 			backgroundSize: "100% 100% !important",
 			width:"100%",
 			backgroundRepeat: "no-repeat, repeat",
-			height:hero.xl.height,
+			height:xl.image.height,
 			margin: "0 auto"
 		},
 		imageNavigationButton :{

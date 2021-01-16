@@ -11,7 +11,7 @@ import {YTPlayer} from "component";
 import {page, pageConfig} from "model";
 
 
-const {xl} = pageConfig.common.youTube.small;
+const {xl} = pageConfig.common.youTube;
 
 const useStyles = makeStyles((theme:Theme) => {	
 	return createStyles({
@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		youTubePlayer : {
 			display:"flex",
-			height:xl.height,
-			width:xl.width,
+			height:xl.small.height,
+			width:xl.small.width,
 			[theme.breakpoints.down("xs")]: {
 				width:"100%",
 			},

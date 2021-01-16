@@ -12,11 +12,14 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Logo from "./logo";
 import Navigation from "./navigation";
 
+import {pageConfig} from "model";
+const {height} = pageConfig.header.bottom;
+
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		root: {
 			display: "flex",
-			flex: "0 0 63px",
+			flex:`0 0 ${height}`,
 			justifyContent : "center",
 			backgroundColor:(theme.palette.type==="light")?theme.palette.background.paper:"#121212",
 			position:"relative",

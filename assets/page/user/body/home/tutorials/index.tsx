@@ -10,16 +10,14 @@ import {Element} from "react-scroll";
 import { useHistory } from "react-router-dom";
 
 
-import {Container, PageTitle, YTPlayer} from "component";
-import {page, pageConfig, icon} from "model";
+import {Container, PageTitle, YTPlayer, ReadMore} from "component";
+import {page, pageConfig} from "model";
 
-const {xl} = pageConfig.common.youTube.small;
+const {xl} = pageConfig.common.youTube;
 
 const tutorials = page.tutorials;
-const {View} = icon;
 
 const useStyles = makeStyles((theme:Theme) => {
-	
 	return createStyles({
 		element: {
 			display: "flex",
@@ -35,16 +33,6 @@ const useStyles = makeStyles((theme:Theme) => {
 		footer : {
 			display:"flex",
 			justifyContent:"flex-end"
-		},
-		footerText : {
-			cursor:"pointer",
-			"& svg":{
-				marginBottom:"-4px",
-				fontSize:"20px"
-			},
-			"& span": {
-				padding:"7px"
-			},
 		},
 		contentItem :{
 			display:"flex",
@@ -77,8 +65,8 @@ const useStyles = makeStyles((theme:Theme) => {
 			justifyContent:"center"
 		},
 		youTubePlayer : {
-			height:xl.height,
-			width:xl.width,
+			height:xl.small.height,
+			width:xl.small.width,
 			[theme.breakpoints.down("xs")]: {
 				width:"100%",
 			},
@@ -128,12 +116,7 @@ const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 					})}
 				</div>
 				<div className={classes.footer}>
-					<span className={classes.footerText} onClick={onViewAll}>
-						<View />
-						<span>
-							View all 
-						</span>
-					</span>
+					<ReadMore text={"View all"} onReadMore={onViewAll}/>
 				</div>
 			</Container>
 		</Element>
