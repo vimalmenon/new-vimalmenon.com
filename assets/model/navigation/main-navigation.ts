@@ -41,6 +41,12 @@ export const privacyPolicy:INavigation ={
 	title: `Privacy Policy | ${home.title}`,
 	inPage:false
 };
+export const aboutUs:INavigation = {
+	name: "About Us",
+	url : "/about-me",
+	title: `About Us | ${home.title}`,
+	inPage:false
+};
 const mainNavigation:INavigation[] = [
 	aboutMe,
 	tutorials,
@@ -48,6 +54,7 @@ const mainNavigation:INavigation[] = [
 ];
 const otherNavigation:INavigation[] = [
 	home,
+	aboutUs,
 	tutorialsPage
 ];
 

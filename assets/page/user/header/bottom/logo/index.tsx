@@ -23,9 +23,6 @@ const useStyles = makeStyles((theme: Theme) => {
 			height: "50px",
 			flex: "0 0 182px",
 			backgroundColor:(theme.palette.type==="light")?theme.palette.background.default:"#121212"
-		},
-		logo : {
-			width: "100%"
 		}
 	});
 });
@@ -36,7 +33,7 @@ const Logo:React.FC = () => {
 	return (
 		<div className={classes.root}>
 			<Link to={"/"}>
-				<img src={themeType==="light"?light:dark} className={classes.logo} alt={"Vimal Menon"} />
+				<img src={themeType==="light"?light:dark} width="100%" height="100%" alt={"Vimal Menon"} />
 			</Link>
 		</div>
 	);

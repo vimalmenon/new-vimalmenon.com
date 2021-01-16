@@ -8,10 +8,11 @@ import {
 
 import {YTPlayer} from "component";
 
-import {page, others} from "model";
+import {page, pageConfig} from "model";
 
-const useStyles = makeStyles((theme:Theme) => {
-	const {xl} = others.yTPlayerSizes.small;
+const {xl, xs} = pageConfig.common.youTube;
+
+const useStyles = makeStyles((theme:Theme) => {	
 	return createStyles({
 		root : {
 			display:"flex",
@@ -21,11 +22,11 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		youTubePlayer : {
 			display:"flex",
-			height:xl.height,
-			width:xl.width,
-			/*[theme.breakpoints.down("md")]: {
-				width:"100%",
-			},*/
+			height:xl.small.height,
+			width:xl.small.width,
+			[theme.breakpoints.down("xs")]: {
+				width:xs.small.width,
+			},
 		}
 	});
 });

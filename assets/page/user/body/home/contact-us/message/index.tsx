@@ -9,19 +9,21 @@ import {
 import {TextFormat, SocialMedia} from "component";
 import {page} from "model";
 
+const {contactUs} = page.home;
+
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		root :{
 			display: "flex",
 			flex:"1 1 50%",
-			margin:theme.spacing(1),
-			flexDirection:"column"
+			margin:theme.spacing(2),
+			flexDirection:"column",
+			justifyContent:"space-around"
 		}
 	});
 });
 
 const Message:React.FC = () => {
-	const {contactUs} = page.home;
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>

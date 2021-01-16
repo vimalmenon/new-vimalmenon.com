@@ -5,9 +5,9 @@ import {
 	createStyles,
 	Theme
 } from "@material-ui/core/styles";
-import {page, others} from "model";
+import {page, pageConfig} from "model";
 import {Container, YTPlayer} from "component";
-const {small} = others.yTPlayerSizes;
+const {xl} = pageConfig.common.youTube;
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
@@ -32,17 +32,25 @@ const useStyles = makeStyles((theme:Theme) => {
 			flexWrap:"wrap",
 		},
 		tutorialContainer : {
-			dislay:"flex",
+			display:"flex",
 			flexDirection:"column",
-			margin:theme.spacing(2)
+			margin:theme.spacing(2),
+			[theme.breakpoints.down("md")]: {
+				flexDirection:"column",
+				flex:"1 1 100%",
+			},
 		},
 		tutorialPlayerContainer : {
-			display:"flex"
+			display:"flex",
+			justifyContent:"center"
 		},
 		tutorialPlayer : {
 			display:"flex",
-			height:small.xl.height,
-			width:small.xl.width
+			height:xl.small.height,
+			width:xl.small.width,
+			[theme.breakpoints.down("xs")]: {
+				width:"100%",
+			},
 		},
 		tutorialDescription : {
 			display:"flex",
@@ -80,7 +88,6 @@ const Tutorials:React.FC = () => {
 												<span>
 													{video.publishedDate}
 												</span>
-												
 											</div>
 										</div>
 									);

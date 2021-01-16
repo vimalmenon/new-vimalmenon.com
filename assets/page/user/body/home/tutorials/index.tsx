@@ -10,16 +10,14 @@ import {Element} from "react-scroll";
 import { useHistory } from "react-router-dom";
 
 
-import {Container, PageTitle, YTPlayer} from "component";
+import {Container, PageTitle, YTPlayer, ReadMore} from "component";
+import {page, pageConfig} from "model";
 
-
-import {page, others, icon} from "model";
+const {xl, xs} = pageConfig.common.youTube;
 
 const tutorials = page.tutorials;
-const {View} = icon;
 
 const useStyles = makeStyles((theme:Theme) => {
-	const {xl} = others.yTPlayerSizes.small;
 	return createStyles({
 		element: {
 			display: "flex",
@@ -36,16 +34,6 @@ const useStyles = makeStyles((theme:Theme) => {
 			display:"flex",
 			justifyContent:"flex-end"
 		},
-		footerText : {
-			cursor:"pointer",
-			"& svg":{
-				marginBottom:"-4px",
-				fontSize:"20px"
-			},
-			"& span": {
-				padding:"7px"
-			},
-		},
 		contentItem :{
 			display:"flex",
 			margin:theme.spacing(2,0),
@@ -57,7 +45,7 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		contentVideos :{
 			display:"flex",
-			[theme.breakpoints.down("sm")]: {
+			[theme.breakpoints.down("md")]: {
 				flexDirection:"column",
 			},
 		},
@@ -77,11 +65,11 @@ const useStyles = makeStyles((theme:Theme) => {
 			justifyContent:"center"
 		},
 		youTubePlayer : {
-			height:xl.height,
-			width:xl.width,
-			/*[theme.breakpoints.down("md")]: {
-				width:"100%",
-			},*/
+			height:xl.small.height,
+			width:xl.small.width,
+			[theme.breakpoints.down("xs")]: {
+				width:xs.small.width,
+			},
 		}
 	});
 });
@@ -128,12 +116,7 @@ const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 					})}
 				</div>
 				<div className={classes.footer}>
-					<span className={classes.footerText} onClick={onViewAll}>
-						<View />
-						<span>
-							View all 
-						</span>
-					</span>
+					<ReadMore text={"View all"} onReadMore={onViewAll}/>
 				</div>
 			</Container>
 		</Element>

@@ -6,7 +6,10 @@ import {
 	Theme
 } from "@material-ui/core/styles";
 
-import {SocialMedia, ToggleTheme} from "component";
+import {SocialMedia, SocialMediaMoble, ToggleTheme} from "component";
+
+import {pageConfig} from "model";
+const {height} = pageConfig.header.top;
 
 
 const useStyles = makeStyles((theme: Theme) => {
@@ -17,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) => {
 			background : "#00172B",
 			justifyContent : "center",	
 			color:"white",
-			flex: "0 0 63px",
+			flex:`0 0 ${height}`,
 			position:"relative",
 			zIndex:20
 		},
@@ -42,6 +45,7 @@ const Top:React.FC = () => {
 		<div className={classes.root}>
 			<div className={classes.container}>
 				<SocialMedia />
+				<SocialMediaMoble />
 				<ToggleTheme />
 			</div>
 		</div>

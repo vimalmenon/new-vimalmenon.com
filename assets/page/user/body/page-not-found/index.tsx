@@ -65,13 +65,13 @@ const useStyles = makeStyles((theme:Theme) => {
 			margin: theme.spacing(0),
 			position:"relative",
 			overflow:"hidden",
-			height:"70vh",
+			height:"81vh",
 		},
 		content:{
 			position:"relative",
 			display:"flex",
 			flexDirection:"column",
-			height:"70vh",
+			height:"81vh",
 			width: "100%",
 			zIndex:0,
 			...createChild()

@@ -15,7 +15,8 @@ const useStyles = makeStyles((theme:Theme) => {
 		root: {
 			display:"flex",
 			flexDirection:"column",
-			flex:"1 1 50%"
+			flex:"1 1 50%",
+			margin:theme.spacing(2),
 		},
 		field:{
 			display:"flex",

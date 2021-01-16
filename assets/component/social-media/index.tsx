@@ -5,7 +5,6 @@ import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
 import EmailIcon from "@material-ui/icons/Email";
 import Link from "@material-ui/core/Link";
-
 import {notification, clipBoard} from "utility";
 
 import {icon} from "model";
