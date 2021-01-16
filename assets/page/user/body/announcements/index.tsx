@@ -2,12 +2,11 @@ import React from "react";
 
 import {
 	makeStyles,
-	createStyles,
-	Theme
+	createStyles
 } from "@material-ui/core/styles";
 import { Container } from "component";
 
-const useStyles = makeStyles((theme:Theme) => {
+const useStyles = makeStyles(() => {
 	return createStyles({
 		root: {
 			display: "flex",

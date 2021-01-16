@@ -7,10 +7,9 @@ import {TextFormat, Container} from "component";
 import {
 	makeStyles,
 	createStyles,
-	Theme
 } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme:Theme) => {
+const useStyles = makeStyles(() => {
 	return createStyles({
 		root: {
 			display: "flex",
