@@ -1,8 +1,9 @@
 const Hero = {
 	xl : {
 		image:{
-			height:"70vh",
-			width:"100%"
+			height:"80vh",
+			width:"100%",
+			minHeight:"600px"
 		},
 		title:{
 			fontSize:"5em"

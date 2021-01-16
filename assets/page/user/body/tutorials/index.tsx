@@ -88,7 +88,6 @@ const Tutorials:React.FC = () => {
 												<span>
 													{video.publishedDate}
 												</span>
-												
 											</div>
 										</div>
 									);

@@ -5,6 +5,8 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
+import {IButton} from "./index.d";
+
 const useStyles = makeStyles(() => {
 	return createStyles({
 		button: {
@@ -51,10 +53,10 @@ const useStyles = makeStyles(() => {
 	});
 });
 
-const Button:React.FC<{lable:string}> = ({lable}) => {
+const Button:React.FC<IButton> = ({lable, onClick}) => {
 	const classes = useStyles();
 	return (
-		<div className={classes.button}>
+		<div className={classes.button} onClick={onClick}>
 			{lable}
 		</div>
 	);

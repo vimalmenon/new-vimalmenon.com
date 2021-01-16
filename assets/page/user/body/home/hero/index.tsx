@@ -118,7 +118,6 @@ const Hero:React.FC = () => {
 								<h1 className={classes.header}>{slider.title}</h1>
 								<p className={classes.p}>{slider.description}</p>
 								<Link to={slider.url} smooth={true} offset={50} duration={500}>
-									<Button lable={slider.buttonName} />
 								</Link>
 							</div>
 						</div>

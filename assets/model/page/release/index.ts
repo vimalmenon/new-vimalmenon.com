@@ -9,6 +9,8 @@ const release = [
 			"More Meta tag added",
 			"Fixed lighthouse issues",
 			"Bug Fixes",
+			"New Carousel / Hero introduced",
+			"Refactoring"
 		]
 	},
 	{

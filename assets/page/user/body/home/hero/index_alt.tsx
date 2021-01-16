@@ -15,7 +15,11 @@ import clsx from "clsx";
 import {pageConfig} from "model";
 import Button from "./button";
 
+import {page} from "model";
+import {scroller} from "react-scroll";
+
 const {xl}=pageConfig.home.hero;
+const {sliders} = page.home.hero;
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
@@ -23,6 +27,7 @@ const useStyles = makeStyles((theme:Theme) => {
 			display: "flex",
 			flexDirection: "column",
 			height:xl.image.height,
+			minHeight:xl.image.minHeight,
 			position:"relative",
 			zIndex:20
 		},
@@ -35,6 +40,7 @@ const useStyles = makeStyles((theme:Theme) => {
 			width:"100%",
 			backgroundRepeat: "no-repeat, repeat",
 			height:xl.image.height,
+			minHeight:xl.image.minHeight,
 			margin: "0 auto"
 		},
 		imageNavigationButton :{
@@ -56,6 +62,7 @@ const useStyles = makeStyles((theme:Theme) => {
 		sliderContainer :{
 			width:"80%",
 			height:"70vh",
+			minHeight:xl.image.minHeight,
 			margin: "0 auto",
 			display:"flex",
 			flexDirection:"column",
@@ -65,23 +72,29 @@ const useStyles = makeStyles((theme:Theme) => {
 		sliderHeader : {
 			fontSize:"4em",
 			textAlign:"center",
-			margin:theme.spacing(2,0)
+			margin:theme.spacing(2,0),
+			textShadow:"2px 2px gray"
 		},
 		sliderNavigationContent :{
-			textIndent:"80px"
+			textIndent:"80px",
+			textShadow:"2px 2px gray"
 		},
 		sliderNavigationButton :{
-			textAlign:"center"
+			textAlign:"center",
 		}
 	});
 });
 
-import {page} from "model";
-const {sliders} = page.home.hero;
-
 
 const HeroAlt:React.FC = () => {
 	const classes = useStyles();
+	const onNavigate = (url) => {
+		scroller.scrollTo(url, {
+			duration:500,
+			smooth: true,
+			offset:50
+		});
+	};
 	return(
 		<CarouselProvider
 			naturalSlideWidth={100}
@@ -106,7 +119,7 @@ const HeroAlt:React.FC = () => {
 										{slider.description}
 									</h2>
 									<div className={classes.sliderNavigationButton}>
-										<Button lable={slider.buttonName} />
+										<Button lable={slider.buttonName} onClick={() =>onNavigate(slider.url)}/>
 									</div>
 								</div>
 							</Image>

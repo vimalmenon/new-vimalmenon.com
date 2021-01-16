@@ -8,6 +8,7 @@ import {
 import {Container, PageTitle, ReadMore} from "component";
 import {Element} from "react-scroll";
 
+import { useHistory } from "react-router-dom";
 
 import Message from "./message";
 import Video from "./video";
@@ -35,6 +36,8 @@ const useStyles = makeStyles((theme:Theme) => {
 });
 const AboutUs:React.FC<{dark:boolean}> = ({dark}) => {
 	const classes = useStyles();
+	const {push} = useHistory();
+	const onReadMore = () => push("/about-me");
 	return (
 		<Element name="about-me" className={classes.element}>
 			<Container dark={dark}>
@@ -46,7 +49,7 @@ const AboutUs:React.FC<{dark:boolean}> = ({dark}) => {
 					<Message />
 				</div>
 				<div className={classes.footer}>
-					<ReadMore text="Read More" onReadMore={() =>console.log("this is clciked")} />
+					<ReadMore text="Read More" onReadMore={onReadMore} />
 				</div>
 			</Container>
 		</Element>
