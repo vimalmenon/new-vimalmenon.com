@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme:Theme) => {
 	});
 });
 
-const ContactUs:React.FC<{dark:boolean}> = ({dark}) => {
+const ContactUs:React.FC<IPagesProps> = ({dark}) => {
 	const classes = useStyles();
 	return (
 		<Element name="contact-us" className={classes.element}>

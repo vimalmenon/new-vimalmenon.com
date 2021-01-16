@@ -1,7 +1,15 @@
 const release = [
 	{
+		versionNo:"v0.0.4.a",
+		buildDate:"24 Jan 2021",
+		details:[
+			"Fixed image reference issue",
+			"Added announcements sections"
+		]
+	},
+	{
 		versionNo:"v0.0.3.a",
-		buildDate:"17 Jan 2021",
+		buildDate:"16 Jan 2021",
 		details:[
 			"New Logo design",
 			"New Favicon",

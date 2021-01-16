@@ -17,6 +17,7 @@ const useStyles = makeStyles(() => {
 import Hero from "./hero";
 import AboutUs from "./about-us";
 import Tutorials from "./tutorials";
+import Latest from "./latest";
 import ContactUs from "./contact-us";
 
 const Home:React.FC = ()=> {
@@ -26,7 +27,8 @@ const Home:React.FC = ()=> {
 			<Hero />
 			<AboutUs dark={false}/>
 			<Tutorials dark={true}/>
-			<ContactUs dark={false}/>
+			<Latest dark={false}/>
+			<ContactUs dark={true}/>
 		</div>
 	);
 };

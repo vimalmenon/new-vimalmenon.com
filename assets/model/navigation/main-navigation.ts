@@ -29,6 +29,13 @@ export const pageNotFound:INavigation = {
 	inPage:false
 };
 
+export const latest:INavigation = {
+	name: "Latest",
+	url : "latest",
+	title: `Latest | ${home.title}`,
+	inPage:true
+};
+
 export const tutorialsPage:INavigation = {
 	name: "Tutorials",
 	url : "/tutorials",
@@ -50,6 +57,7 @@ export const aboutUs:INavigation = {
 const mainNavigation:INavigation[] = [
 	aboutMe,
 	tutorials,
+	latest,
 	contactUs
 ];
 const otherNavigation:INavigation[] = [

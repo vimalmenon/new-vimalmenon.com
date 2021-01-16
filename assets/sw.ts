@@ -57,3 +57,7 @@ self.addEventListener("fetch", (event:any) => {
 			})
 	);
 });
+
+self.addEventListener('beforeinstallprompt', (e) => {
+	console.log("this is called");
+});

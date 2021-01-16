@@ -1,0 +1,3 @@
+interface IPagesProps {
+    dark:boolean
+}

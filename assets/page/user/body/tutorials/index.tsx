@@ -58,14 +58,14 @@ const useStyles = makeStyles((theme:Theme) => {
 		}
 	});
 });
-const {tutorials} = page;
+const {full} = page.tutorials;
 
 const Tutorials:React.FC = () => {
 	const classes = useStyles();
 	return (
 		<Container dark={false}>
 			<div className={classes.root}>
-				{tutorials.map((tutorial, key) => {
+				{full.map((tutorial, key) => {
 					return (
 						<div key={key} className={classes.tutorialsContainer}>
 							<div className={classes.tutorialsTitle}>

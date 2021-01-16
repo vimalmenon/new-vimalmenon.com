@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme:Theme) => {
 		}
 	});
 });
-const AboutUs:React.FC<{dark:boolean}> = ({dark}) => {
+const AboutUs:React.FC<IPagesProps> = ({dark}) => {
 	const classes = useStyles();
 	const {push} = useHistory();
 	const onReadMore = () => push("/about-me");

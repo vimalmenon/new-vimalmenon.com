@@ -15,7 +15,7 @@ import {page, pageConfig} from "model";
 
 const {xl, xs} = pageConfig.common.youTube;
 
-const tutorials = page.tutorials;
+const {short} = page.tutorials;
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme:Theme) => {
 		}
 	});
 });
-const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
+const Tutorials:React.FC<IPagesProps> = ({dark}) => {
 	const classes = useStyles();
 	const {push} = useHistory();
 	const onViewAll = () => push("/tutorials");
@@ -84,7 +84,7 @@ const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 					<PageTitle title="Tutorials" />
 				</div>
 				<div className={classes.content}>
-					{tutorials.map((tutorial, key) => {
+					{short.map((tutorial, key) => {
 						return (
 							<div key={key} className={classes.contentItem}>
 								<div className={classes.contentTitle}>
