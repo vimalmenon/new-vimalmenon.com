@@ -1,10 +1,14 @@
 import React from "react";
 
+import {Container} from "component";
+
 const AboutMe:React.FC = () => {
-	return(
-		<div>
-			Comming Soon
-		</div>
+	return(		
+		<Container>
+			<div>
+				Comming Soon
+			</div>
+		</Container>
 	);
 };
 
