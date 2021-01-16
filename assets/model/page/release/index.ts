@@ -4,7 +4,8 @@ const release = [
 		buildDate:"24 Jan 2021",
 		details:[
 			"Fixed image reference issue",
-			"Added announcements sections"
+			"Added announcements sections",
+			"Refactoring"
 		]
 	},
 	{
@@ -49,15 +50,11 @@ const release = [
 	},
 ];
 const bugs = [
-	"YouTube Player should be adjusted to media screen : Currently supporting larger screens only",
-	"PWA not working in mobile versions",
-	"Rendering very bad on the mobiles",
-	"Issue with carousel on the home page",
-	"Routes don't work on Refresh"
 ];
 const features = [
 	"Navigation Section : Animation should be different in Hover and active elements",
-	"Backend Support : (Java Spring boot)"
+	"Backend Support : (Java Spring boot)",
+	"PWA installable on mobile"
 ];
 
 export {

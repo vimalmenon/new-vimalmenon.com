@@ -1,8 +1,8 @@
-import {home, pageNotFound, privacyPolicy, tutorialsPage, aboutUs} from "./main-navigation";
+import {home, pageNotFound, privacyPolicy, tutorialsPage, aboutMePage} from "./main-navigation";
 
 const navigationByUrl = {
 	[home.url]:home,
-	[aboutUs.url]:aboutUs,
+	[aboutMePage.url]:aboutMePage,
 	[pageNotFound.url]:pageNotFound,
 	[privacyPolicy.url]:privacyPolicy,
 	[tutorialsPage.url]:tutorialsPage
