@@ -23,11 +23,12 @@ const useStyles = makeStyles((theme:Theme) => {
 		content : {
 			display:"flex",
 			flexDirection:"column",
-			margin:theme.spacing(1,0)
+			margin:theme.spacing(2,1)
 		},
 		releaseItem:{
 			display: "flex",
-			flexDirection:"column"
+			flexDirection:"column",
+			margin:theme.spacing(1,0)
 		},
 		releaseHeader:{
 			display:"flex",
@@ -37,7 +38,8 @@ const useStyles = makeStyles((theme:Theme) => {
 			fontSize:"2em"
 		},
 		releaseDetails : {
-			fontSize:text.fontSize
+			fontSize:text.fontSize,
+			margin:theme.spacing(0)
 		},
 		releaseDetail: {
 			padding:theme.spacing(1)
@@ -55,7 +57,7 @@ const Release:React.FC = () => {
 					<PageTitle title={"Release and Features"} />
 				</div>
 				<div className={classes.content}>
-					<Map items={release} renderItem={(data) => {
+					<Map items={release} renderItem={(data, key) => {
 						return (
 							<div className={classes.releaseItem}>
 								<div className={classes.releaseHeader}>
@@ -66,17 +68,23 @@ const Release:React.FC = () => {
 										{data.buildDate}
 									</span>
 								</div>
-								<ul className={classes.releaseDetails}>
-									<Map 
-										items={data.details}
-										renderItem={(detail) => {
-											return (
-												<li className={classes.releaseDetail}>
-													{detail}
-												</li>
-											);
-										}} />
-								</ul>
+								{key<2 ?
+									<>
+										<ul className={classes.releaseDetails}>
+											<Map 
+												items={data.details}
+												renderItem={(detail) => {
+													return (
+														<li className={classes.releaseDetail}>
+															{detail}
+														</li>
+													);
+												}} />
+										</ul>
+										<span>show less..</span>
+									</>: 
+									<span>show more..</span>
+								}
 							</div>
 						);
 					}}/>
