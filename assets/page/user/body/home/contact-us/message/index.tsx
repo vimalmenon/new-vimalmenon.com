@@ -7,8 +7,9 @@ import {
 } from "@material-ui/core/styles";
 
 import {TextFormat, SocialMedia} from "component";
-import {page} from "model";
+import {page, pageConfig} from "model";
 
+const {paragraph} = pageConfig.common;
 const {contactUs} = page.home;
 
 const useStyles = makeStyles((theme:Theme) => {
@@ -18,7 +19,8 @@ const useStyles = makeStyles((theme:Theme) => {
 			flex:"1 1 50%",
 			margin:theme.spacing(2),
 			flexDirection:"column",
-			justifyContent:"space-around"
+			justifyContent:"space-around",
+			...paragraph,
 		}
 	});
 });

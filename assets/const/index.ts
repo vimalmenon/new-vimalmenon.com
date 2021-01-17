@@ -6,8 +6,3 @@ export const THEME="theme";
 export const DEFAULT_THEME:ThemeType="dark";
 export const HEADER="header";
 export const ALPHA=true;
-
-export enum PageType {
-    short="short",
-    full="full"
-}

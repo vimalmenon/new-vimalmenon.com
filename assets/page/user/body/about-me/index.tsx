@@ -7,9 +7,10 @@ import {
 } from "@material-ui/core/styles";
 import { Container, PageTitle, TextFormat } from "component";
 
-import {page} from "model";
+import {page, pageConfig} from "model";
 
 const {aboutMe} = page;
+const {paragraph} = pageConfig.common;
 const useStyles = makeStyles((theme:Theme ) => {
 	return createStyles({
 		root: {
@@ -25,10 +26,10 @@ const useStyles = makeStyles((theme:Theme ) => {
 		},
 		items: {
 			display:"flex",
-			textIndent: "5em",
 			margin:theme.spacing(2,0),
-			fontSize:"1.2em",
-			lineHeight:"2em"
+			textIndent: paragraph.textIndent,
+			fontSize:paragraph.fontSize,
+			lineHeight:paragraph.lineHeight
 		}
 	});
 });

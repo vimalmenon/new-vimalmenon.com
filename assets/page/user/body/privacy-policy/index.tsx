@@ -1,15 +1,18 @@
 import React from "react";
 
-import {page} from "model";
+import {page, pageConfig} from "model";
 
 import {TextFormat, Container, PageTitle} from "component";
 
 import {
 	makeStyles,
 	createStyles,
+	Theme,
 } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(() => {
+const {paragraph} = pageConfig.common;
+
+const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		root: {
 			display: "flex",
@@ -20,7 +23,12 @@ const useStyles = makeStyles(() => {
 		},
 		content:{
 			display: "flex",
-			flexDirection: "column"
+			flexDirection: "column",
+			lineHeight:paragraph.lineHeight,
+			fontSize:paragraph.fontSize,
+			"& a":{
+				color:theme.palette.text.primary
+			}
 		}
 	});
 });

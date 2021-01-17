@@ -6,9 +6,11 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
-import {page} from "model";
+import {page, pageConfig} from "model";
 
 import {TextFormat} from "component";
+
+const {paragraph} = pageConfig.common;
 
 const {aboutMe} = page;
 const useStyles = makeStyles((theme:Theme) => {
@@ -20,10 +22,8 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		items: {
 			display:"flex",
-			textIndent: "5em",
 			margin:theme.spacing(2,0),
-			fontSize:"1.2em",
-			lineHeight:"2em"
+			...paragraph,
 		}
 	});
 });

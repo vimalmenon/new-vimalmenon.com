@@ -3,7 +3,8 @@ import React from "react";
 import {Element} from "react-scroll";
 import {
 	makeStyles,
-	createStyles
+	createStyles,
+	Theme
 } from "@material-ui/core/styles";
 
 
@@ -15,7 +16,7 @@ import { useHistory } from "react-router-dom";
 
 const {short} = page.announcements;
 
-const useStyles = makeStyles(() => {
+const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		element: {
 			display: "flex",
@@ -25,7 +26,28 @@ const useStyles = makeStyles(() => {
 			display: "flex",
 		},
 		content : {
-			display: "flex",
+			display:"flex",
+			flexWrap:"wrap",
+			[theme.breakpoints.down("sm")]: {
+				flexDirection:"column",
+			},
+		},
+		latestItem:{
+			display:"flex",
+			flexDirection:"column",
+			flex:"0 0 50%",
+			padding:theme.spacing(2)
+		},
+		latestTitle:{
+			fontSize:"2em",
+			justifyContent:"space-between",
+			display:"flex"
+		},
+		latestDate:{
+			fontSize:"0.5em"
+		},
+		latestContent:{
+			fontSize:"1.2em"
 		},
 		footer : {
 			display:"flex",
@@ -47,11 +69,14 @@ const Latest:React.FC<IPagesProps> = ({dark}) => {
 				<div className={classes.content}>
 					{short.map((data, key) => {
 						return (
-							<div key={key}>
-								<div>
+							<div key={key} className={classes.latestItem}>
+								<div className={classes.latestTitle}>
 									{data.title}
+									<span className={classes.latestDate}>
+										{data.date}
+									</span>
 								</div>
-								<div>
+								<div className={classes.latestContent}>
 									{data.description}
 								</div>
 							</div>

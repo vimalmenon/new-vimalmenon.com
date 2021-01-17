@@ -25,10 +25,10 @@ const Home:React.FC = ()=> {
 	return (
 		<div className={classes.root}>
 			<Hero />
-			<AboutUs dark={false}/>
-			<Tutorials dark={true}/>
-			<Latest dark={false}/>
-			<ContactUs dark={true}/>
+			<AboutUs dark={true}/>
+			<Tutorials dark={false}/>
+			<Latest dark={true}/>
+			<ContactUs dark={false}/>
 		</div>
 	);
 };

@@ -6,7 +6,9 @@ import {
 	Theme
 } from "@material-ui/core/styles";
 import {Container, useMap, PageTitle} from "component";
-import {page} from "model";
+import {page, pageConfig} from "model";
+
+const {text} = pageConfig.common;
 
 const {release} = page;
 const useStyles = makeStyles((theme:Theme) => {
@@ -35,6 +37,7 @@ const useStyles = makeStyles((theme:Theme) => {
 			fontSize:"2em"
 		},
 		releaseDetails : {
+			fontSize:text.fontSize
 		},
 		releaseDetail: {
 			padding:theme.spacing(1)
