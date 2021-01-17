@@ -6,7 +6,7 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
-
+import Latest from "./latest";
 import Explore from "./explore";
 
 
@@ -30,10 +30,6 @@ const useStyles = makeStyles((theme:Theme) => {
 				flexDirection:"column",
 			},
 		},
-		leftContent:{
-			display:"flex",
-			flex:"1 1 60%"
-		}
 	});
 });
 const Bottom:React.FC = () => {
@@ -41,9 +37,7 @@ const Bottom:React.FC = () => {
 	return (
 		<div className={classes.root}>
 			<div className={classes.container}>
-				<div className={classes.leftContent}>
-
-				</div>
+				<Latest />
 				<Explore />
 			</div>
 		</div>

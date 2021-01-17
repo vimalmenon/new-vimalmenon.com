@@ -4,8 +4,9 @@ const release = [
 		buildDate:"24 Jan 2021",
 		details:[
 			"Fixed image reference issue",
-			"Added announcements sections",
-			"Added explore feature",
+			"Pages: announcements page",
+			"Added explore section",
+			"Added latest section",
 			"Refactoring",
 		]
 	},
@@ -26,7 +27,6 @@ const release = [
 	{
 		versionNo:"v0.0.2.a",
 		buildDate:"10 Jan 2021",
-		show:false,
 		details:[
 			"Introduced Service worker",
 			"PWA feature",
@@ -42,7 +42,6 @@ const release = [
 	{
 		versionNo:"v0.0.1.a",
 		buildDate:"02 Jan 2021",
-		show:false,
 		details:[
 			"Website hosted",
 			"Added basic page",

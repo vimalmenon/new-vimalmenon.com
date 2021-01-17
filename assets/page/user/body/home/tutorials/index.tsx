@@ -13,8 +13,9 @@ import { useHistory } from "react-router-dom";
 import {Container, PageTitle, YTPlayer, ReadMore} from "component";
 import {page, pageConfig} from "model";
 
-const {xl, xs} = pageConfig.common.youTube;
+const {youTube, text, smallText} = pageConfig.common;
 
+const {xl, xs} = youTube;
 const {short} = page.tutorials;
 
 const useStyles = makeStyles((theme:Theme) => {
@@ -58,7 +59,12 @@ const useStyles = makeStyles((theme:Theme) => {
 		videoDetail :{
 			display:"flex",
 			justifyContent:"space-between",
-			margin:theme.spacing(1,0)
+			margin:theme.spacing(1,0),
+			alignItems:"center",
+			...text
+		},
+		videoDetailPublishedDate:{
+			...smallText
 		},
 		youTubePlayerContainer: {
 			display:"flex",
@@ -102,7 +108,7 @@ const Tutorials:React.FC<IPagesProps> = ({dark}) => {
 														<span>
 															{video.name}
 														</span>
-														<span>
+														<span className={classes.videoDetailPublishedDate}>
 															{video.publishedDate}
 														</span>
 													</div>

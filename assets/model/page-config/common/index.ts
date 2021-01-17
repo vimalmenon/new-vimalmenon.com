@@ -32,6 +32,9 @@ const common = {
 		fontSize:"1.2em",
 		lineHeight:"2em"
 	},
+	smallText:{
+		fontSize:"0.8em",
+	},
 	text:{
 		fontSize:"1.2em",
 	},

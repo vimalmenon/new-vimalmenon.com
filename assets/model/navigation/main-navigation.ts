@@ -33,7 +33,7 @@ export const latest:INavigation = {
 	name: "Latest",
 	url : "latest",
 	title: `Latest | ${home.title}`,
-	inPage:true
+	inPage:false
 };
 
 export const tutorialsPage:INavigation = {
@@ -69,7 +69,6 @@ export const release:INavigation = {
 const mainNavigation:INavigation[] = [
 	aboutMe,
 	tutorials,
-	latest,
 	contactUs
 ];
 const otherNavigation:INavigation[] = [
