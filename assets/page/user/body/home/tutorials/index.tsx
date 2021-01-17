@@ -116,7 +116,7 @@ const Tutorials:React.FC<IPagesProps> = ({dark}) => {
 					})}
 				</div>
 				<div className={classes.footer}>
-					<ReadMore text={"View all"} onReadMore={onViewAll}/>
+					<ReadMore text={"View All"} onReadMore={onViewAll}/>
 				</div>
 			</Container>
 		</Element>

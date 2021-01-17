@@ -77,7 +77,7 @@ const otherNavigation:INavigation[] = [
 	aboutMePage,
 	tutorialsPage
 ];
-const explore:INavigation[] = [
+const exploreNavigation:INavigation[] = [
 	home,
 	aboutMePage,
 	tutorialsPage,
@@ -86,7 +86,7 @@ const explore:INavigation[] = [
 	privacyPolicy
 ];
 export {
-	explore,
+	exploreNavigation,
 	mainNavigation,
 	otherNavigation
 };

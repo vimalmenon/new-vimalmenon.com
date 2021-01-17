@@ -11,7 +11,7 @@ const aboutMe = {
 	],
 	updatedDate:"Jan 16, 2021",
 	short: [],
-	long:[]
+	full:[]
 };
 
 export default aboutMe;

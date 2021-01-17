@@ -52,8 +52,8 @@ const release = [
 const bugs = [
 ];
 const features = [
-	"Navigation Section : Animation should be different in Hover and active elements",
-	"Backend Support : (Java Spring boot)",
+	"Navigation : Animation should be different in Hover and Active elements",
+	"Backend : (Java Spring boot)",
 	"PWA installable on mobile"
 ];
 

@@ -6,6 +6,10 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
+
+import Explore from "./explore";
+
+
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		root: {
@@ -26,20 +30,24 @@ const useStyles = makeStyles((theme:Theme) => {
 				flexDirection:"column",
 			},
 		},
+		leftContent:{
+			display:"flex",
+			flex:"1 1 60%"
+		}
 	});
 });
 const Bottom:React.FC = () => {
 	const classes = useStyles();
-	const [show] = React.useState<boolean>(false);
-	if (show) {
-		return (
-			<div className={classes.root}>
-				<div className={classes.container}>
+	return (
+		<div className={classes.root}>
+			<div className={classes.container}>
+				<div className={classes.leftContent}>
+
 				</div>
+				<Explore />
 			</div>
-		);
-	}
-	return null;
+		</div>
+	);
 };
 
 export default Bottom;
