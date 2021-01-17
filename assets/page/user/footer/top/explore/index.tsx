@@ -33,7 +33,10 @@ const useStyles = makeStyles((theme:Theme) => {
 		navigationItem:{
 			color:"white",
 			flex:"0 0 50%",
-			margin:theme.spacing(1,0),
+			margin:theme.spacing(1,0)
+		},
+		navigationLink:{
+			color:"white",
 			textDecoration:"none"
 		}
 	});
@@ -50,9 +53,11 @@ const Explore:React.FC = () => {
 			<div className={classes.content}>
 				{exploreNavigation.map((data, key) => {
 					return (
-						<NavLink exact key={key} to={data.url} className={classes.navigationItem}>
-							{data.name}
-						</NavLink>
+						<div key={key} className={classes.navigationItem}>
+							<NavLink exact  to={data.url} className={classes.navigationLink}>
+								{data.name}
+							</NavLink>
+						</div>
 					);
 				})}
 			</div>
