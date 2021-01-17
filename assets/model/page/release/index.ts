@@ -5,7 +5,8 @@ const release = [
 		details:[
 			"Fixed image reference issue",
 			"Added announcements sections",
-			"Refactoring"
+			"Refactoring",
+			"Added explore feature"
 		]
 	},
 	{

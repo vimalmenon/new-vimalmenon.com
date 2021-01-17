@@ -5,7 +5,7 @@ import {
 	createStyles,
 	Theme
 } from "@material-ui/core/styles";
-import { Container, TextFormat } from "component";
+import { Container, PageTitle, TextFormat } from "component";
 
 import {page} from "model";
 
@@ -13,6 +13,13 @@ const {aboutMe} = page;
 const useStyles = makeStyles((theme:Theme ) => {
 	return createStyles({
 		root: {
+			display: "flex",
+			flexDirection: "column"
+		},
+		title:{
+			display: "flex",
+		},
+		content:{
 			display: "flex",
 			flexDirection: "column"
 		},
@@ -31,13 +38,18 @@ const AboutMe:React.FC = () => {
 	return(		
 		<Container>
 			<div className={classes.root}>
-				{aboutMe.description.map((value, key) => {
-					return (
-						<div key={key} className={classes.items}>
-							<TextFormat text={value} />
-						</div>
-					);
-				})}
+				<div className={classes.title}>
+					<PageTitle title={"About Me"} />
+				</div>
+				<div className={classes.content}>
+					{aboutMe.description.map((value, key) => {
+						return (
+							<div key={key} className={classes.items}>
+								<TextFormat text={value} />
+							</div>
+						);
+					})}
+				</div>
 			</div>
 		</Container>
 	);

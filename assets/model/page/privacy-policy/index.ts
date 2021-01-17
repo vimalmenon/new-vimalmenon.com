@@ -1,7 +1,4 @@
 export default `
-
-    <h1>Privacy Policy for Vimal Menon</h1>
-
     <p>At VimalMenon, accessible from https://vimalmenon.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by VimalMenon and how we use it.</p>
 
     <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>

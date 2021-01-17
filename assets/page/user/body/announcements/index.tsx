@@ -4,7 +4,7 @@ import {
 	makeStyles,
 	createStyles
 } from "@material-ui/core/styles";
-import { Container } from "component";
+import { Container, PageTitle } from "component";
 
 import {page} from "model";
 
@@ -15,29 +15,41 @@ const useStyles = makeStyles(() => {
 			display: "flex",
 			flexDirection: "column"
 		},
+		title:{
+			display: "flex",
+		},
+		content:{
+			display: "flex",
+			flexDirection: "column"
+		}
 	});
 });
 
 const Announcements:React.FC = () => {
 	const classes = useStyles();
 	return (
-		<div className={classes.root}>
-			<Container>
-				{full.map((data, key) => {
-					return (
-						<div key={key}>
-							<div>
-								{data.title}
-								{data.date}
+		<Container>
+			<div className={classes.root}>
+				<div className={classes.title}>
+					<PageTitle title={"Announcements"} />
+				</div>
+				<div className={classes.content}>
+					{full.map((data, key) => {
+						return (
+							<div key={key}>
+								<div>
+									{data.title}
+									{data.date}
+								</div>
+								<div>
+									{data.description}
+								</div>
 							</div>
-							<div>
-								{data.description}
-							</div>
-						</div>
-					);
-				})}
-			</Container>
-		</div>
+						);
+					})}
+				</div>
+			</div>
+		</Container>
 	);
 };
 

@@ -6,12 +6,19 @@ import {
 	Theme
 } from "@material-ui/core/styles";
 import {page, pageConfig} from "model";
-import {Container, YTPlayer} from "component";
+import {Container, PageTitle, YTPlayer} from "component";
 const {xl} = pageConfig.common.youTube;
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		root: {
+			display: "flex",
+			flexDirection:"column"
+		},
+		title:{
+			display: "flex",
+		},
+		content:{
 			display: "flex",
 			flexDirection:"column"
 		},
@@ -65,37 +72,42 @@ const Tutorials:React.FC = () => {
 	return (
 		<Container dark={false}>
 			<div className={classes.root}>
-				{full.map((tutorial, key) => {
-					return (
-						<div key={key} className={classes.tutorialsContainer}>
-							<div className={classes.tutorialsTitle}>
-								{tutorial.title}
-							</div>
-							<div className={classes.tutorialsContent}>
-								{tutorial.videos.map((video, innerKey) => {
-									return (
-										<div key={innerKey} className={classes.tutorialContainer}>
-											<div className={classes.tutorialPlayerContainer}>
-												<YTPlayer 
-													videoId={video.videoId} 
-													videoName={video.name} 
-													className={classes.tutorialPlayer}/>
+				<div className={classes.title}>
+					<PageTitle title={"Tutorials"} />
+				</div>
+				<div className={classes.content}>
+					{full.map((tutorial, key) => {
+						return (
+							<div key={key} className={classes.tutorialsContainer}>
+								<div className={classes.tutorialsTitle}>
+									{tutorial.title}
+								</div>
+								<div className={classes.tutorialsContent}>
+									{tutorial.videos.map((video, innerKey) => {
+										return (
+											<div key={innerKey} className={classes.tutorialContainer}>
+												<div className={classes.tutorialPlayerContainer}>
+													<YTPlayer 
+														videoId={video.videoId} 
+														videoName={video.name} 
+														className={classes.tutorialPlayer}/>
+												</div>
+												<div className={classes.tutorialDescription}>
+													<span>
+														{video.name}
+													</span>
+													<span>
+														{video.publishedDate}
+													</span>
+												</div>
 											</div>
-											<div className={classes.tutorialDescription}>
-												<span>
-													{video.name}
-												</span>
-												<span>
-													{video.publishedDate}
-												</span>
-											</div>
-										</div>
-									);
-								})}
+										);
+									})}
+								</div>
 							</div>
-						</div>
-					);
-				})}
+						);
+					})}
+				</div>
 			</div>
 		</Container>
 	);
