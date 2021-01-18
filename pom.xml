@@ -16,6 +16,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<application.version>0.0.1-SNAPSHOT</application.version>
 	</properties>
 
 	<dependencies>
