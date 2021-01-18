@@ -5,10 +5,10 @@ import com.vimalmenon.application.common.enums.ResponseCode;
 public class ApiResponseModel<T> {
 
   private ResponseCode responseCode = ResponseCode.SUCCESS;
-  public int code = responseCode.code;
-  public String message = responseCode.msg;
-  public boolean flush;
-  public T data;
+  private int code = responseCode.code;
+  private String message = responseCode.msg;
+  private boolean flush;
+  private T data;
 
   public ApiResponseModel<T> setFlush(boolean flush) {
     this.flush = flush;
@@ -28,5 +28,21 @@ public class ApiResponseModel<T> {
   public ApiResponseModel<T> setCode(int code) {
     this.code = code;
     return this;
+  }
+
+  public int getCode() {
+    return this.code;
+  }
+
+  public String getMessage() {
+    return this.message;
+  }
+
+  public T getData() {
+    return this.data;
+  }
+  
+  public boolean getFlush() {
+    return this.flush;
   }
 }
