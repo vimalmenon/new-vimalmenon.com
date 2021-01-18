@@ -1,11 +1,13 @@
 package com.vimalmenon.application.common.enums;
 
 public enum ResponseCode {
-  SUCCESS(0, "SUCCESS", null), URL_NOT_FOUND(1, "The requested URL is not found", "The requested URL(%s) is not found");
+  SUCCESS(0, "SUCCESS", null), 
+  OFFLINE(1, "Page offline", null),
+  URL_NOT_FOUND(2, "The requested URL is not found", "The requested URL(%s) is not found");
 
-  public int code;
-  public String msg;
-  public String serverMsg;
+  public final int code;
+  public final String msg;
+  public final String serverMsg;
 
   private ResponseCode(int code, String msg, String serverMsg) {
     this.code = code;

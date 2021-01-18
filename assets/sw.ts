@@ -17,7 +17,8 @@ const cacheList = [
 	"/fonts/image1.jpg",
 	"/fonts/image2.jpg",
 	"/fonts/image3.jpg",
-	"/fonts/manifest.webmanifest"
+	"/fonts/manifest.webmanifest",
+	"/api/offline"
 ];
 
 const whiteListed = [

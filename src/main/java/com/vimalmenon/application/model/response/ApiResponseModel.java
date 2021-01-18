@@ -25,7 +25,7 @@ public class ApiResponseModel<T> {
     return this;
   }
   
-  public ApiResponseModel<T> setCode (int code) {
+  public ApiResponseModel<T> setCode(int code) {
     this.code = code;
     return this;
   }
