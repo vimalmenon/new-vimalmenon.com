@@ -20,14 +20,20 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		title:{
 			display: "flex",
+			margin:theme.spacing(2,0)
 		},
 		content:{
 			display: "flex",
 			flexDirection: "column",
 			lineHeight:paragraph.lineHeight,
 			fontSize:paragraph.fontSize,
+			margin:theme.spacing(2,0),
 			"& a":{
 				color:theme.palette.text.primary
+			},
+			"& >div >div":{
+				textIndent:"5em",
+				margin:theme.spacing(1,0)
 			}
 		}
 	});
