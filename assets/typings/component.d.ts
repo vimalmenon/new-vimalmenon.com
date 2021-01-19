@@ -7,8 +7,9 @@ interface IEntitlement<T> {
 }
 
 interface IContainer {
-    dark?:boolean; 
-    children:ChilderenType
+    dark?:boolean;
+    className?:string;
+    children:ChilderenType;
 }
 
 interface IPageTitle {

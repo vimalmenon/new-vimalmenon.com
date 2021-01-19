@@ -9,7 +9,9 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { Container } from "component";
 
+import Form from "./form";
 
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
@@ -18,8 +20,19 @@ const useStyles = makeStyles((theme: Theme) => {
 			flexDirection: "column",
 			backgroundColor: theme.palette.background.paper,
 			color: theme.palette.text.primary,
-			flex:"1 1 100%"
+			flex:"1 1 100%",
+			minHeight:"100vh"
 		},
+		container: {
+			display: "flex",
+			flex:"1 1 100%",
+		},
+		formContainer:{
+			display: "flex",
+			flex:"1 1 100%",
+			justifyContent:"center",
+			alignItems:"center"
+		}
 	});
 });
 const Login:React.FC = () => {
@@ -27,8 +40,12 @@ const Login:React.FC = () => {
 	return (
 		<section className={classes.root}>
 			<CssBaseline />
-			<Header />
-			this is login page
+			<Header />			
+			<Container className={classes.container}>
+				<div className={classes.formContainer}>
+					<Form />
+				</div>
+			</Container>
 			<Footer />
 		</section>
 	);

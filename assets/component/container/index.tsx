@@ -30,10 +30,10 @@ const useStyles = makeStyles((theme: Theme) => {
 	});
 });
 
-const Container:React.FC<IContainer> = ({dark=false, children}) => {
+const Container:React.FC<IContainer> = ({dark=false, children, className}) => {
 	const classes = useStyles(dark);
 	return (
-		<div className={clsx(classes.root)}>
+		<div className={clsx(classes.root,className)}>
 			<div className={classes.container}>
 				{children}
 			</div>
