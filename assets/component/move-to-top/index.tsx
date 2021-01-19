@@ -10,6 +10,8 @@ import {animateScroll} from "react-scroll";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import Tooltip from "@material-ui/core/Tooltip/Tooltip";
 
+//import {scrollSpy} from "react-scroll";
+
 const useStyles = makeStyles(() => {
 	return createStyles({
 		root: {
@@ -32,9 +34,17 @@ const useStyles = makeStyles(() => {
 });
 
 const MoveToTop:React.FC = () => {
+	/*
+	const [pos, setPos] = React.useState<number>(0);
+	React.useEffect(() => {
+		scrollSpy.addSpyHandler((x, y) => {
+			setPos(y);
+		}, document);
+	},[]);
+	*/
 	const classes = useStyles();
 	return (
-		<Tooltip title="Move to top">
+		<Tooltip title="Top">
 			<div className={classes.root} onClick={() => animateScroll.scrollToTop()}>
 				<ExpandLessIcon className={classes.icon}/>
 			</div>
