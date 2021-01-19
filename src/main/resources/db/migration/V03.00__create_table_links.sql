@@ -11,10 +11,10 @@ CREATE TABLE links (
 );
 
 insert into links (name, title, url, type, sequence, is_active)
-select "YouTube", "YouTube", "https://www.youtube.com/channel/UCjNZaCFrHPmgmYRmEud7f_A",id, 1, 1 from link_types where name ="SOCIAL_MEDIA";
+select "YouTube", "YouTube", "https://www.youtube.com/channel/UCjNZaCFrHPmgmYRmEud7f_A",id,1,1 from link_types where name ="SOCIAL_MEDIA";
 
 insert into links (name, title, url, type, sequence,is_active)
-select "Twitter","Twitter","https://twitter.com/VimalMenon13",id ,2,1 from link_types where name ="SOCIAL_MEDIA";
+select "Twitter","Twitter","https://twitter.com/VimalMenon13",id,2,1 from link_types where name ="SOCIAL_MEDIA";
 
 
 insert into links (name, title, url, type, sequence, is_active)
