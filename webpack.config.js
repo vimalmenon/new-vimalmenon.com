@@ -114,6 +114,7 @@ module.exports = {
             "service": path.resolve(__dirname, "./assets/service"),
             "action": path.resolve(__dirname, "./assets/store/action"),
             "const" : path.resolve(__dirname, "./assets/const"),
+            "enums" :path.resolve(__dirname,"./assets/const/enums"),
             "image": path.resolve(__dirname, "./assets/image/"),
         }
     }
