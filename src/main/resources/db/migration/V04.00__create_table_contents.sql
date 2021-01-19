@@ -3,5 +3,5 @@ CREATE TABLE contents (
    content text NOT NULL,
    type ENUM('short', 'full') NOT NULL,
    last_updated_date VARCHAR (50) NOT NULL,
-   PRIMARY KEY (id),
+   PRIMARY KEY (id)
 );
