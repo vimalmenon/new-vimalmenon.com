@@ -5,6 +5,7 @@ const release = [
 		details:[
 			"Fixed image reference issue",
 			"Pages: announcements page",
+			"Move to top feature added",
 			"Added explore section",
 			"Added latest section",
 			"Refactoring",
@@ -50,6 +51,7 @@ const release = [
 	},
 ];
 const bugs = [
+	`Refresh fails on all navigations except home page`
 ];
 const features = [
 	"Navigation : Animation should be different in Hover and Active elements",

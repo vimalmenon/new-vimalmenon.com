@@ -61,7 +61,13 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		tutorialDescription : {
 			display:"flex",
-			justifyContent:"space-between"
+			justifyContent:"space-between",
+			fontSize:"1.2em",
+			margin:theme.spacing(1,0),
+			alignItems:"center"
+		},
+		publishedDate: {
+			fontSize:"0.8em"
 		}
 	});
 });
@@ -96,7 +102,7 @@ const Tutorials:React.FC = () => {
 													<span>
 														{video.name}
 													</span>
-													<span>
+													<span className={classes.publishedDate}>
 														{video.publishedDate}
 													</span>
 												</div>
