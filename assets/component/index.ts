@@ -11,12 +11,14 @@ import PageTitle from "./page-title";
 import TextFormat from "./text-format";
 import YTPlayer from "./yt-player";
 import useMap from "./map";
+import MoveToTop from "./move-to-top";
 
 export {
 	SocialMediaMoble,
 	Entitlement,
 	ToggleTheme,
 	SocialMedia,
+	MoveToTop,
 	TextFormat,
 	PageTitle,
 	Container,
