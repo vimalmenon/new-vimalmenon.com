@@ -3,14 +3,15 @@ import React from "react";
 
 import {
 	makeStyles,
-	createStyles
+	createStyles,
+	Theme
 } from "@material-ui/core/styles";
 
 import {animateScroll} from "react-scroll";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import Tooltip from "@material-ui/core/Tooltip/Tooltip";
 
-const useStyles = makeStyles(() => {
+const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		root: {
 			display:"flex",
@@ -26,6 +27,7 @@ const useStyles = makeStyles(() => {
 		},
 		icon : {
 			fontSize:"3em",
+			color:"white"
 		}
 	});
 });
