@@ -11,11 +11,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class LinkManager {
 
+    private static final String SOCIAL_MEDIA="SOCIAL_MEDIA";
+
     @Autowired
     private LinkRepository linkRepository;
 
     public List<Link> getLinks() {
-        return linkRepository.findByLinkTypeName("SOCIAL_MEDIA");
+        return linkRepository.findByLinkTypeName(SOCIAL_MEDIA);
 	}
 
 }

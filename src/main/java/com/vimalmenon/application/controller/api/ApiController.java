@@ -1,6 +1,7 @@
 package com.vimalmenon.application.controller.api;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,6 +16,7 @@ import com.vimalmenon.application.service.entitlements.ComponentEntitlementServi
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,8 +49,19 @@ public class ApiController {
         .setData(componentEntitlementService.checkEntitlement(entitlementModel));
   }
 
+  @GetMapping("/tutorials")
+  public String getTutorials () {
+    return "reading";
+  }
+
+  @GetMapping({"/topic/{subject}", "/topic/{subject}/{type}"})
+  public String getTopics (@PathVariable("subject") String subject, @PathVariable("type") Optional<String> type) {
+    return "Vimal Menon " + subject + " " + type;
+  }
   @RequestMapping(value = "**")
   public void urlNotFound(HttpServletRequest request) {
     throw new UrlNotFoundException(request.getRequestURI());
   }
+
+  
 }
