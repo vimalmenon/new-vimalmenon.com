@@ -1,13 +1,12 @@
 package com.vimalmenon.application.controller.api;
 
-import java.util.List;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 
 import com.vimalmenon.application.common.exceptions.OfflineException;
 import com.vimalmenon.application.common.exceptions.UrlNotFoundException;
-import com.vimalmenon.application.data.links.Link;
+import com.vimalmenon.application.model.controller.ApiModel;
 import com.vimalmenon.application.model.others.ComponentEntitlementModel;
 import com.vimalmenon.application.model.others.ReadWriteModel;
 import com.vimalmenon.application.model.response.ApiResponseModel;
@@ -33,8 +32,8 @@ public class ApiController {
   private ControllerService controllerService;
 
   @GetMapping("")
-  public ApiResponseModel< List<Link>> api() {
-    return new ApiResponseModel< List<Link>>().setData(controllerService.getApi());
+  public ApiResponseModel<ApiModel> api() {
+    return new ApiResponseModel<ApiModel>().setData(controllerService.getApi());
   }
 
   @GetMapping("/offline")
@@ -49,12 +48,17 @@ public class ApiController {
         .setData(componentEntitlementService.checkEntitlement(entitlementModel));
   }
 
+  @GetMapping("/topics")
+  public String getTopics () {
+    return controllerService.getTopics();
+
+  }
   @GetMapping("/tutorials")
   public String getTutorials () {
     return "reading";
   }
 
-  @GetMapping({"/topic/{subject}", "/topic/{subject}/{type}"})
+  @GetMapping({"/content/{subject}", "/content/{subject}/{type}"})
   public String getTopics (@PathVariable("subject") String subject, @PathVariable("type") Optional<String> type) {
     return "Vimal Menon " + subject + " " + type;
   }
@@ -62,6 +66,5 @@ public class ApiController {
   public void urlNotFound(HttpServletRequest request) {
     throw new UrlNotFoundException(request.getRequestURI());
   }
-
   
 }

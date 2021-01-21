@@ -1,2 +1,9 @@
 https://nightwatchjs.org/gettingstarted/installation/
 https://github.com/garris/BackstopJS
+
+
+
+API Controller model
+    Social Medias
+
+
