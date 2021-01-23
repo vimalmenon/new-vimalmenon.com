@@ -8,6 +8,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LinkRepository extends JpaRepository<Link, Integer> {
-
-    public List<Link> findByLinkTypeName(String name);
+    public List<Link> findByNameIn(String[] values);
 }

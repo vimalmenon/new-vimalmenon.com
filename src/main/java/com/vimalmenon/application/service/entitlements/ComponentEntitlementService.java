@@ -9,7 +9,13 @@ import org.springframework.stereotype.Service;
 public class ComponentEntitlementService {
 
 	public ReadWriteModel checkEntitlement(ComponentEntitlementModel entitlementModel) {
-        return new ReadWriteModel();
+		ReadWriteModel readWriteModel = new ReadWriteModel();
+		if(entitlementModel.getName().equals("LoginPage")) {
+			readWriteModel.setRead(true);
+			readWriteModel.setWrite(true);
+			return readWriteModel;
+		}
+        return readWriteModel;
 	}
     
 }

@@ -1,4 +1,4 @@
-package com.vimalmenon.application.data.links;
+package com.vimalmenon.application.data.tutorials;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,9 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "link_types")
-public class LinkType {
- 
+@Table(name = "topics")
+public class Topic {
+
     @Id
     private int id;
 
@@ -30,8 +30,5 @@ public class LinkType {
     public void setName(String name) {
         this.name = name;
     }
-    
 
-    
-    
 }
