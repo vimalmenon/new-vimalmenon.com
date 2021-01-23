@@ -6,4 +6,8 @@ https://github.com/garris/BackstopJS
 API Controller model
     Social Medias
 
+Topic model
+    topics
 
+Tutorial model
+    tutorials
