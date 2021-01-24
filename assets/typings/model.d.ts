@@ -6,3 +6,10 @@ interface INavigation {
 }
 interface IModel {
 }
+
+interface IApi {
+    name: string;
+    method : string;
+    url : string;
+    body?: string;
+}

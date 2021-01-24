@@ -1,11 +1,6 @@
 import { METHODS } from "enums";
 
-interface IApi {
-    name: string;
-    method : string;
-    url : string;
-    body?: string;
-}
+
 
 export class Api implements IApi{
 	public name;

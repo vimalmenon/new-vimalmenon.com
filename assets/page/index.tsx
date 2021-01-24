@@ -21,6 +21,8 @@ const Admin = loadable(() => import( /* webpackChunkName: "admin" */ /* webpackM
 import {Loading} from "component";
 import {init} from "./index.service";
 
+import {Spinner} from "react-redux-spinner";
+
 const Page:React.FC = () => {
 	const config = useSelector<IState, IConfig>((state) => state.config);
 	const {loading, themeType} = config;
@@ -44,6 +46,7 @@ const Page:React.FC = () => {
 					</Switch>
 				</Router>
 			}
+			<Spinner config={{}}/>
 		</ThemeProvider>
 	);
 };
