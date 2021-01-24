@@ -3,10 +3,14 @@ package com.vimalmenon.application.manager.database.links;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.vimalmenon.application.data.links.Link;
 import com.vimalmenon.application.data.links.LinkRepository;
 
+
+
+@Service
 public class LinkManager {
 
 	@Autowired
@@ -14,7 +18,7 @@ public class LinkManager {
 
 	private static final String[] SOCIAL_MEDIA_LINKS = { "YouTube", "Twitter", "Instagram" };
 
-	public List<Link> getLinks() {
+	public List<Link> getSocialMedias() {
 		return linkRepository.findByNameIn(SOCIAL_MEDIA_LINKS);
 	}
 

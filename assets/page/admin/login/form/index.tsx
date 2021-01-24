@@ -26,7 +26,8 @@ const useStyles = makeStyles((theme: Theme) => {
 		root: {
 			display: "flex",
 			width:"800px",
-			flexDirection:"column"
+			flexDirection:"column",
+			fontSize:"1.2em"
 		},
 		inputFieldContainer:{
 			display:"flex",
