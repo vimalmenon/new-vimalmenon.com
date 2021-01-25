@@ -26,6 +26,20 @@ const common = {
 			}
 
 		}
+	},
+	paragraph:{
+		textIndent: "5em",
+		fontSize:"1.2em",
+		lineHeight:"2em"
+	},
+	smallText:{
+		fontSize:"0.8em",
+	},
+	text:{
+		fontSize:"1.2em",
+	},
+	headingText: {
+		fontSize:"2em",
 	}
 };
 

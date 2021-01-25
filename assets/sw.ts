@@ -13,6 +13,7 @@ const cacheList = [
 	"/fonts/light.png",
 	"/core.worker.worker.js",
 	"/fonts/192x192.png",
+	"/fonts/512x512.png",
 	"/fonts/image1.jpg",
 	"/fonts/image2.jpg",
 	"/fonts/image3.jpg",
@@ -55,4 +56,8 @@ self.addEventListener("fetch", (event:any) => {
 				return fetch(event.request);
 			})
 	);
+});
+
+self.addEventListener('beforeinstallprompt', (e) => {
+	console.log("this is called");
 });

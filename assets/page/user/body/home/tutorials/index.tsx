@@ -13,9 +13,10 @@ import { useHistory } from "react-router-dom";
 import {Container, PageTitle, YTPlayer, ReadMore} from "component";
 import {page, pageConfig} from "model";
 
-const {xl, xs} = pageConfig.common.youTube;
+const {youTube, text, smallText} = pageConfig.common;
 
-const tutorials = page.tutorials;
+const {xl, xs} = youTube;
+const {short} = page.tutorials;
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
@@ -58,7 +59,12 @@ const useStyles = makeStyles((theme:Theme) => {
 		videoDetail :{
 			display:"flex",
 			justifyContent:"space-between",
-			margin:theme.spacing(1,0)
+			margin:theme.spacing(1,0),
+			alignItems:"center",
+			...text
+		},
+		videoDetailPublishedDate:{
+			...smallText
 		},
 		youTubePlayerContainer: {
 			display:"flex",
@@ -73,7 +79,7 @@ const useStyles = makeStyles((theme:Theme) => {
 		}
 	});
 });
-const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
+const Tutorials:React.FC<IPagesProps> = ({dark}) => {
 	const classes = useStyles();
 	const {push} = useHistory();
 	const onViewAll = () => push("/tutorials");
@@ -84,7 +90,7 @@ const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 					<PageTitle title="Tutorials" />
 				</div>
 				<div className={classes.content}>
-					{tutorials.map((tutorial, key) => {
+					{short.map((tutorial, key) => {
 						return (
 							<div key={key} className={classes.contentItem}>
 								<div className={classes.contentTitle}>
@@ -102,7 +108,7 @@ const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 														<span>
 															{video.name}
 														</span>
-														<span>
+														<span className={classes.videoDetailPublishedDate}>
 															{video.publishedDate}
 														</span>
 													</div>
@@ -116,7 +122,7 @@ const Tutorials:React.FC<{dark:boolean}> = ({dark}) => {
 					})}
 				</div>
 				<div className={classes.footer}>
-					<ReadMore text={"View all"} onReadMore={onViewAll}/>
+					<ReadMore text={"View All"} onReadMore={onViewAll}/>
 				</div>
 			</Container>
 		</Element>

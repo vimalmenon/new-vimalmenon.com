@@ -1,11 +1,13 @@
-import {home, pageNotFound, privacyPolicy, tutorialsPage, aboutUs} from "./main-navigation";
+import {home, pageNotFound, privacyPolicy, tutorialsPage, aboutMePage, release, announcements} from "./main-navigation";
 
 const navigationByUrl = {
 	[home.url]:home,
-	[aboutUs.url]:aboutUs,
+	[aboutMePage.url]:aboutMePage,
 	[pageNotFound.url]:pageNotFound,
 	[privacyPolicy.url]:privacyPolicy,
-	[tutorialsPage.url]:tutorialsPage
+	[tutorialsPage.url]:tutorialsPage,
+	[release.url]:release,
+	[announcements.url]:announcements
 };
 
 export default navigationByUrl;

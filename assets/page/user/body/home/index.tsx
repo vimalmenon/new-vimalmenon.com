@@ -18,6 +18,7 @@ import Hero from "./hero";
 import AboutUs from "./about-us";
 import Tutorials from "./tutorials";
 import ContactUs from "./contact-us";
+import { MoveToTop } from "component";
 
 const Home:React.FC = ()=> {
 	const classes = useStyles();
@@ -27,6 +28,7 @@ const Home:React.FC = ()=> {
 			<AboutUs dark={false}/>
 			<Tutorials dark={true}/>
 			<ContactUs dark={false}/>
+			<MoveToTop />
 		</div>
 	);
 };

@@ -22,7 +22,8 @@ module.exports =  {
         "VERSION":"readonly",
         "setTimeout":"readonly",
         "window":"readonly",
-        "self":"readonly"
+        "self":"readonly",
+        "showInstallPromotion":"readonly"
     },
     rules:  {
       "no-console": 1,

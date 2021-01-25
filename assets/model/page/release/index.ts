@@ -1,7 +1,19 @@
 const release = [
 	{
+		versionNo:"v0.0.4.a",
+		buildDate:"25 Jan 2021",
+		details:[
+			"Fixed image reference issue",
+			"Pages: announcements page",
+			"Move to top feature added",
+			"Added explore section",
+			"Added latest section",
+			"Refactoring",
+		]
+	},
+	{
 		versionNo:"v0.0.3.a",
-		buildDate:"17 Jan 2021",
+		buildDate:"16 Jan 2021",
 		details:[
 			"New Logo design",
 			"New Favicon",
@@ -16,7 +28,6 @@ const release = [
 	{
 		versionNo:"v0.0.2.a",
 		buildDate:"10 Jan 2021",
-		show:false,
 		details:[
 			"Introduced Service worker",
 			"PWA feature",
@@ -32,7 +43,6 @@ const release = [
 	{
 		versionNo:"v0.0.1.a",
 		buildDate:"02 Jan 2021",
-		show:false,
 		details:[
 			"Website hosted",
 			"Added basic page",
@@ -41,15 +51,12 @@ const release = [
 	},
 ];
 const bugs = [
-	"YouTube Player should be adjusted to media screen : Currently supporting larger screens only",
-	"PWA not working in mobile versions",
-	"Rendering very bad on the mobiles",
-	"Issue with carousel on the home page",
-	"Routes don't work on Refresh"
+	`Refresh fails on all navigations except home page`
 ];
 const features = [
-	"Navigation Section : Animation should be different in Hover and active elements",
-	"Backend Support : (Java Spring boot)"
+	"Navigation : Animation should be different in Hover and Active elements",
+	"Backend : (Java Spring boot)",
+	"PWA installable on mobile"
 ];
 
 export {

@@ -7,7 +7,7 @@ import {
 } from "@material-ui/core/styles";
 
 
-import {icon} from "model";
+import {icon, page} from "model";
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
 		root: {
@@ -43,7 +43,7 @@ const EarlyRelease:React.FC = () => {
 			<section className={classes.root}>
 				<div className={classes.container}>
 					<span>
-						This website is in early release (alpha), so some features are not complete or cemented. Please be aware that some pages might be missing or some features might not work as expected.
+						{page.home.earlyRelease}
 					</span>
 					<Close onClick={() => setShow(false)}/>
 				</div>

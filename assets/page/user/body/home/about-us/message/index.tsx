@@ -6,10 +6,13 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
-import {page} from "model";
+import {page, pageConfig} from "model";
 
 import {TextFormat} from "component";
 
+const {paragraph} = pageConfig.common;
+
+const {aboutMe} = page;
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		root : {
@@ -19,10 +22,8 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		items: {
 			display:"flex",
-			textIndent: "5em",
 			margin:theme.spacing(2,0),
-			fontSize:"1.2em",
-			lineHeight:"2em"
+			...paragraph,
 		}
 	});
 });
@@ -31,7 +32,7 @@ const Message:React.FC = () => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			{page.home.aboutMe.description.map((value, key) => {
+			{aboutMe.description.map((value, key) => {
 				return (
 					<div key={key} className={classes.items}>
 						<TextFormat text={value} />

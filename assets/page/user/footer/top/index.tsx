@@ -6,6 +6,10 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
+import Latest from "./latest";
+import Explore from "./explore";
+
+
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		root: {
@@ -30,16 +34,14 @@ const useStyles = makeStyles((theme:Theme) => {
 });
 const Bottom:React.FC = () => {
 	const classes = useStyles();
-	const [show] = React.useState<boolean>(false);
-	if (show) {
-		return (
-			<div className={classes.root}>
-				<div className={classes.container}>
-				</div>
+	return (
+		<div className={classes.root}>
+			<div className={classes.container}>
+				<Latest />
+				<Explore />
 			</div>
-		);
-	}
-	return null;
+		</div>
+	);
 };
 
 export default Bottom;

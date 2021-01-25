@@ -29,6 +29,13 @@ export const pageNotFound:INavigation = {
 	inPage:false
 };
 
+export const latest:INavigation = {
+	name: "Latest",
+	url : "latest",
+	title: `Latest | ${home.title}`,
+	inPage:false
+};
+
 export const tutorialsPage:INavigation = {
 	name: "Tutorials",
 	url : "/tutorials",
@@ -41,10 +48,22 @@ export const privacyPolicy:INavigation ={
 	title: `Privacy Policy | ${home.title}`,
 	inPage:false
 };
-export const aboutUs:INavigation = {
-	name: "About Us",
+export const aboutMePage:INavigation = {
+	name: "About Me",
 	url : "/about-me",
-	title: `About Us | ${home.title}`,
+	title: `About Me | ${home.title}`,
+	inPage:false
+};
+export const announcements:INavigation = {
+	name: "Announcements",
+	url : "/announcements",
+	title: `Announcements | ${home.title}`,
+	inPage:false
+};
+export const release:INavigation = {
+	name: "Release",
+	url : "/release",
+	title: `Release | ${home.title}`,
 	inPage:false
 };
 const mainNavigation:INavigation[] = [
@@ -54,11 +73,19 @@ const mainNavigation:INavigation[] = [
 ];
 const otherNavigation:INavigation[] = [
 	home,
-	aboutUs,
+	aboutMePage,
 	tutorialsPage
 ];
-
+const exploreNavigation:INavigation[] = [
+	home,
+	aboutMePage,
+	tutorialsPage,
+	announcements,
+	release,
+	privacyPolicy
+];
 export {
+	exploreNavigation,
 	mainNavigation,
 	otherNavigation
 };
