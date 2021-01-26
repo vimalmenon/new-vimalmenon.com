@@ -18,7 +18,13 @@ export class Api implements IApi{
 	}
 }
 
+class MainApi extends Api {
+	constructor() {
+		super("api", METHODS.GET, "/api");
+	}
+}
 
 
 export default {
+	MainApi
 };

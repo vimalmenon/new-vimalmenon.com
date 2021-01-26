@@ -17,11 +17,8 @@ interface ISessionState {
 	group?: string;
 }
 interface ISocialMedia {
-	id:number;
 	name:string;
 	title:string;
-	label:string;
-	type: string;
 	url: string;
 }
 

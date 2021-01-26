@@ -42,11 +42,11 @@ const SocialMediaMobile:React.FC = () => {
 			onOpen={() => setOpen(true)}
 			open={open}
 			direction={"down"}>
-			{socialMedias.map(({id, name}) => {
+			{socialMedias.map(({name}, key) => {
 				const Icon = icon[name];
 				return (
 					<SpeedDialAction
-						key={id}
+						key={key}
 						icon={<Icon />}
 						tooltipTitle={name}/>);
 			})}

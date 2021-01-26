@@ -18,12 +18,12 @@ const SocialMedia = () => {
 	};
 	return (
 		<React.Fragment>
-			{socialMedias.map(({id, name, ...rest}) => {
+			{socialMedias.map(({name, ...rest}, key) => {
 				const Icon = icon[name];
 				return(
-					<Tooltip title={rest.title} aria-label={name} key={id}>
+					<Tooltip title={rest.title} aria-label={name} key={key}>
 						<Link href={rest.url} target="_blank" color="inherit" rel="noreferrer">
-							<IconButton color="inherit" aria-label={rest.label}>
+							<IconButton color="inherit" aria-label={rest.title}>
 								<Icon />
 							</IconButton>
 						</Link>
