@@ -1,6 +1,6 @@
 import {theme, ApiCaller} from "utility";
 import {api} from "model";
-import {misc} from "action";
+import {misc, config} from "action";
 import store from "store";
 
 export const init:IVoidNoParamMethod = () => {
@@ -9,5 +9,6 @@ export const init:IVoidNoParamMethod = () => {
 		.getPromise()
 		.then((data) => {
 			store.dispatch(misc.setSocialMedias(data.socialMedias));
+			store.dispatch(config.setLoading(false));
 		});
 };

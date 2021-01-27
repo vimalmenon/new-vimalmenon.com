@@ -8,13 +8,7 @@ export const setLocation = (value:string):IAction<{currentLocation:string}> => {
 		}
 	};
 };
-export const toggleTheme = ():IAction<null> => {
-	return {
-		type:type.TOGGLE_THEME_TYPE,
-		payload:null
-	};
-};
-export const setTheme = (themeType:ThemeType):IAction<{themeType:ThemeType}> => {
+export const setTheme:IReturnOneParamMethod<ThemeType,IAction<{themeType:ThemeType}>> = (themeType) => {
 	return {
 		type:type.SET_THEME_TYPE,
 		payload:{
@@ -22,5 +16,13 @@ export const setTheme = (themeType:ThemeType):IAction<{themeType:ThemeType}> => 
 		}
 	};
 };
+export const setLoading:IReturnOneParamMethod<boolean,IAction<{loading:boolean}>> = (loading) => {
+	return {
+		type:type.SET_LOADING,
+		payload : {
+			loading
+		}
+	}
+};
 
-export type actionTypes = IAction<{themeType:ThemeType, currentLocation:string}>;
+export type actionTypes = IAction<{themeType:ThemeType, currentLocation:string, loading:boolean}>;

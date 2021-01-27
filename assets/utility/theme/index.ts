@@ -13,7 +13,7 @@ const toggleTheme:IVoidNoParamMethod = () => {
 	const storageValue = storage.setLocalStorage().getValue();
 	const theme:ThemeType = storageValue[THEME]||DEFAULT_THEME;
 	storage.setLocalStorage().addValue({[THEME]:(theme==="light")?"dark":"light"});
-	store.dispatch(config.toggleTheme());
+	store.dispatch(config.setTheme((theme==="light")?"dark":"light"));
 };
 
 export default {
