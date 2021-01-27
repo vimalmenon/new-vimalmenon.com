@@ -1,8 +1,11 @@
 package com.vimalmenon.application.data.contents;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -12,11 +15,11 @@ public class Content {
 	@Id
 	private int id;
 
-	@Column(nullable = false, name = "content")
-	private String contentData;
+	@Column(nullable = false, name = "name")
+	private String name;
 
-	@Column(nullable = false, name = "last_updated")
-	private String lastUpdated;
+	@OneToMany(mappedBy="contentId")
+	private List<Data> data;
 
 	public int getId() {
 		return id;
@@ -26,20 +29,20 @@ public class Content {
 		this.id = id;
 	}
 
-	public String getContentData() {
-		return contentData;
+	public String getName() {
+		return name;
 	}
 
-	public void setContentData(String contentData) {
-		this.contentData = contentData;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getLastUpdated() {
-		return lastUpdated;
+	public List<Data> getData() {
+		return data;
 	}
 
-	public void setLastUpdated(String lastUpdated) {
-		this.lastUpdated = lastUpdated;
+	public void setData(List<Data> data) {
+		this.data = data;
 	}
 	
 }
