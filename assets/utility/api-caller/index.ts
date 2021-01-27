@@ -25,13 +25,20 @@ class ApiCaller<T> {
 					} else {
 						reject(response.data);
 					}
+				})
+				.catch((rejected) => {
+					if (this.isSpinning){
+						spinner.stopSpinner();
+						this.isSpinning = false;
+					}
+					reject(rejected);
 				});
 		});
 	}
 	public getPromise ():Promise<T> {
 		return this.promise;
 	}
-	public abort () {
+	public abort ():void {
 		if (this.isSpinning){
 			spinner.stopSpinner();
 			this.isSpinning = false;

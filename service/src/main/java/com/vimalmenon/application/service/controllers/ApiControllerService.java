@@ -23,6 +23,12 @@ public class ApiControllerService {
 		return model;
 	}
 	
+	public String getContent (String content) {
+		return "Api Controller Service : " + content;
+	}
+	public String getContent(String content, String type) {
+		return "Api Controller Service : " + content + " : " + type;
+	}
 	
 	private List<SocialMediaModel> getSocialMedias () {
 		List<SocialMediaModel> socialMedias = new ArrayList<>();

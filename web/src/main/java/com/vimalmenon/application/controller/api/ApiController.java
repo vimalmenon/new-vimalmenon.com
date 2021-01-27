@@ -1,9 +1,12 @@
 package com.vimalmenon.application.controller.api;
 
+import java.util.Optional;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,10 +32,14 @@ public class ApiController {
 	public String offline() {
 		throw new OfflineException();
 	}
+	@GetMapping({"/content/{content}", "/content/{content}/{type}"})
+	public String getContent (@PathVariable("content") String content, @PathVariable(value="type",required = false) Optional<String> type) {
+		if (type.isPresent()) {
+			return apiControllerService.getContent(content, type.get());
+		}
 
-	@GetMapping("/api")
-	public void getApi() {
-
+		return apiControllerService.getContent(content);
+		
 	}
 
 	@RequestMapping(value = "**")
