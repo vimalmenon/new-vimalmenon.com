@@ -6,8 +6,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.vimalmenon.application.manager.database.content.ContentManager;
 import com.vimalmenon.application.manager.database.links.LinkManager;
 import com.vimalmenon.appliction.model.controller.ApiControllerModel;
+import com.vimalmenon.appliction.model.others.ContentModel;
+import com.vimalmenon.appliction.model.others.DataModel;
 import com.vimalmenon.appliction.model.others.SocialMediaModel;
 
 @Service
@@ -16,6 +19,9 @@ public class ApiControllerService {
 	
 	@Autowired
 	private LinkManager linkManager;
+
+	@Autowired
+	private ContentManager contentManager;
 	
 	public ApiControllerModel getApi () {
 		ApiControllerModel model = new ApiControllerModel();
@@ -40,6 +46,25 @@ public class ApiControllerService {
 			socialMedias.add(data);
 		});
 		return socialMedias;
+	}
+
+	public List<ContentModel> getContent() {
+		List<ContentModel> contentModels = new ArrayList<>();
+		
+		contentManager.geContent().forEach((content) -> {
+			ContentModel contentModel = new ContentModel();
+			contentModel.setName(content.getName());
+			System.out.println(content.getData());
+			/*List<DataModel> dataModels = new ArrayList<>();
+			content.getData().forEach((contentData) -> {
+				DataModel dataModel = new DataModel();
+				dataModel.setText(contentData.getText());
+				dataModel.setType(contentData.getType());
+				dataModels.add(dataModel);
+			});*/
+			contentModels.add(contentModel);
+		});
+		return contentModels;
 	}
 
 }

@@ -18,7 +18,7 @@ public class Content {
 	@Column(nullable = false, name = "name")
 	private String name;
 
-	@OneToMany(mappedBy="contentId")
+	@OneToMany(mappedBy = "contentId")
 	private List<Data> data;
 
 	public int getId() {

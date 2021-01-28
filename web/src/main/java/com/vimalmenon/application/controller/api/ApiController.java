@@ -1,5 +1,6 @@
 package com.vimalmenon.application.controller.api;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +15,7 @@ import com.vimalmenon.application.common.exceptions.OfflineException;
 import com.vimalmenon.application.common.exceptions.UrlNotFoundException;
 import com.vimalmenon.application.service.controllers.ApiControllerService;
 import com.vimalmenon.appliction.model.controller.ApiControllerModel;
+import com.vimalmenon.appliction.model.others.ContentModel;
 import com.vimalmenon.appliction.model.response.ApiResponseModel;
 
 @RestController
@@ -32,13 +34,15 @@ public class ApiController {
 	public String offline() {
 		throw new OfflineException();
 	}
-	@GetMapping({"/content/{content}", "/content/{content}/{type}"})
-	public String getContent (@PathVariable("content") String content, @PathVariable(value="type",required = false) Optional<String> type) {
-		if (type.isPresent()) {
-			return apiControllerService.getContent(content, type.get());
-		}
 
-		return apiControllerService.getContent(content);
+	@GetMapping({ "/content/{content}", "/content/{content}/{type}" })
+	public List<ContentModel> getContent(@PathVariable("content") String content,
+			@PathVariable(value = "type", required = false) Optional<String> type) {
+		if (type.isPresent()) {
+			//return apiControllerService.getContent(content, type.get());
+		}
+		//return apiControllerService.getContent(content);
+		return apiControllerService.getContent();
 		
 	}
 
