@@ -1,35 +1,25 @@
 package com.vimalmenon.appliction.model.others;
 
 public class DataModel {
-
-    private String content;
     
-    private String text;
+    private String data;
 
-    private String type;
+    private String lastUpdated;
 
-    public String getContent() {
-        return content;
+    public String getData() {
+        return data;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setData(String data) {
+        this.data = data;
     }
 
-    public String getText() {
-        return text;
+    public String getLastUpdated() {
+        return lastUpdated;
     }
 
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    public void setLastUpdated(String lastUpdated) {
+        this.lastUpdated = lastUpdated;
     }
     
 }

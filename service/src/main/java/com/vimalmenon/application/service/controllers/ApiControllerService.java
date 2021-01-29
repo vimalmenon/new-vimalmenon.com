@@ -10,6 +10,7 @@ import com.vimalmenon.application.manager.database.content.ContentManager;
 import com.vimalmenon.application.manager.database.links.LinkManager;
 import com.vimalmenon.appliction.model.controller.ApiControllerModel;
 import com.vimalmenon.appliction.model.others.ContentModel;
+import com.vimalmenon.appliction.model.others.DataModel;
 import com.vimalmenon.appliction.model.others.SocialMediaModel;
 
 @Service
@@ -54,6 +55,14 @@ public class ApiControllerService {
 			ContentModel contentModel = new ContentModel();
 			contentModel.setName(content.getName());
 			contentModel.setTitle(content.getTitle());
+			List<DataModel> contentDatas = new ArrayList<>();
+			content.getContentData().forEach(data -> {
+				DataModel dataModel = new DataModel();
+				dataModel.setData(data.getData());
+				dataModel.setLastUpdated(data.getLastUpdated());
+				contentDatas.add(dataModel);
+			});
+			contentModel.setData(contentDatas);
 			contentModels.add(contentModel);
 		});
 		return contentModels;
