@@ -1,4 +1,4 @@
-package com.vimalmenon.application.data.contents;
+package com.vimalmenon.application.data.database;
 
 import org.springframework.stereotype.Repository;
 

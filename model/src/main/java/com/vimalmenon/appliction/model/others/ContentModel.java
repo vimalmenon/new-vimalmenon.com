@@ -1,12 +1,11 @@
 package com.vimalmenon.appliction.model.others;
 
-import java.util.List;
 
 public class ContentModel {
 
 	private String name;
 
-    private List<DataModel> data;
+    private String title;
 
     public String getName() {
         return name;
@@ -16,14 +15,12 @@ public class ContentModel {
         this.name = name;
     }
 
-    public List<DataModel> getData() {
-        return data;
+    public String getTitle() {
+        return title;
     }
 
-    public void setData(List<DataModel> data) {
-        this.data = data;
+    public void setTitle(String title) {
+        this.title = title;
     }
-    
-
     
 }

@@ -45,7 +45,9 @@ const MoveToTop:React.FC = () => {
 	const classes = useStyles();
 	return (
 		<Tooltip title="Top">
-			<div className={classes.root} onClick={() => animateScroll.scrollToTop()}>
+			<div 
+				className={classes.root} 
+				onClick={() => animateScroll.scrollToTop()}>
 				<ExpandLessIcon className={classes.icon}/>
 			</div>
 		</Tooltip>

@@ -10,7 +10,6 @@ import com.vimalmenon.application.manager.database.content.ContentManager;
 import com.vimalmenon.application.manager.database.links.LinkManager;
 import com.vimalmenon.appliction.model.controller.ApiControllerModel;
 import com.vimalmenon.appliction.model.others.ContentModel;
-import com.vimalmenon.appliction.model.others.DataModel;
 import com.vimalmenon.appliction.model.others.SocialMediaModel;
 
 @Service
@@ -38,7 +37,7 @@ public class ApiControllerService {
 	
 	private List<SocialMediaModel> getSocialMedias () {
 		List<SocialMediaModel> socialMedias = new ArrayList<>();
-		linkManager.getSocialMedias().forEach((socialMedia) -> {
+		linkManager.getSocialMedias().forEach(socialMedia -> {
 			SocialMediaModel data = new SocialMediaModel();
 			data.setName(socialMedia.getName());
 			data.setTitle(socialMedia.getTitle());
@@ -51,17 +50,10 @@ public class ApiControllerService {
 	public List<ContentModel> getContent() {
 		List<ContentModel> contentModels = new ArrayList<>();
 		
-		contentManager.geContent().forEach((content) -> {
+		contentManager.geContent().forEach(content -> {
 			ContentModel contentModel = new ContentModel();
 			contentModel.setName(content.getName());
-			System.out.println(content.getData());
-			/*List<DataModel> dataModels = new ArrayList<>();
-			content.getData().forEach((contentData) -> {
-				DataModel dataModel = new DataModel();
-				dataModel.setText(contentData.getText());
-				dataModel.setType(contentData.getType());
-				dataModels.add(dataModel);
-			});*/
+			contentModel.setTitle(content.getTitle());
 			contentModels.add(contentModel);
 		});
 		return contentModels;
