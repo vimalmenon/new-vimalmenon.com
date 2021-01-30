@@ -9,10 +9,13 @@ import {
 	Theme
 } from "@material-ui/core/styles";
 
+import {api} from "model";
 
 import Form from "./form";
 import Message from "./message";
+import {ApiCaller} from "utility";
 
+const {ContactApi} = api;
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		element: {
@@ -33,14 +36,20 @@ const useStyles = makeStyles((theme:Theme) => {
 
 const ContactUs:React.FC<IPagesProps> = ({dark}) => {
 	const classes = useStyles();
+	const [data, setData] = React.useState<{title:string, data:string}>({title:"", data:""});
+	React.useEffect(() => {
+		new ApiCaller<{title:string, data:string}>(new ContactApi())
+			.getPromise()
+			.then(setData)
+	},[]);
 	return (
 		<Element name="contact-us" className={classes.element}>
 			<Container dark={dark}>
 				<div className={classes.title}>
-					<PageTitle title="Contact Us" />
+					<PageTitle title={data.title} />
 				</div>
 				<div className={classes.content}>
-					<Message />
+					<Message content={data.data}/>
 					<Form />
 				</div>
 			</Container>

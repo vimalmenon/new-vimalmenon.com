@@ -25,15 +25,11 @@ const useStyles = makeStyles((theme:Theme) => {
 	});
 });
 
-const Message:React.FC = () => {
+const Message:React.FC<{content:string}> = ({content}) => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			{contactUs.map((data, key) => {
-				return (
-					<TextFormat text={data} key={key} />
-				);
-			})}
+			<TextFormat text={content} />	
 			<div>
 				<SocialMedia />
 			</div>
