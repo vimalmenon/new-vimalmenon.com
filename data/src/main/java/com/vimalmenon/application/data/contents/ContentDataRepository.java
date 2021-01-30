@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ContentDataMappingRepository extends JpaRepository<ContentData, Integer> {
+public interface ContentDataRepository extends JpaRepository<ContentData, Integer> {
     
 }
