@@ -1,6 +1,6 @@
 package com.vimalmenon.application.data.contents;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ContentRepository extends JpaRepository<Content, Integer> {
 
-    public List<Content> findByNameAndContentDataIsActive(int isActive, String name);
+    public Optional<Content> findByNameAndContentDataIsActive(String name, int isActive);
 
-    public List<Content> findByNameAndContentDataIsActiveAndContentDataType(String name, int isActive, String type);
+    public Optional<Content> findByNameAndContentDataIsActiveAndContentDataType(String name, int isActive, String type);
 
 }

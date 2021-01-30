@@ -6,34 +6,43 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.vimalmenon.application.data.contents.Content;
 import com.vimalmenon.application.manager.database.content.ContentManager;
 import com.vimalmenon.application.manager.database.links.LinkManager;
 import com.vimalmenon.appliction.model.controller.ApiControllerModel;
 import com.vimalmenon.appliction.model.others.ContentModel;
-import com.vimalmenon.appliction.model.others.DataModel;
 import com.vimalmenon.appliction.model.others.SocialMediaModel;
 
 @Service
 public class ApiControllerService {
-	
-	
+
 	@Autowired
 	private LinkManager linkManager;
 
 	@Autowired
 	private ContentManager contentManager;
-	
-	public ApiControllerModel getApi () {
+
+	public ApiControllerModel getApi() {
 		ApiControllerModel model = new ApiControllerModel();
 		model.setSocialMedias(this.getSocialMedias());
 		return model;
 	}
-	
-	public String getContent (String content) {
-		return "Api Controller Service : " + content;
+
+	public ContentModel getContent(String name) {
+		ContentModel content  = new ContentModel();
+		Content contentModel = contentManager.getActiveContentByTitle(name);
+		content.setName(contentModel.getName());
+		content.setTitle(contentModel.getTitle());
+		content.setData(contentModel.getContentData().get(0).getData());
+		return content;
 	}
-	public String getContent(String content, String type) {
-		return "Api Controller Service : " + content + " : " + type;
+	public ContentModel getContent(String name, String type) {
+		ContentModel content  = new ContentModel();
+		Content contentModel = contentManager.getActiveContentByTitleAndType(name, type);
+		content.setName(contentModel.getName());
+		content.setTitle(contentModel.getTitle());
+		content.setData(contentModel.getContentData().get(0).getData());
+		return content;
 	}
 	
 	private List<SocialMediaModel> getSocialMedias () {
@@ -46,26 +55,6 @@ public class ApiControllerService {
 			socialMedias.add(data);
 		});
 		return socialMedias;
-	}
-
-	public List<ContentModel> getContent() {
-		List<ContentModel> contentModels = new ArrayList<>();
-		
-		contentManager.geContent().forEach(content -> {
-			ContentModel contentModel = new ContentModel();
-			contentModel.setName(content.getName());
-			contentModel.setTitle(content.getTitle());
-			List<DataModel> contentDatas = new ArrayList<>();
-			content.getContentData().forEach(data -> {
-				DataModel dataModel = new DataModel();
-				dataModel.setData(data.getData());
-				dataModel.setLastUpdated(data.getLastUpdated());
-				contentDatas.add(dataModel);
-			});
-			contentModel.setData(contentDatas);
-			contentModels.add(contentModel);
-		});
-		return contentModels;
 	}
 
 }

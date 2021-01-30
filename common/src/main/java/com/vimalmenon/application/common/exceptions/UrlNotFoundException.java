@@ -11,6 +11,5 @@ public class UrlNotFoundException extends RuntimeException {
 	public static final String MESSAGE = RESPONSE_CODE.msg;
 
 	public UrlNotFoundException(String string) {
-		// = String.format(RESPONSE_CODE.serverMsg, string);
 	}
 }

@@ -1,6 +1,5 @@
 package com.vimalmenon.application.controller.api;
 
-import java.util.List;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,14 +35,12 @@ public class ApiController {
 	}
 
 	@GetMapping({ "/content/{content}", "/content/{content}/{type}" })
-	public List<ContentModel> getContent(@PathVariable("content") String content,
+	public ApiResponseModel<ContentModel> getContent(@PathVariable("content") String content,
 			@PathVariable(value = "type", required = false) Optional<String> type) {
 		if (type.isPresent()) {
-			//return apiControllerService.getContent(content, type.get());
+			return new ApiResponseModel<ContentModel>().setData(apiControllerService.getContent(content, type.get()));
 		}
-		//return apiControllerService.getContent(content);
-		return apiControllerService.getContent();
-		
+		return new ApiResponseModel<ContentModel>().setData(apiControllerService.getContent(content));
 	}
 
 	@RequestMapping(value = "**")

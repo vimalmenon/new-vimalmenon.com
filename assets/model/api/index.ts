@@ -24,7 +24,14 @@ class MainApi extends Api {
 	}
 }
 
+class PrivacyPolicyApi extends Api {
+	constructor() {
+		super("privacyPolicyApi", METHODS.GET, "/api/content/privacy-policy");
+	}
+}
+
 
 export default {
-	MainApi
+	MainApi,
+	PrivacyPolicyApi
 };
