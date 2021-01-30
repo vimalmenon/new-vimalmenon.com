@@ -19,12 +19,11 @@ const cacheList = [
 	"/fonts/image3.jpg",
 	"/fonts/manifest.webmanifest",
 	"/api/offline",
-	"/api/api"
+	"/api"
 ];
 
 const whiteListed = [
 	"/admin.js",
-	"/api"
 ];
 
 self.addEventListener("install", (event:any) => {

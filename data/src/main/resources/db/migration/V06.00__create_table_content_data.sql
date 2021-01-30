@@ -85,3 +85,8 @@ select '<div>At VimalMenon, accessible from https://vimalmenon.com, one of our m
     <div>VimalMenon does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</div>
 ', 1, "30 jan 2021", id from contents where name  = "privacy-policy";
 
+
+insert into content_data(data, is_active, last_updated, content_id)
+select '<p>If you guys have some interesting ideas or projects and you are looking for a way to execute them. 
+		I would love to hear about them and can help you to get them executed.</p>
+		<p>You guys can get in touch with me by either dropping me an email at support@vimalmenon.com or connect with me on one of my below social media.</p>', 1, "30 jan 2021", id from contents where name  = "contact";

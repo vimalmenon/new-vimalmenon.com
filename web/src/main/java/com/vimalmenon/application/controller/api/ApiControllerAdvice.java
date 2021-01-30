@@ -33,13 +33,13 @@ public class ApiControllerAdvice {
 			HttpServletResponse httpResponse)
 	{
 		log.error("ApplicationException : ", exception);
+		httpResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 		return new ApiResponseModel<String>().setCode(ApplicationException.CODE).setMessage(ApplicationException.MESSAGE);
 	}
 
 	@ExceptionHandler(value = Exception.class)
 	public ApiResponseModel<String> exception(final Exception exception, HttpServletResponse httpResponse)
 	{
-		
 		return this.application(new ApplicationException(), httpResponse);
 	}
 

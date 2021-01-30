@@ -8,3 +8,7 @@ CREATE TABLE contents (
 
 INSERT into contents (name, title)
 values("privacy-policy", "Privacy Policy for Vimal Menon");
+
+
+INSERT into contents (name, title)
+values("contact", "Contact Us");

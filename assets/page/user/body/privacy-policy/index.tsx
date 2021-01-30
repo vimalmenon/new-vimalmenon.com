@@ -1,9 +1,9 @@
 import React from "react";
 
-import {page, pageConfig} from "model";
+import {pageConfig, api} from "model";
 
 import {TextFormat, Container, PageTitle} from "component";
-
+import {ApiCaller} from "utility";
 import {
 	makeStyles,
 	createStyles,
@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core/styles";
 
 const {paragraph} = pageConfig.common;
+const {PrivacyPolicyApi} = api;
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
@@ -40,17 +41,22 @@ const useStyles = makeStyles((theme:Theme) => {
 });
 
 const PrivacyPolicyPage:React.FC = () => {
-	const {PrivacyPolicy} = page;
 	const classes = useStyles();
+	const [data, setData] = React.useState<{title:string,data:string}>({title:"", data:""});
+	React.useEffect(() => {
+		new ApiCaller<{title:string,data:string}>(new PrivacyPolicyApi())
+			.getPromise()
+			.then(setData);
+	},[])
 	return (
 		<Container>
 			<div className={classes.root}>
 				<div className={classes.title}>
-					<PageTitle title={"Privacy Policy for Vimal Menon"} />
+					<PageTitle title={data.title} />
 				</div>
 				<div className={classes.content}>
 					<TextFormat 
-						text={PrivacyPolicy} />
+						text={data.data} />
 				</div>
 			</div>
 		</Container>
