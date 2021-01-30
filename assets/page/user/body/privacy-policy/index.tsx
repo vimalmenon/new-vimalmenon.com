@@ -47,7 +47,7 @@ const PrivacyPolicyPage:React.FC = () => {
 		new ApiCaller<{title:string,data:string}>(new PrivacyPolicyApi())
 			.getPromise()
 			.then(setData);
-	},[])
+	},[]);
 	return (
 		<Container>
 			<div className={classes.root}>

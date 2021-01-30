@@ -22,7 +22,7 @@ export const setLoading:IReturnOneParamMethod<boolean,IAction<{loading:boolean}>
 		payload : {
 			loading
 		}
-	}
+	};
 };
 
 export type actionTypes = IAction<{themeType:ThemeType, currentLocation:string, loading:boolean}>;

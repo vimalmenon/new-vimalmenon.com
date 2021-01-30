@@ -40,7 +40,7 @@ const ContactUs:React.FC<IPagesProps> = ({dark}) => {
 	React.useEffect(() => {
 		new ApiCaller<{title:string, data:string}>(new ContactApi())
 			.getPromise()
-			.then(setData)
+			.then(setData);
 	},[]);
 	return (
 		<Element name="contact-us" className={classes.element}>

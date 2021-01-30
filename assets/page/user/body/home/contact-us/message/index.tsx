@@ -7,10 +7,9 @@ import {
 } from "@material-ui/core/styles";
 
 import {TextFormat, SocialMedia} from "component";
-import {page, pageConfig} from "model";
+import {pageConfig} from "model";
 
 const {paragraph} = pageConfig.common;
-const {contactUs} = page.home;
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
