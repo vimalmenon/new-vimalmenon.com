@@ -21,6 +21,10 @@ public class Content {
 	@Column(nullable = false, name = "title")
 	private String title;
 
+	
+	@Column(nullable = false, name = "is_json")
+	private int isJson;
+
 	@OneToMany(mappedBy = "content")
 	private List<ContentData> contentData;
 
@@ -57,5 +61,12 @@ public class Content {
 		this.contentData = contentData;
 	}
 
+	public int getIsJson() {
+		return isJson;
+	}
+
+	public void setIsJson(int isJson) {
+		this.isJson = isJson;
+	}
 	
 }

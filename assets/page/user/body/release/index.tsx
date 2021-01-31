@@ -6,10 +6,12 @@ import {
 	Theme
 } from "@material-ui/core/styles";
 import {Container, useMap, PageTitle} from "component";
-import {page, pageConfig} from "model";
+import {page, pageConfig, api} from "model";
+import {ApiCaller} from "utility";
 
 const {text} = pageConfig.common;
 
+const {ReleaseApi} = api;
 const {release} = page;
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
@@ -50,6 +52,13 @@ const useStyles = makeStyles((theme:Theme) => {
 const Release:React.FC = () => {
 	const classes = useStyles();
 	const Map = useMap<any>();
+	React.useEffect(() => {
+		new ApiCaller<IContent>(new ReleaseApi())
+			.getPromise()
+			.then((data) => {
+				console.log(JSON.parse(data.data));
+			});
+	},[]);
 	return(
 		<Container>
 			<div className={classes.root}>

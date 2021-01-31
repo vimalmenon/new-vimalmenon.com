@@ -10,5 +10,10 @@ interface IReadWrite {
     write:boolean;
 }
 interface IApiResponse {
-	socialMedias:ISocialMedia[]
+	socialMedias:ISocialMedia[];
+}
+interface IContent {
+	data:string;
+	title:string;
+	name:string;
 }

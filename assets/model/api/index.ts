@@ -36,9 +36,16 @@ class ContactApi extends Api {
 	}
 }
 
+class ReleaseApi extends Api {
+	constructor() {
+		super("releaseApi", METHODS.GET, "/api/content/release");
+	}
+}
+
 
 export default {
 	MainApi,
 	ContactApi,
+	ReleaseApi,
 	PrivacyPolicyApi
 };
