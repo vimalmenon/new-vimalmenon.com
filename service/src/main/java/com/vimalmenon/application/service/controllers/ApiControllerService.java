@@ -38,7 +38,7 @@ public class ApiControllerService {
 	}
 	public ContentModel getContent(String name, String type) {
 		ContentModel content  = new ContentModel();
-		Content contentModel = contentManager.getActiveContentByTitleAndType(name, type);
+		Content contentModel = contentManager.getActiveContentByTitleAndType(name,type);
 		content.setName(contentModel.getName());
 		content.setTitle(contentModel.getTitle());
 		content.setData(contentModel.getContentData().get(0).getData());
