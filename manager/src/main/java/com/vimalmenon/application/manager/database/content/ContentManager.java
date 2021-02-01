@@ -20,8 +20,11 @@ public class ContentManager {
     @Autowired
     private ContentDataRepository contentDataRepository;
 
-    public List<Content> geContent() {
+    public List<Content> getAllContent () {
         return contentRepository.findAll();
+    }
+    public List<ContentData> getAllContentData () {
+        return contentDataRepository.findAll();
     }
 
     public Content getActiveContentByName(String name) {

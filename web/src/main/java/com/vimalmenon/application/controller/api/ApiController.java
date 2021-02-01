@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +17,8 @@ import com.vimalmenon.application.common.exceptions.UrlNotFoundException;
 import com.vimalmenon.application.service.controllers.ApiControllerService;
 import com.vimalmenon.appliction.model.controller.ApiControllerModel;
 import com.vimalmenon.appliction.model.others.ContentModel;
+import com.vimalmenon.appliction.model.others.ReadWriteModel;
+import com.vimalmenon.appliction.model.request.EntitlementRequestModel;
 import com.vimalmenon.appliction.model.response.ApiResponseModel;
 
 @RestController
@@ -43,6 +47,10 @@ public class ApiController {
 		return new ApiResponseModel<ContentModel>().setData(apiControllerService.getContent(content));
 	}
 
+	@PostMapping("/entitlements")
+	public ApiResponseModel<ReadWriteModel> getEntitlements(@RequestBody EntitlementRequestModel data) {
+		return new ApiResponseModel<ReadWriteModel>().setData(new ReadWriteModel());
+	}
 	@RequestMapping(value = "**")
 	public void urlNotFound(HttpServletRequest request) {
 		throw new UrlNotFoundException(request.getRequestURI());
