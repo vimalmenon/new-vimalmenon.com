@@ -4,3 +4,9 @@ export enum METHODS {
 	POST="POST",
 	DELETE="DELETE"
 }
+
+export enum PAGES {
+	Login="LoginPage",
+	AdminDashboard="AdminDashboardPage",
+	SuperAdmin="SuperAdminPage"
+}

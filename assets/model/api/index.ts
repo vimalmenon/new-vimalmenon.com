@@ -1,7 +1,5 @@
 import { METHODS } from "enums";
 
-
-
 export class Api implements IApi{
 	public name;
 	public method;

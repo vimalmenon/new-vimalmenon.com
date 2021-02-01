@@ -8,8 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ContentRepository extends JpaRepository<Content, Integer> {
 
-    public Optional<Content> findByNameAndContentDataIsActive(String name, int isActive);
-
-    public Optional<Content> findByNameAndContentDataIsActiveAndContentDataType(String name, int isActive, String type);
+    public Optional<Content> findByName(String name);
 
 }

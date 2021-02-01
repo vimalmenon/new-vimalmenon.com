@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.vimalmenon.application.data.contents.Content;
+import com.vimalmenon.application.data.contents.ContentData;
 import com.vimalmenon.application.manager.database.content.ContentManager;
 import com.vimalmenon.application.manager.database.links.LinkManager;
 import com.vimalmenon.appliction.model.controller.ApiControllerModel;
@@ -29,19 +30,22 @@ public class ApiControllerService {
 	}
 
 	public ContentModel getContent(String name) {
-		ContentModel content  = new ContentModel();
-		Content contentModel = contentManager.getActiveContentByTitle(name);
+		ContentModel content = new ContentModel();
+		Content contentModel = contentManager.getActiveContentByName(name);
+		ContentData contentDataModel = contentManager.getContentAndType(contentModel, "full");
 		content.setName(contentModel.getName());
 		content.setTitle(contentModel.getTitle());
-		content.setData(contentModel.getContentData().get(0).getData());
+		content.setData(contentDataModel.getData());
 		return content;
 	}
+
 	public ContentModel getContent(String name, String type) {
-		ContentModel content  = new ContentModel();
-		Content contentModel = contentManager.getActiveContentByTitleAndType(name,type);
+		ContentModel content = new ContentModel();
+		Content contentModel = contentManager.getActiveContentByName(name);
+		ContentData contentDataModel = contentManager.getContentAndType(contentModel, type);
 		content.setName(contentModel.getName());
 		content.setTitle(contentModel.getTitle());
-		content.setData(contentModel.getContentData().get(0).getData());
+		content.setData(contentDataModel.getData());
 		return content;
 	}
 	

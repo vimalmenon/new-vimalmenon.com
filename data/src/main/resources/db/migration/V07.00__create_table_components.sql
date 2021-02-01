@@ -21,7 +21,7 @@ insert into components
 )
 values 
 (
-	"DashboardPage"
+	"AdminDashboardPage"
 );
 
 insert into components
