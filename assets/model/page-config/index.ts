@@ -1,6 +1,6 @@
 import common from "./common";
 import home from "./home";
-
+import admin from "./admin";
 
 const header = {
 	top:{
@@ -19,6 +19,7 @@ const footer = {
 };
 
 const pageConfig = {
+	admin,
 	common,
 	header,
 	footer,
