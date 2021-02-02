@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,7 @@ import com.vimalmenon.application.service.entitlements.ComponentEntitlementServi
 import com.vimalmenon.appliction.model.controller.ApiControllerModel;
 import com.vimalmenon.appliction.model.others.ContentModel;
 import com.vimalmenon.appliction.model.others.ReadWriteModel;
+import com.vimalmenon.appliction.model.request.ContactRequestModel;
 import com.vimalmenon.appliction.model.request.EntitlementRequestModel;
 import com.vimalmenon.appliction.model.response.ApiResponseModel;
 
@@ -55,6 +57,11 @@ public class ApiController {
 	public ApiResponseModel<ReadWriteModel> getEntitlements(@RequestBody EntitlementRequestModel data) {
 		componentEntitlementService.getEntitlements(data);
 		return new ApiResponseModel<ReadWriteModel>().setData(new ReadWriteModel());
+	}
+
+	@PutMapping("/save_contact_us")
+	public ApiResponseModel<String> saveContactUs(@RequestBody ContactRequestModel data) {
+		return new ApiResponseModel<String>().setData(apiControllerService.saveContactUs(data));
 	}
 	@RequestMapping(value = "**")
 	public void urlNotFound(HttpServletRequest request) {

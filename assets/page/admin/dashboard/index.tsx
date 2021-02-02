@@ -1,7 +1,6 @@
 import React from "react";
 
 import {
-	Theme,
 	makeStyles,
 	createStyles
 } from "@material-ui/core/styles";
@@ -11,14 +10,11 @@ import Header from "./header";
 import Sidebar from "./sidebar";
 import Body from "./body";
 
-const useStyles = makeStyles((theme: Theme) => {
+const useStyles = makeStyles(() => {
 	return createStyles({
 		root: {
 			display: "flex",
-			flexDirection: "column",
-			backgroundColor: theme.palette.background.paper,
-			color: theme.palette.text.primary,
-			flex:"1 1 100%"
+			minHeight: "100%"
 		},
 	});
 });

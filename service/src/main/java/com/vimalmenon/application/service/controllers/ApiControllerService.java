@@ -13,6 +13,7 @@ import com.vimalmenon.application.manager.database.links.LinkManager;
 import com.vimalmenon.appliction.model.controller.ApiControllerModel;
 import com.vimalmenon.appliction.model.others.ContentModel;
 import com.vimalmenon.appliction.model.others.SocialMediaModel;
+import com.vimalmenon.appliction.model.request.ContactRequestModel;
 
 @Service
 public class ApiControllerService {
@@ -48,6 +49,13 @@ public class ApiControllerService {
 		content.setData(contentDataModel.getData());
 		return content;
 	}
+
+	public String saveContactUs (ContactRequestModel data) {
+		if (data.getSubject().equals("reading")) {
+			return "Success";
+		}
+		return null;
+	}
 	
 	private List<SocialMediaModel> getSocialMedias () {
 		List<SocialMediaModel> socialMedias = new ArrayList<>();
@@ -60,5 +68,6 @@ public class ApiControllerService {
 		});
 		return socialMedias;
 	}
+
 
 }

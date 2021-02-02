@@ -52,13 +52,13 @@ const useStyles = makeStyles((theme:Theme) => {
 const Release:React.FC = () => {
 	const classes = useStyles();
 	const Map = useMap<any>();
-	React.useEffect(() => {
+	/*React.useEffect(() => {
 		new ApiCaller<IContent>(new ReleaseApi())
 			.getPromise()
 			.then((data) => {
 				console.log(JSON.parse(data.data));
 			});
-	},[]);
+	},[]);*/
 	return(
 		<Container>
 			<div className={classes.root}>

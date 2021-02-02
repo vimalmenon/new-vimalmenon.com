@@ -4,6 +4,7 @@ interface ISession {
 type ThemeType = "light"|"dark";
 
 interface IAdmin {
+	isSidebarOpen:boolean
 }
 
 interface IConfig {
