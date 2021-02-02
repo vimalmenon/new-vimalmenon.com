@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.vimalmenon.application.common.exceptions.OfflineException;
 import com.vimalmenon.application.common.exceptions.UrlNotFoundException;
 import com.vimalmenon.application.service.controllers.ApiControllerService;
+import com.vimalmenon.application.service.entitlements.ComponentEntitlementService;
 import com.vimalmenon.appliction.model.controller.ApiControllerModel;
 import com.vimalmenon.appliction.model.others.ContentModel;
 import com.vimalmenon.appliction.model.others.ReadWriteModel;
@@ -27,6 +28,9 @@ public class ApiController {
 
 	@Autowired
 	private ApiControllerService apiControllerService;
+
+	@Autowired
+	private ComponentEntitlementService componentEntitlementService;
 
 	@GetMapping("")
 	public ApiResponseModel<ApiControllerModel> api() {
@@ -49,6 +53,7 @@ public class ApiController {
 
 	@PostMapping("/entitlements")
 	public ApiResponseModel<ReadWriteModel> getEntitlements(@RequestBody EntitlementRequestModel data) {
+		componentEntitlementService.getEntitlements(data);
 		return new ApiResponseModel<ReadWriteModel>().setData(new ReadWriteModel());
 	}
 	@RequestMapping(value = "**")

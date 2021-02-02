@@ -7,6 +7,10 @@ import {
 } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
+import Header from "./header";
+import Sidebar from "./sidebar";
+import Body from "./body";
+
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
 		root: {
@@ -24,7 +28,9 @@ const Dashboard:React.FC = () => {
 	return(
 		<section className={classes.root}>
 			<CssBaseline />
-			this is dashboard page
+			<Header />
+			<Sidebar />
+			<Body />
 		</section>
 	);
 };

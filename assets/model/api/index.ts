@@ -11,7 +11,7 @@ export class Api implements IApi{
 		this.method = method;
 		this.url = url;
 	}
-	public setApiData<T>(data:T):void {
+	public setBody<T>(data:T):void {
 		this.body = JSON.stringify(data);
 	}
 }
@@ -40,10 +40,18 @@ class ReleaseApi extends Api {
 	}
 }
 
+class ComponentEntitlements<T> extends Api {
+	constructor(data:T) {
+		super("componentEntitlements", METHODS.POST, "/api/entitlements");
+		this.setBody<T>(data);
+	}
+}
+
 
 export default {
 	MainApi,
 	ContactApi,
 	ReleaseApi,
-	PrivacyPolicyApi
+	PrivacyPolicyApi,
+	ComponentEntitlements
 };
