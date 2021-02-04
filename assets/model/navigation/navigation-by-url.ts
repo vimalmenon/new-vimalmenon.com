@@ -1,4 +1,5 @@
 import {home, pageNotFound, privacyPolicy, tutorialsPage, aboutMePage, release, announcements} from "./main-navigation";
+import {superAdmin, adminContent} from "./admin-navigation";
 
 const navigationByUrl = {
 	[home.url]:home,
@@ -7,7 +8,9 @@ const navigationByUrl = {
 	[privacyPolicy.url]:privacyPolicy,
 	[tutorialsPage.url]:tutorialsPage,
 	[release.url]:release,
-	[announcements.url]:announcements
+	[announcements.url]:announcements,
+	[superAdmin.url]:superAdmin,
+	[adminContent.url]:adminContent
 };
 
 export default navigationByUrl;

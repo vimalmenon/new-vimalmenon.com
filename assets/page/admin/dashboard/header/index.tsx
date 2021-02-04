@@ -10,11 +10,12 @@ import { useSelector } from "react-redux";
 import {toogleSidebar} from "./index.service";
 import {pageConfig} from "model";
 
-const {drawerWidth} = pageConfig.admin.header;
+const {drawerWidth, drawerWidthMin} = pageConfig.admin.sidebar;
 
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
 		appBar: {
+			width: `calc(100% - ${drawerWidthMin}px)`,
 			zIndex: theme.zIndex.drawer + 1,
 			transition: theme.transitions.create(["width", "margin"], {
 				easing: theme.transitions.easing.sharp,

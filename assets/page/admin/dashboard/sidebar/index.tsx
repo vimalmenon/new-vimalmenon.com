@@ -7,7 +7,7 @@ import {pageConfig} from "model";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { useSelector } from "react-redux";
 
-const {drawerWidth} = pageConfig.admin.header;
+const {drawerWidth, drawerWidthMin} = pageConfig.admin.sidebar;
 
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) => {
 				duration: theme.transitions.duration.leavingScreen,
 			}),
 			overflowX: "hidden",
-			width: theme.spacing(7) + 1,
+			width: drawerWidthMin,
 			[theme.breakpoints.up("sm")]: {
 				width: theme.spacing(8) + 1,
 			},

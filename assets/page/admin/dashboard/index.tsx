@@ -14,8 +14,9 @@ const useStyles = makeStyles(() => {
 	return createStyles({
 		root: {
 			display: "flex",
-			minHeight: "100%"
-		},
+			minHeight: "100%",
+			flex:"1 1 100%"
+		}
 	});
 });
 
@@ -24,9 +25,10 @@ const Dashboard:React.FC = () => {
 	return(
 		<section className={classes.root}>
 			<CssBaseline />
-			<Header />
 			<Sidebar />
+			<Header />
 			<Body />
+			
 		</section>
 	);
 };
