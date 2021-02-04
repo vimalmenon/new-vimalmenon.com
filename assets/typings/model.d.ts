@@ -2,7 +2,8 @@ interface INavigation {
     name: string;
 	url: string;
 	title: string;
-	inPage:boolean;
+    inPage:boolean;
+    navigations?:INavigation[]
 }
 interface IModel {
 }

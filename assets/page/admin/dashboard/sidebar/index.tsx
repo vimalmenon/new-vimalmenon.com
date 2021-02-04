@@ -3,10 +3,11 @@ import clsx from "clsx";
 import Drawer from "@material-ui/core/Drawer";
 
 
-import {pageConfig} from "model";
+import {pageConfig, navigation} from "model";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { useSelector } from "react-redux";
 
+const {adminNavigation} = navigation.adminNavigation;
 const {drawerWidth, drawerWidthMin} = pageConfig.admin.sidebar;
 
 const useStyles = makeStyles((theme: Theme) => {
@@ -89,6 +90,13 @@ const Sidebar:React.FC = () => {
 					[classes.drawerClose]: !isOpen
 				}),
 			}}>
+			{adminNavigation.map((admin, key) => {
+				return (
+					<div key={key}>
+						{admin.name}
+					</div>
+				);
+			})}
 		</Drawer>
 	);
 };
