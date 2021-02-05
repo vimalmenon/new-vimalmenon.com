@@ -28,7 +28,6 @@ const Dashboard:React.FC = () => {
 			<Sidebar />
 			<Header />
 			<Body />
-			
 		</section>
 	);
 };

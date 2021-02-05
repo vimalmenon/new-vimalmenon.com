@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 
 import {toogleSidebar} from "./index.service";
 import {pageConfig} from "model";
+import {ToggleTheme} from "component";
 
 const {drawerWidth, drawerWidthMin} = pageConfig.admin.sidebar;
 
@@ -36,6 +37,11 @@ const useStyles = makeStyles((theme: Theme) => {
 			color : theme.palette.primary.contrastText,
 			marginRight: 16,
 		},
+		flexContent:{
+			display:"flex",
+			flex:"1 1 100%",
+			justifyContent:"flex-end"
+		}
 	});
 });
 
@@ -53,8 +59,8 @@ const Header:React.FC = () => {
 					className={clsx(classes.menuButton)}>
 					<MenuIcon />
 				</IconButton>
-				<div>
-					
+				<div className={classes.flexContent}>
+					<ToggleTheme />
 				</div>
 			</Toolbar>
 		</AppBar>

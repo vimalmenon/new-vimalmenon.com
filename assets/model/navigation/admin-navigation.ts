@@ -3,7 +3,7 @@ export const homeAdmin:INavigation = {
 	url: "/admin",
 	title: "Admin | Free programming video tutorials",
 	inPage:false
-}
+};
 
 export const otherAdminConfig:INavigation = {
 	name: "Other Config",
@@ -11,7 +11,6 @@ export const otherAdminConfig:INavigation = {
 	title: "Other Config | Free programming video tutorials",
 	inPage:false
 };
-
 
 export const adminContent:INavigation = {
 	name: "Content",
