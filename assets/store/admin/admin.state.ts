@@ -1,5 +1,5 @@
 const admin:IAdmin = {
-	isSidebarOpen: false,
+	isSidebarOpen: true,
 };
 
 export default admin;
