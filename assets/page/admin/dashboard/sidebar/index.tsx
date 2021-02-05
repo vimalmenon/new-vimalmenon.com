@@ -6,10 +6,7 @@ import Drawer from "@material-ui/core/Drawer";
 import {pageConfig, navigation} from "model";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { useSelector } from "react-redux";
-
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
+import Navigation from "./navigation";
 
 
 const {adminNavigation} = navigation.adminNavigation;
@@ -95,36 +92,7 @@ const Sidebar:React.FC = () => {
 					[classes.drawerClose]: !isOpen
 				}),
 			}}>
-			<List className={classes.navigation}>
-				{adminNavigation.map((admin, key) => {
-					return (
-						<React.Fragment key={key}>
-							<ListItem
-								button>
-								<ListItemText primary={admin.name} />			
-							</ListItem>
-							{admin.navigations && (
-								<List disablePadding key={key}>
-									{admin.navigations.map((superAdminNavigation, innerKey) => {
-										return (
-											<ListItem 
-												key={innerKey}
-												button>
-												<ListItemText primary={superAdminNavigation.name} />
-											</ListItem>
-										);
-									})}
-								</List>
-							)}
-							
-							
-							
-							
-						</React.Fragment>
-						
-					);
-				})}
-			</List>
+			<Navigation navigations={adminNavigation}/>
 		</Drawer>
 	);
 };

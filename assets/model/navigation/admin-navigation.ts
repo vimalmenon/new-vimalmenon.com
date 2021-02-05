@@ -1,3 +1,10 @@
+export const homeAdmin:INavigation = {
+	name: "Home",
+	url: "/admin",
+	title: "Admin | Free programming video tutorials",
+	inPage:false
+}
+
 export const otherAdminConfig:INavigation = {
 	name: "Other Config",
 	url: "/admin/super_admin/other",
@@ -26,6 +33,7 @@ export const superAdmin:INavigation = {
 };
 
 export const adminNavigation:INavigation[] = [
+	homeAdmin,
 	superAdmin
 ];
 export default {
