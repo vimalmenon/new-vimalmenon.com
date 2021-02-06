@@ -16,7 +16,7 @@ public class LinkService {
 
 	public List<LinkModel> getLinks() {
 		List<LinkModel> links = new ArrayList<>();
-		linkManager.getAllLinks().forEach((data) -> {
+		linkManager.getAllLinks().forEach(data -> {
 			LinkModel linkModel = new LinkModel();
 			linkModel.setId(data.getId());
 			linkModel.setName(data.getName());

@@ -3,6 +3,7 @@ import React from "react";
 import {api} from "model";
 import {ApiCaller} from "utility";
 import {Link} from "./index.d";
+import {Table} from "component";
 
 const {SuperAdminLinks} = api;
 
@@ -13,17 +14,9 @@ const Other:React.FC = () => {
 			.getPromise()
 			.then(setLinks);
 	},[]);
-
 	return (
 		<section>
-			{links.map((data, key) => {
-				return (
-					<div key={key}>
-						<div>{data.name}</div>
-					</div>
-				);
-			})}
-			this is other page
+			<Table data={links}/>
 		</section>
 	);
 };

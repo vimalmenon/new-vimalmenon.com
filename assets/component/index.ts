@@ -12,6 +12,7 @@ import TextFormat from "./text-format";
 import YTPlayer from "./yt-player";
 import useMap from "./map";
 import MoveToTop from "./move-to-top";
+import Table from "./table";
 
 export {
 	SocialMediaMoble,
@@ -27,5 +28,6 @@ export {
 	ReadMore,
 	MetaData,
 	Loading,
-	useMap
+	useMap,
+	Table
 };
