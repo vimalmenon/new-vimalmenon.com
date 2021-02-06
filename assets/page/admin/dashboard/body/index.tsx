@@ -1,22 +1,35 @@
-import { createStyles, makeStyles } from "@material-ui/core/styles";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import React from "react";
 
-const useStyles = makeStyles(() => {
+import {
+	Route,
+	Switch,
+	useRouteMatch,
+} from "react-router-dom";
+
+import SuperAdmin from "./super-admin";
+
+const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		root: {
+			position:"relative",
 			display: "flex",
-			marginTop:"64px",
+			top:"64px",
 			minHeight:`100vh`,
-			flex:"1 1 100%"
+			flex:"1 1 100%",
+			margin:theme.spacing(2)
 		}
 	});
 });
 
 const Body:React.FC = () => {
 	const classes = useStyles();
+	const match = useRouteMatch();
 	return (
 		<section className={classes.root}>
-			this is body
+			<Switch>
+				<Route path={`${match.url}/super_admin`} component={SuperAdmin} />
+			</Switch>
 		</section>
 	);
 };
