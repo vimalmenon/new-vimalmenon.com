@@ -20,6 +20,8 @@ import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 
+import {TableProps} from "./index.d";
+
 const tableIcons:Icons = {
 	Add: forwardRef((props, ref) => <AddBox {...props} ref={ref}/>),
 	Check: forwardRef((props, ref) => <Check {...props} ref={ref}/>),
@@ -41,17 +43,12 @@ const tableIcons:Icons = {
 };
 
 
-const Table:React.FC<{data:any}> = ({data}) => {
+const Table:React.FC<TableProps> = ({data, columns, title}) => {
 	return (
 		<MaterialTable 
 			icons={tableIcons}
-			title="Toolbar Overriding Preview"
-			columns={[
-				{ title: "Id", field: "id" },
-				{ title: "Name", field: "name" },
-				{ title: "Title", field: "title"},
-				{ title: "URL", field: "url"}
-			]}
+			title={title}
+			columns={columns}
 			data={data}/>
 	);
 };

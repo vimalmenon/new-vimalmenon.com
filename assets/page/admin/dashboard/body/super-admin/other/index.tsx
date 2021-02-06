@@ -7,6 +7,13 @@ import {Table} from "component";
 
 const {SuperAdminLinks} = api;
 
+
+const columns = [
+	{ title: "Id", field: "id" , test:"read"},
+	{ title: "Name", field: "name" },
+	{ title: "Title", field: "title"},
+	{ title: "URL", field: "url"}
+];
 const Other:React.FC = () => {
 	const [links, setLinks] = React.useState<Link[]>([]);
 	React.useEffect(() => {
@@ -16,7 +23,10 @@ const Other:React.FC = () => {
 	},[]);
 	return (
 		<section>
-			<Table data={links}/>
+			<Table 
+				data={links} 
+				columns={columns}
+				title={"URL"}/>
 		</section>
 	);
 };
