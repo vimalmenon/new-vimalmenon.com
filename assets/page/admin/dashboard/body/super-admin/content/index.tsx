@@ -1,10 +1,13 @@
 import React from "react";
 
 
+import Release from "./release";
+
+
 const Content:React.FC = () => {
 	return (
 		<div>
-			This is content page
+			<Release />
 		</div>
 	);
 };

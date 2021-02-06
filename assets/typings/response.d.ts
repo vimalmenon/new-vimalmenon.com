@@ -17,3 +17,9 @@ interface IContent {
 	title:string;
 	name:string;
 }
+
+interface IRelease {
+	versionNo:string,
+	buildDate:string,
+	details:string[]
+}
