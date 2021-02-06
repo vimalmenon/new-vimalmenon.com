@@ -22,4 +22,8 @@ public class LinkManager {
 		return linkRepository.findByNameIn(SOCIAL_MEDIA_LINKS);
 	}
 
+	public List<Link> getAllLinks () {
+		return linkRepository.findAll();
+	}
+
 }

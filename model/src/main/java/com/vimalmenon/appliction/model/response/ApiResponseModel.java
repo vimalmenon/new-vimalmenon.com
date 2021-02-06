@@ -1,5 +1,6 @@
 package com.vimalmenon.appliction.model.response;
 
+
 import com.vimalmenon.application.common.enums.ResponseCode;
 
 public class ApiResponseModel<T> {
@@ -41,8 +42,8 @@ public class ApiResponseModel<T> {
 		return data;
 	}
 
-	public ApiResponseModel<T> setData(T data) {
-		this.data = data;
+	public ApiResponseModel<T> setData(T list) {
+		this.data = list;
 		return this;
 	}
 

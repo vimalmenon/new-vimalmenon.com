@@ -48,10 +48,17 @@ class ComponentEntitlements<T> extends Api {
 }
 
 
+class SuperAdminLinks extends Api {
+	constructor () {
+		super("superAdminLinks", METHODS.GET, "/api/admin/super/links");
+	}
+}
+
 export default {
 	MainApi,
-	ContactApi,
 	ReleaseApi,
+	ContactApi,
+	SuperAdminLinks,
 	PrivacyPolicyApi,
 	ComponentEntitlements
 };
