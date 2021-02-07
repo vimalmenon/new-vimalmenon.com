@@ -18,8 +18,14 @@ interface IContent {
 	name:string;
 }
 
-interface IRelease {
+interface IReleaseResponse {
 	versionNo:string,
 	buildDate:string,
 	details:string[]
+}
+
+interface IContentResponse {	
+	data: string;
+	name: string;
+	title:string;
 }

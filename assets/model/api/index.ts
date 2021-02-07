@@ -14,6 +14,13 @@ export class Api implements IApi{
 	public setBody<T>(data:T):void {
 		this.body = JSON.stringify(data);
 	}
+	public setPath (paths:string[]) {
+		paths.unshift(this.url);
+		this.url = paths.join("/");
+	}
+	public setName (name:string) {
+		this.name = name;
+	}
 }
 
 class MainApi extends Api {
@@ -33,10 +40,16 @@ class ContactApi extends Api {
 		super("contactApi", METHODS.GET, "/api/content/contact");
 	}
 }
-
-class ReleaseApi extends Api {
+class ContentApi extends Api {
 	constructor() {
-		super("releaseApi", METHODS.GET, "/api/content/release");
+		super("contentApi", METHODS.GET, "/api/content");
+	}
+}
+class ReleaseApi extends ContentApi {
+	constructor() {
+		super();
+		this.setName("releaseApi")
+		this.setPath(["release"]);
 	}
 }
 
