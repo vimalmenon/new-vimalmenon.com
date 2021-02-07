@@ -28,4 +28,5 @@ interface IContentResponse {
 	data: string;
 	name: string;
 	title:string;
+	short:boolean;
 }

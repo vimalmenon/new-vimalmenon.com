@@ -3,11 +3,11 @@ import {api} from "model";
 
 const {ReleaseApi} = api;
 
-export const onSave = (releases) => {
+export const onSave = (releases:IReleaseResponse[]):void => {
 	console.log(JSON.stringify(releases));
 };
 
-export const onInit = (setReleases) => {
+export const onInit = (setReleases):void => {
 	new ApiCaller<IContentResponse>(new ReleaseApi())
 		.getPromise()
 		.then((data) => {
@@ -15,7 +15,7 @@ export const onInit = (setReleases) => {
 		});
 };
 
-export const onDeleteDetail = (releases, key, innerKey) => {
+export const onDeleteDetail:(release:IReleaseResponse[], key:number, innerKey:number) => IReleaseResponse[] = (releases, key, innerKey) => {
 	const newReleases = [...releases];
 	const release = {...newReleases[key]};
 	const newDetail = [...release.details];
@@ -27,7 +27,7 @@ export const onDeleteDetail = (releases, key, innerKey) => {
 	return newReleases;
 };
 
-export const onVersionNoUpdate = (releases, e, key) => {
+export const onVersionNoUpdate:(release:IReleaseResponse[], e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, innerKey:number) => IReleaseResponse[] = (releases, e, key) => {
 	const {name, value} = e.target;
 	const newReleases = [...releases];
 	const release = newReleases[key];
@@ -38,7 +38,7 @@ export const onVersionNoUpdate = (releases, e, key) => {
 	return newReleases;
 };
 
-export const onVersionDetailUpdate = (releases, e, key) => {
+export const onVersionDetailUpdate:(release:IReleaseResponse[], e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, innerKey:number) => IReleaseResponse[] = (releases, e, key) => {
 	const {name, value} = e.target;
 	const newReleases = [...releases];
 	const release = {...newReleases[key]};
@@ -51,7 +51,7 @@ export const onVersionDetailUpdate = (releases, e, key) => {
 	return newReleases;
 };
 
-export const onDetailAdd = (releases, key) => {
+export const onDetailAdd:(release:IReleaseResponse[], key:number) => IReleaseResponse[] = (releases, key) => {
 	const newReleases = [...releases];
 	const release = {...newReleases[key]};
 	const newDetail = [...release.details];

@@ -14,11 +14,11 @@ export class Api implements IApi{
 	public setBody<T>(data:T):void {
 		this.body = JSON.stringify(data);
 	}
-	public setPath (paths:string[]) {
+	public setPath (paths:string[]):void {
 		paths.unshift(this.url);
 		this.url = paths.join("/");
 	}
-	public setName (name:string) {
+	public setName (name:string):void {
 		this.name = name;
 	}
 }
@@ -48,7 +48,7 @@ class ContentApi extends Api {
 class ReleaseApi extends ContentApi {
 	constructor() {
 		super();
-		this.setName("releaseApi")
+		this.setName("releaseApi");
 		this.setPath(["release"]);
 	}
 }

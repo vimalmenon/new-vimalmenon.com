@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme:Theme) => {
 const Release:React.FC = () => {
 	const classes = useStyles();
 	const Map = useMap<IReleaseResponse>();
-	const [releases, setReleases] = React.useState<IReleaseResponse[]>([])
+	const [releases, setReleases] = React.useState<IReleaseResponse[]>([]);
 	React.useEffect(() => {
 		new ApiCaller<IContent>(new ReleaseApi())
 			.getPromise()
