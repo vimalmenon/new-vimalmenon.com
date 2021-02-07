@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme:Theme) => {
 
 const Release:React.FC = () => {
 	const classes = useStyles();
-	const Map = useMap<any>();
+	const Map = useMap<IRelease>();
 	React.useEffect(() => {
 		new ApiCaller<IContent>(new ReleaseApi())
 			.getPromise();
@@ -77,15 +77,13 @@ const Release:React.FC = () => {
 								{key<2 ?
 									<>
 										<ul className={classes.releaseDetails}>
-											<Map 
-												items={data.details}
-												renderItem={(detail) => {
-													return (
-														<li className={classes.releaseDetail}>
-															{detail}
-														</li>
-													);
-												}} />
+											{data.details.map((detail, innerKey) => {
+												return (
+													<li className={classes.releaseDetail} key={innerKey}>
+														{detail}
+													</li>
+												);
+											})}
 										</ul>
 										<span>show less..</span>
 									</>: 
