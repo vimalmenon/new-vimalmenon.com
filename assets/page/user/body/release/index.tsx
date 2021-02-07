@@ -5,14 +5,14 @@ import {
 	createStyles,
 	Theme
 } from "@material-ui/core/styles";
+
 import {Container, useMap, PageTitle} from "component";
-import {page, pageConfig, api} from "model";
+import {pageConfig, api} from "model";
 import {ApiCaller} from "utility";
 
 const {text} = pageConfig.common;
 
 const {ReleaseApi} = api;
-const {release} = page;
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		root:{
@@ -51,10 +51,14 @@ const useStyles = makeStyles((theme:Theme) => {
 
 const Release:React.FC = () => {
 	const classes = useStyles();
-	const Map = useMap<IRelease>();
+	const Map = useMap<IReleaseResponse>();
+	const [releases, setReleases] = React.useState<IReleaseResponse[]>([])
 	React.useEffect(() => {
 		new ApiCaller<IContent>(new ReleaseApi())
-			.getPromise();
+			.getPromise()
+			.then((data) => {
+				setReleases(JSON.parse(data.data));
+			});
 	},[]);
 	return(
 		<Container>
@@ -63,7 +67,7 @@ const Release:React.FC = () => {
 					<PageTitle title={"Release and Features"} />
 				</div>
 				<div className={classes.content}>
-					<Map items={release} renderItem={(data, key) => {
+					<Map items={releases} renderItem={(data, key) => {
 						return (
 							<div className={classes.releaseItem}>
 								<div className={classes.releaseHeader}>
