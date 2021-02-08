@@ -22,6 +22,7 @@ import com.vimalmenon.appliction.model.others.ContentModel;
 import com.vimalmenon.appliction.model.others.ReadWriteModel;
 import com.vimalmenon.appliction.model.request.ContactRequestModel;
 import com.vimalmenon.appliction.model.request.EntitlementRequestModel;
+import com.vimalmenon.appliction.model.request.LoginModel;
 import com.vimalmenon.appliction.model.response.ApiResponseModel;
 
 @RestController
@@ -63,9 +64,16 @@ public class ApiController {
 	public ApiResponseModel<String> saveContactUs(@RequestBody ContactRequestModel data) {
 		return new ApiResponseModel<String>().setData(apiControllerService.saveContactUs(data));
 	}
+
+	@PutMapping("/login")
+	public ApiResponseModel<String> login (@RequestBody LoginModel data) {
+		return new ApiResponseModel<String>().setData("Success");
+	}
+
 	@RequestMapping(value = "**")
 	public void urlNotFound(HttpServletRequest request) {
 		throw new UrlNotFoundException(request.getRequestURI());
 	}
+
 
 }

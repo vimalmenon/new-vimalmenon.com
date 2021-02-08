@@ -53,13 +53,19 @@ class ReleaseApi extends ContentApi {
 	}
 }
 
-class ComponentEntitlements<T> extends Api {
-	constructor(data:T) {
+class ComponentEntitlements extends Api {
+	constructor(data:IEntitlementRequest) {
 		super("componentEntitlements", METHODS.POST, "/api/entitlements");
-		this.setBody<T>(data);
+		this.setBody<IEntitlementRequest>(data);
 	}
 }
 
+class LoginApi extends Api {
+	constructor(data:ILoginRequest) {
+		super("loginApi", METHODS.PUT, "/api/login");
+		this.setBody<ILoginRequest>(data);
+	}
+}
 
 class SuperAdminLinks extends Api {
 	constructor () {
@@ -69,6 +75,7 @@ class SuperAdminLinks extends Api {
 
 export default {
 	MainApi,
+	LoginApi,
 	ReleaseApi,
 	ContactApi,
 	SuperAdminLinks,

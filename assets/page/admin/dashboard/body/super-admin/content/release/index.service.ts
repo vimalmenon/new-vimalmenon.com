@@ -43,7 +43,7 @@ export const onVersionDetailUpdate:(release:IReleaseResponse[], e:React.ChangeEv
 	const newReleases = [...releases];
 	const release = {...newReleases[key]};
 	const newDetail = [...release.details];
-	newDetail[name] = value;
+	newDetail[parseInt(name)] = value;
 	newReleases.splice(key, 1, {
 		...release,
 		details:[...newDetail]
