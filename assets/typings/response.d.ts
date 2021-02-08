@@ -30,3 +30,10 @@ interface IContentResponse {
 	title:string;
 	short:boolean;
 }
+
+interface ILinkReponse  {
+    id:number;
+    name:string;
+    title:string
+    url:string;
+}

@@ -2,22 +2,21 @@ import React from "react";
 
 import {api} from "model";
 import {ApiCaller} from "utility";
-import {Link} from "./index.d";
 import {Table} from "component";
 
 const {SuperAdminLinks} = api;
 
 
 const columns = [
-	{ title: "Id", field: "id" , test:"read"},
+	{ title: "Id", field: "id" },
 	{ title: "Name", field: "name" },
 	{ title: "Title", field: "title"},
 	{ title: "URL", field: "url"}
 ];
 const Other:React.FC = () => {
-	const [links, setLinks] = React.useState<Link[]>([]);
+	const [links, setLinks] = React.useState<ILinkReponse[]>([]);
 	React.useEffect(() => {
-		new ApiCaller<Link[]>(new SuperAdminLinks())
+		new ApiCaller<ILinkReponse[]>(new SuperAdminLinks())
 			.getPromise()
 			.then(setLinks);
 	},[]);

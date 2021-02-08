@@ -10,6 +10,7 @@ import com.vimalmenon.application.data.links.LinkRepository;
 
 
 
+
 @Service
 public class LinkManager {
 
@@ -25,5 +26,14 @@ public class LinkManager {
 	public List<Link> getAllLinks () {
 		return linkRepository.findAll();
 	}
+
+	public void saveAllLinks(List<Link> links) {
+		linkRepository.saveAll(links);
+	}
+
+	public void deleteLinks(List<Link> links) {
+		linkRepository.deleteAll(links);
+	}
+
 
 }
