@@ -17,9 +17,7 @@ import { IconButton } from "@material-ui/core";
 import { VisibilityOff } from "@material-ui/icons";
 import Visibility from "@material-ui/icons/Visibility";
 import Button from "@material-ui/core/Button/Button";
-
-import {ICredentials} from "./index.d";
-import {onFormSave} from "./index.service";
+import {onFormSave, formValue} from "./index.service";
 
 const useStyles = makeStyles((theme: Theme) => {
 	return createStyles({
@@ -39,14 +37,7 @@ const useStyles = makeStyles((theme: Theme) => {
 const Form:React.FC = () => {
 	const classes = useStyles();
 	const [hide, setHide] = React.useState<boolean>(false);
-	const [credential, setCredential] = React.useState<ICredentials>({username:"", password:""});
-	const setFormValue = (e) => {
-		const {name, value} = e.target;
-		setCredential({
-			...credential,
-			[name]:value
-		});
-	};
+	const [credential, setCredential] = React.useState<ILoginRequest>({username:"", password:""});
 	return (
 		<section className={classes.root}>
 			<div className={classes.inputFieldContainer}>
@@ -58,7 +49,7 @@ const Form:React.FC = () => {
 					label="Username"
 					name="username"
 					value={credential.username}
-					onChange={setFormValue}
+					onChange={(e) => setCredential(formValue(credential,e))}
 					placeholder="Username"/>
 			</div>
 			<div className={classes.inputFieldContainer}>
@@ -72,7 +63,7 @@ const Form:React.FC = () => {
 						id="standard-adornment-password"
 						value={credential.password}
 						name="password"
-						onChange={setFormValue}
+						onChange={(e) => setCredential(formValue(credential,e))}
 						type={hide?"text":"password"}
 						endAdornment={
 							<InputAdornment position="end">
