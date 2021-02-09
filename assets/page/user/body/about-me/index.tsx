@@ -7,10 +7,12 @@ import {
 } from "@material-ui/core/styles";
 import { Container, PageTitle, TextFormat } from "component";
 
-import {page, pageConfig} from "model";
+import {page, pageConfig, api} from "model";
+import {ApiCaller} from "utility";
 
 const {aboutMe} = page;
 const {paragraph} = pageConfig.common;
+const {AboutMeApi} = api;
 const useStyles = makeStyles((theme:Theme ) => {
 	return createStyles({
 		root: {
@@ -36,6 +38,11 @@ const useStyles = makeStyles((theme:Theme ) => {
 
 const AboutMe:React.FC = () => {
 	const classes = useStyles();
+	React.useEffect(() => {
+		new ApiCaller(new AboutMeApi(true))
+			.getPromise()
+			.then(console.log);
+	}, []);
 	return(		
 		<Container>
 			<div className={classes.root}>

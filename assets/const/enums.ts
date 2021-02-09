@@ -10,3 +10,7 @@ export enum PAGES {
 	AdminDashboard="AdminDashboardPage",
 	SuperAdmin="SuperAdminPage"
 }
+
+export enum CONTENT_TYPE {
+	SHORT="short"
+}

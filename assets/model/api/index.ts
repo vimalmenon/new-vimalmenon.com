@@ -1,4 +1,4 @@
-import { METHODS } from "../../const/enums";
+import { METHODS , CONTENT_TYPE} from "../../const/enums";
 
 export class Api implements IApi{
 	public name;
@@ -73,9 +73,22 @@ class SuperAdminLinks extends Api {
 	}
 }
 
+class AboutMeApi extends ContentApi {
+	constructor(isShort?:boolean) {
+		super();
+		this.setName("aboutMeApi");
+		if (isShort) {
+			this.setPath(["about-me", CONTENT_TYPE.SHORT]);
+		} else {
+			this.setPath(["about-me"]);
+		}
+	}
+}
+
 export default {
 	MainApi,
 	LoginApi,
+	AboutMeApi,
 	ReleaseApi,
 	ContactApi,
 	SuperAdminLinks,
