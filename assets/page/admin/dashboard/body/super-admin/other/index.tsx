@@ -2,7 +2,12 @@ import React from "react";
 
 import {api} from "model";
 import {ApiCaller} from "utility";
-import {Table} from "component";
+import {Table} from "component_admin";
+
+import * as admin from "component_admin";
+
+
+console.log(admin);
 
 const {SuperAdminLinks} = api;
 

@@ -1,4 +1,4 @@
-import { METHODS } from "enums";
+import { METHODS } from "../../const/enums";
 
 export class Api implements IApi{
 	public name;

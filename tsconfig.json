@@ -24,12 +24,13 @@
         "paths": {
             "store": ["assets/store"],
             "model": ["assets/model"],
+            "model_admin": ["assets/model/admin"],
             "utility": ["assets/utility"],
             "component": ["assets/component"],
+            "component_admin": ["assets/component/admin"],
             "service": ["assets/service"],
             "action": ["assets/store/action"],
             "const" : ["assets/const"],
-            "enums" :["assets/const/enums"],
             "image":["assets/image/"],
         }
     }

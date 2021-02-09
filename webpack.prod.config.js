@@ -110,10 +110,10 @@ module.exports = {
             "model": path.resolve(__dirname, "./assets/model"),
             "utility": path.resolve(__dirname, "./assets/utility"),
             "component": path.resolve(__dirname, "./assets/component"),
+            "component_admin": path.resolve(__dirname, "./assets/component/admin"),
             "service": path.resolve(__dirname, "./assets/service"),
             "action": path.resolve(__dirname, "./assets/store/action"),
             "const" : path.resolve(__dirname, "./assets/const"),
-            "enums" :path.resolve(__dirname, "./assets/const/enums"),
             "image": path.resolve(__dirname, "./assets/image/"),
         }
     }

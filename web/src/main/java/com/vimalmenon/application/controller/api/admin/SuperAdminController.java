@@ -2,6 +2,7 @@ package com.vimalmenon.application.controller.api.admin;
 
 import java.util.List;
 
+import com.vimalmenon.application.service.content.AdminContentService;
 import com.vimalmenon.application.service.superadmin.LinkService;
 import com.vimalmenon.appliction.model.response.ApiResponseModel;
 import com.vimalmenon.appliction.model.superadmin.LinkModel;
@@ -21,6 +22,9 @@ public class SuperAdminController {
 
     @Autowired
     private LinkService linkService;
+
+    @Autowired
+    private AdminContentService adminContentService;
     
     @GetMapping("/links")
     public ApiResponseModel<List<LinkModel>> getSuperAdminLinks () {
@@ -36,14 +40,18 @@ public class SuperAdminController {
         return new ApiResponseModel<List<LinkModel>>().setData(linkService.deleteSuperAdminLinks(data));
     }
 
+    @GetMapping("/content")
+    public ApiResponseModel<String> getContent() {
+        return new ApiResponseModel<String>().setData(adminContentService.getContent());
+    }
     @GetMapping("/content/{content}")
-    public void getContent (@PathVariable("content") String content) {
-        System.out.println("this is vimal menon");
+    public ApiResponseModel<String> getContent (@PathVariable("content") String content) {
+        return new ApiResponseModel<String>().setData(adminContentService.getContentByContent(content));
     } 
 
     @PutMapping("/content/{content}")
-    public void saveContent (@PathVariable("content") String content) {
-        System.out.println("this is vimal menon");
+    public ApiResponseModel<String> saveContent (@PathVariable("content") String content) {
+        return new ApiResponseModel<String>().setData(adminContentService.saveContentByContent(content));
     }
 
 }

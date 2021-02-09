@@ -1,5 +1,5 @@
 import {Api} from "./index";
-import { METHODS } from "enums";
+import { METHODS } from "../../const/enums";
 
 class GetSuperAdminLinks extends Api {
 	constructor () {
