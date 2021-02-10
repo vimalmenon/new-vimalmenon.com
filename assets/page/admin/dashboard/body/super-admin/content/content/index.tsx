@@ -2,19 +2,25 @@ import React from "react";
 
 import AceEditor from "react-ace";
 
-import "ace-builds/src-noconflict/mode-java";
-import "ace-builds/src-noconflict/theme-github";
-import "ace-builds/src-noconflict/ext-language_tools"
+import "ace-builds/webpack-resolver";
+import  "ace-builds/src-noconflict/mode-javascript";
+import "ace-builds/src-noconflict/theme-twilight";
+import "ace-builds/src-noconflict/ext-language_tools";
+
+
 
 const Content:React.FC = () => {
 	const onChange = (newValue) => {
 		console.log("change", newValue);
-	}
+	};
+	React.useEffect(() => {
+		console.log("this is working")
+	}, []);
 	return (
 		<div>
 			<AceEditor
-				mode="java"
-				theme="github"
+				mode="javascript"
+				theme="twilight"
 				onChange={onChange}
 				name="Content type"
 				editorProps={{ $blockScrolling: true }}
