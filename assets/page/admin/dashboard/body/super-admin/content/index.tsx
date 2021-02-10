@@ -4,8 +4,20 @@ import Tab from "@material-ui/core/Tab";
 
 
 import Release from "./release";
+import ContentComponent from "./content";
 import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
+
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme:Theme) => {
+	return createStyles({
+		root: {
+			display:"flex",
+			flex: "1 1 100%",
+			flexDirection:"column"
+		}
+	});
+});
 
 function TabPanel (props) {
 	const { children, value, index, ...other } = props;
@@ -16,8 +28,8 @@ function TabPanel (props) {
 			aria-labelledby={`wrapped-tab-${index}`}
 			{...other}>
 			{value === index && ( 
-				<Box p={3}>
-					<Typography>{children}</Typography>
+				<Box component="div" p={3}>
+					{children}
 				</Box>
 			)}
 		</div>
@@ -25,17 +37,25 @@ function TabPanel (props) {
 }
 
 const Content:React.FC = () => {
-	const [value,] = React.useState("one");
+	const [value, setValue] = React.useState<number>(0);
+	const handleChange = (event:any, newValue:number) => {
+		setValue(newValue);
+	};
+	const classes = useStyles();
 	return (
-		<div>
+		<div className={classes.root}>
 			<Tabs
 				value={value}
-				indicatorColor="primary"
-				textColor="primary">
+				indicatorColor="secondary"
+				textColor="secondary"
+				onChange={handleChange}>
+				<Tab label="Content" />
 				<Tab label="Release" />
-				<Tab label="Active" />
 			</Tabs>
-			<TabPanel value={value} index="one">
+			<TabPanel value={0} index={value}>
+				<ContentComponent />
+			</TabPanel>
+			<TabPanel value={1} index={value}>
 				<Release />
 			</TabPanel>
 			
