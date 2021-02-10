@@ -67,11 +67,6 @@ class LoginApi extends Api {
 	}
 }
 
-class SuperAdminLinks extends Api {
-	constructor () {
-		super("superAdminLinks", METHODS.GET, "/api/admin/super/links");
-	}
-}
 
 class AboutMeApi extends ContentApi {
 	constructor(isShort?:boolean) {
@@ -91,7 +86,6 @@ export default {
 	AboutMeApi,
 	ReleaseApi,
 	ContactApi,
-	SuperAdminLinks,
 	PrivacyPolicyApi,
 	ComponentEntitlements
 };

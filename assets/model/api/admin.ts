@@ -10,11 +10,11 @@ class GetSuperAdminLinks extends Api {
 class SaveSuperAdminLinks extends Api {
 	constructor (data:ILinkReponse) {
 		super("saveSuperAdminLinks", METHODS.PUT, "/api/admin/super/links");
-        this.setBody<ILinkReponse>(data);
+		this.setBody<ILinkReponse>(data);
 	}
 }
 
 export default {
-    GetSuperAdminLinks,
-    SaveSuperAdminLinks
-}
+	GetSuperAdminLinks,
+	SaveSuperAdminLinks
+};
