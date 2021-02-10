@@ -2,27 +2,22 @@ import React from "react";
 
 import AceEditor from "react-ace";
 
-import "ace-builds/webpack-resolver";
-import "ace-builds/src-noconflict/mode-javascript";
+import "ace-builds/src-noconflict/mode-json";
 import "ace-builds/src-noconflict/theme-twilight";
 import "ace-builds/src-noconflict/ext-language_tools";
 
-
+import "ace-builds/webpack-resolver";
 
 const Content:React.FC = () => {
-	const onChange = (newValue) => {
-		console.log("change", newValue);
-	};
-	React.useEffect(() => {
-		console.log("this is working")
-	}, []);
+	const [value, setValue] = React.useState<string>();
 	return (
 		<div>
 			<AceEditor
-				mode="javascript"
+				mode="json"
 				theme="twilight"
-				onChange={onChange}
+				onChange={(newValue) => setValue(newValue)}
 				name="Content type"
+				defaultValue={value}
 				editorProps={{ $blockScrolling: true }}
 				setOptions={{
 					enableBasicAutocompletion: true,
