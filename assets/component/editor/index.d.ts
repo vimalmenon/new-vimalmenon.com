@@ -1,5 +1,9 @@
 export interface IEditorProps {
     language?:"json"|"javascript"|"markdown",
     theme?:"dark"|"light",
-    value:string
+    name?:string;
+    value:string;
+    onChange?:(value:string)=>void
 }
+
+export type ThemeSelectorType = (value:string) =>string;
