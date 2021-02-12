@@ -5,6 +5,8 @@ import Tab from "@material-ui/core/Tab";
 
 import Release from "./release";
 import ContentComponent from "./content";
+import Tutorials from "./tutorials";
+
 import Box from "@material-ui/core/Box";
 
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
@@ -51,6 +53,7 @@ const Content:React.FC = () => {
 				onChange={handleChange}>
 				<Tab label="Content" />
 				<Tab label="Release" />
+				<Tab label="Tutorials" />
 			</Tabs>
 			<TabPanel value={0} index={value}>
 				<ContentComponent />
@@ -58,6 +61,10 @@ const Content:React.FC = () => {
 			<TabPanel value={1} index={value}>
 				<Release />
 			</TabPanel>
+			<TabPanel value={2} index={value}>
+				<Tutorials />
+			</TabPanel>
+			
 			
 		</div>
 	);
