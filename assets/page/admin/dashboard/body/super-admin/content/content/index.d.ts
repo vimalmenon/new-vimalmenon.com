@@ -1,3 +1,6 @@
+import { SelectProps } from "@material-ui/core/Select";
+import {CheckboxProps} from "@material-ui/core/Checkbox"
+
 export interface IContentData {
     id:number;
     active:boolean;
@@ -15,6 +18,11 @@ export interface IContent{
     contentData:IContentData[];
 }
 
+type OnValueUpdateType = (e:SelectProps|CheckboxProps, key:number, innerKey?:number) => void;
+type UseInitDataType = () => {refresh:IVoidNoParamMethod, data:IContent[], onValueUpdate:OnValueUpdateType}
+
 export interface IContentDataProps {
-    data:IContentData[]
+    data:IContentData[];
+    parentKey:number;
+    onValueUpdate:OnValueUpdateType;
 }

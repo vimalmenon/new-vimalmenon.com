@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme:Theme) => {
 });
 
 const Content:React.FC = () => {
-	const {data} = useInitData();
+	const {data, onValueUpdate} = useInitData();
 	const [expanded, setExpanded] = React.useState<number>(0);
 	const classes = useStyles();
 	return (
@@ -42,16 +42,32 @@ const Content:React.FC = () => {
 						</AccordionSummary>
 						<AccordionDetails className={classes.accordionDetails}>
 							<div>
-								<TextField color="secondary" value={value.title} fullWidth/>
+								<TextField
+									name="title"
+									color="secondary" 
+									value={value.title}
+									onChange={(e) => onValueUpdate(e, key)}
+									fullWidth/>
 							</div>
 							<div>
-								<TextField color="secondary" value={value.name} fullWidth/>
+								<TextField
+									name="name"
+									color="secondary" 
+									value={value.name} 
+									onChange={(e) => onValueUpdate(e, key)}
+									fullWidth/>
 							</div>
 							<div>
 								<Checkbox 
-									checked={value.isJson} />
+									checked={value.isJson}
+									value={value.isJson}
+									name="isJson"
+									onChange={(e) => onValueUpdate(e, key)} />
 							</div>
-							<ContentData data={value.contentData}/>
+							<ContentData 
+								data={value.contentData}
+								parentKey={key}
+								onValueUpdate={onValueUpdate}/>
 						</AccordionDetails>
 					</Accordion>
 				);

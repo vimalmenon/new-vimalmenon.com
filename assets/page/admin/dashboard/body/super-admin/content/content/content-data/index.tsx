@@ -20,23 +20,22 @@ const useStyles = makeStyles((theme:Theme) => {
 		}
 	});
 });
-const ContentData:React.FC<IContentDataProps> = ({data}) => {
+const ContentData:React.FC<IContentDataProps> = ({data, parentKey, onValueUpdate}) => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
 			{data.map((value, key) => {
-				console.log(value);
 				return (
 					<div key={key}>
 						<div>
 							<Select
 								native
 								value={value.type}
+								onChange={(e) => onValueUpdate(e, parentKey, key)}
 								inputProps={{
-									name: 'age',
-									id: 'age-native-simple',
-								}}>
-								<option aria-label="None" value="" />
+									name: "type"
+								}}
+								fullWidth>
 								<option value={"full"}>full</option>
 								<option value={"short"}>short</option>
 							</Select>
