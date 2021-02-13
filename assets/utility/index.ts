@@ -4,12 +4,14 @@ import notification from "./notification";
 import clipBoard from "./clip-board";
 import ApiCaller from "./api-caller";
 import spinner from "./spinner";
+import isTrue from "./isTrue";
 
 export {
 	theme,
 	header,
 	spinner,
-	clipBoard,
+	isTrue,
 	ApiCaller,
+	clipBoard,
 	notification
 };
