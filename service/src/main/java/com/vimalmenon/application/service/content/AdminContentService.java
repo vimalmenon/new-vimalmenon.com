@@ -2,8 +2,11 @@ package com.vimalmenon.application.service.content;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
+import com.vimalmenon.application.data.contents.ContentData;
 import com.vimalmenon.application.manager.database.content.ContentManager;
+import com.vimalmenon.appliction.model.superadmin.ContentDataModel;
 import com.vimalmenon.appliction.model.superadmin.ContentModel;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +17,7 @@ public class AdminContentService {
 
     @Autowired
     private ContentManager contentManager;
-    
+
     public List<ContentModel> getContent() {
         List<ContentModel> contents = new ArrayList<>();
         contentManager.getAllContent().forEach(content -> {
@@ -23,7 +26,20 @@ public class AdminContentService {
             contentModel.setName(content.getName());
             contentModel.setTitle(content.getTitle());
             contentModel.setIsJson(content.getIsJson() == 1);
-            
+            Optional<List<ContentData>> contentDataOptional = contentManager.getContentDataByContent(content);
+            if (contentDataOptional.isPresent()) {
+                List<ContentDataModel> contentDataModels = new ArrayList<>();
+                contentDataOptional.get().forEach(contentData -> {
+                    ContentDataModel contentDataModel = new ContentDataModel();
+                    contentDataModel.setId(contentData.getId());
+                    contentDataModel.setData(contentData.getData());
+                    contentDataModel.setActive(contentData.getIsActive() ==1);
+                    contentDataModel.setLastUpdated(contentData.getLastUpdated());
+                    contentDataModel.setType(contentData.getType());
+                    contentDataModels.add(contentDataModel);
+                });
+                contentModel.setContentData(contentDataModels);
+            }
             contents.add(contentModel);
         });
         return contents;

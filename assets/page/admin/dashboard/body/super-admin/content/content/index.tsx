@@ -4,19 +4,20 @@ import {Editor} from "component_admin";
 
 import {init} from "./index.service";
 
+import {IContent} from "./index.d";
+
 const Content:React.FC = () => {
 	React.useEffect(() => {
 		init();
 	}, []);
-	const [value, setValue] = React.useState<string>("");
+	// const [value, setValue] = React.useState<IContent>();
 	return (
 		<div>
 			<Editor
 				theme="dark"
 				language="markdown"
-				onChange={(newValue) => setValue(newValue)}
 				name="Content type"
-				value={value}/>
+				value={""}/>
 		</div>
 	);
 };

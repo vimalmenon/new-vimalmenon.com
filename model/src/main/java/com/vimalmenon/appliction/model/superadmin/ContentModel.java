@@ -12,7 +12,7 @@ public class ContentModel {
 	
 	private boolean isJson;
 
-	private List<LinkModel> contentData;
+	private List<ContentDataModel> contentData;
 
     public int getId() {
         return id;
@@ -46,11 +46,11 @@ public class ContentModel {
         this.isJson = isJson;
     }
 
-    public List<LinkModel> getContentData() {
+    public List<ContentDataModel> getContentData() {
         return contentData;
     }
 
-    public void setContentData(List<LinkModel> contentData) {
+    public void setContentData(List<ContentDataModel> contentData) {
         this.contentData = contentData;
     }
 

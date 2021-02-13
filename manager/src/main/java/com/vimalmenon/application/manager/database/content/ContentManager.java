@@ -27,6 +27,10 @@ public class ContentManager {
         return contentDataRepository.findAll();
     }
 
+    public Optional<List<ContentData>> getContentDataByContent(Content content) {
+        return contentDataRepository.findByContent(content);
+    }
+
     public Content getActiveContentByName(String name) {
         Optional<Content> contentOptional = contentRepository.findByName(name);
         if (contentOptional.isPresent()) {
