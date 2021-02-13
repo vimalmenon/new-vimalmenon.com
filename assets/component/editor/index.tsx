@@ -13,7 +13,7 @@ import "ace-builds/src-noconflict/ext-language_tools";
 import "ace-builds/webpack-resolver";
 
 
-const Editor:React.FC<IEditorProps> = ({theme="dark", language="markdown", value, name, onChange}) => {
+const Editor:React.FC<IEditorProps> = ({theme="dark", language="markdown", value, name, onChange, className}) => {
 	return (
 		<AceEditor
 			mode={language}
@@ -21,7 +21,9 @@ const Editor:React.FC<IEditorProps> = ({theme="dark", language="markdown", value
 			onChange={onChange}
 			name={name}
 			defaultValue={value}
+			width="100%"
 			editorProps={{ $blockScrolling: true }}
+			className={className}
 			setOptions={{
 				enableBasicAutocompletion: true,
 				enableLiveAutocompletion: true,

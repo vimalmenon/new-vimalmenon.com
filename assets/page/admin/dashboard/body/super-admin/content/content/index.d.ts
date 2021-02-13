@@ -14,3 +14,7 @@ export interface IContent{
     title:string;
     contentData:IContentData[];
 }
+
+export interface IContentDataProps {
+    data:IContentData[]
+}

@@ -1,13 +1,22 @@
 import {ApiCaller} from "utility"
 import {api} from "model_admin";
-import {IContentData} from "./index.d";
+import {IContent} from "./index.d";
+import React from "react";
 
 const {GetSuperAdminContents} = api;
 
-export const init = () => {
-	new ApiCaller<IContentData>(new GetSuperAdminContents)
+const callApi = (setData) => {
+	new ApiCaller<IContent[]>(new GetSuperAdminContents)
 		.getPromise()
-		.then(console.log);
-
-	return [];
+		.then(setData);
+}
+export const useInitData = () => {
+	const [data, setData] = React.useState<IContent[]>()
+	React.useEffect(() => {
+		callApi(setData);
+	}, []);
+	const refresh = () => {
+		callApi(setData)
+	}
+	return {refresh, data};
 };
