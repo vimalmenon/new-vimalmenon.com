@@ -1,19 +1,18 @@
 import React from "react";
 
-import {api} from "model_admin";
-import {ApiCaller} from "utility";
-
-const {GetSuperAdminTutorials} = api;
+import {useInitData} from "./index.service";
 
 const Tutorial:React.FC = () => {
-	React.useEffect(() => {
-		new ApiCaller(new GetSuperAdminTutorials())
-			.getPromise()
-			.then(console.log);
-	}, []);
+	const [tutorials] = useInitData();
 	return (
 		<div>
-			this is tutorials
+			{tutorials.map((tutorial, key) => {
+				return (
+					<div key={key}>
+						{tutorial.name}
+					</div>
+				);
+			})}
 		</div>
 	);
 };
