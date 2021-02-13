@@ -40,7 +40,7 @@ function TabPanel (props) {
 
 const Content:React.FC = () => {
 	const [value, setValue] = React.useState<number>(0);
-	const handleChange = (event:any, newValue:number) => {
+	const handleChange = (e,newValue:number) => {
 		setValue(newValue);
 	};
 	const classes = useStyles();

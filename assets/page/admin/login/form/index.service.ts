@@ -8,7 +8,7 @@ export const onFormSave:IVoidOneParamMethod<ILoginRequest> = (data) => {
 		.getPromise();
 };
 
-export const formValue = (credential, e) => {
+export const formValue = (credential:ILoginRequest, e:React.ChangeEvent<HTMLTextAreaElement|HTMLInputElement>) => {
 	const {name, value} = e.target;
 	return {
 		...credential,

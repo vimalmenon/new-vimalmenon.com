@@ -1,4 +1,4 @@
-import {ApiCaller} from "utility"
+import {ApiCaller} from "utility";
 import {api} from "model_admin";
 import {IContent, UseInitDataType} from "./index.d";
 import React from "react";
@@ -9,15 +9,12 @@ const callApi = (setData) => {
 	new ApiCaller<IContent[]>(new GetSuperAdminContents)
 		.getPromise()
 		.then(setData);
-}
+};
 export const useInitData:UseInitDataType = () => {
-	const [data, setData] = React.useState<IContent[]>([])
-	React.useEffect(() => {
-		callApi(setData);
-	}, []);
-	const refresh = () => {
-		callApi(setData)
-	}
+	const [data, setData] = React.useState<IContent[]>([]);
+	React.useEffect(() => callApi(setData), []);
+
+	const refresh = () => callApi(setData);
 	const onValueUpdate = (e, key:number, innerKey?:number) => {
 		const {name, type, checked} = e.target;
 		let {value} = e.target;

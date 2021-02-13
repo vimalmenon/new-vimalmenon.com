@@ -29,13 +29,13 @@ const useStyles = makeStyles((theme:Theme) => {
 
 const Content:React.FC = () => {
 	const {data, onValueUpdate} = useInitData();
-	const [expanded, setExpanded] = React.useState<number>(0);
+	const [expanded, setExpanded] = React.useState<number|null>(null);
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
 			{data?.map((value, key) => {
 				return (
-					<Accordion expanded={expanded===key} key={key} onChange={() => setExpanded(key)}>
+					<Accordion expanded={expanded===key} key={key} onChange={() => setExpanded(expanded===key?null:key)}>
 						<AccordionSummary
 							expandIcon={<ExpandMoreIcon />}>
 							<Typography>{value.title}</Typography>
