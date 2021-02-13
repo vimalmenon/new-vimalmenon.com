@@ -14,7 +14,14 @@ class SaveSuperAdminLinks extends Api {
 	}
 }
 
+class GetSuperAdminContents extends Api {
+	constructor () {
+		super("getSuperAdminContents", METHODS.GET, "/api/admin/super/content");
+	}
+}
+
 export default {
 	GetSuperAdminLinks,
-	SaveSuperAdminLinks
+	SaveSuperAdminLinks,
+	GetSuperAdminContents
 };

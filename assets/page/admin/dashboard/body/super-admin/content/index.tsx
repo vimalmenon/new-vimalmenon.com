@@ -64,8 +64,6 @@ const Content:React.FC = () => {
 			<TabPanel value={2} index={value}>
 				<Tutorials />
 			</TabPanel>
-			
-			
 		</div>
 	);
 };

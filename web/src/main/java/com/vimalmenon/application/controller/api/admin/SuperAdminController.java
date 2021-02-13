@@ -5,6 +5,7 @@ import java.util.List;
 import com.vimalmenon.application.service.content.AdminContentService;
 import com.vimalmenon.application.service.superadmin.LinkService;
 import com.vimalmenon.appliction.model.response.ApiResponseModel;
+import com.vimalmenon.appliction.model.superadmin.ContentModel;
 import com.vimalmenon.appliction.model.superadmin.LinkModel;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,8 +42,8 @@ public class SuperAdminController {
     }
 
     @GetMapping("/content")
-    public ApiResponseModel<String> getContent() {
-        return new ApiResponseModel<String>().setData(adminContentService.getContent());
+    public ApiResponseModel<List<ContentModel>> getContent() {
+        return new ApiResponseModel<List<ContentModel>>().setData(adminContentService.getContent());
     }
     @GetMapping("/content/{content}")
     public ApiResponseModel<String> getContent (@PathVariable("content") String content) {
