@@ -18,7 +18,7 @@ export interface IContent{
     contentData:IContentData[];
 }
 
-type OnValueUpdateType = (e:SelectProps|CheckboxProps, key:number, innerKey?:number) => void;
+type OnValueUpdateType = (e:SelectProps|CheckboxProps|any, key:number, innerKey?:number) => void;
 type UseInitDataType = () => {refresh:IVoidNoParamMethod, data:IContent[], onValueUpdate:OnValueUpdateType, onSave:IVoidNoParamMethod}
 
 export interface IContentDataProps {

@@ -48,6 +48,8 @@ public class ContentManager {
 	public void saveContent(List<Content> contents) {
         contentRepository.saveAll(contents);
 	}
-
+	public void saveContentData(List<ContentData> contentDatas) {
+        contentDataRepository.saveAll(contentDatas);
+	}
 
 }

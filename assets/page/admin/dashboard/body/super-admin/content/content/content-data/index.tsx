@@ -44,7 +44,13 @@ const ContentData:React.FC<IContentDataProps> = ({data, parentKey, onValueUpdate
 						<Editor
 							value={value.data}
 							className={classes.editor}
-							language={isJson?"javascript":"markdown"} />
+							language={isJson?"javascript":"markdown"}
+							onChange={(value) => onValueUpdate({
+								target:{
+									name:"data",
+									value
+								}
+							}, parentKey, key)} />
 					</div>
 				);
 			})}

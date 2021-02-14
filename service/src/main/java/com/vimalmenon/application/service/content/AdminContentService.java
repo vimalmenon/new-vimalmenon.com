@@ -47,15 +47,27 @@ public class AdminContentService {
     }
     public List<ContentModel> saveContent(List<ContentModel> data) {
         List<Content> contents = new ArrayList<>();
+        List<ContentData> contentDatas = new ArrayList<>();
         data.forEach(value -> {
             Content content = new Content();
             content.setName(value.getName());
             content.setTitle(value.getTitle());
             content.setIsJson(value.getIsJson()?1:0);
             content.setId(value.getId());
+
+            value.getContentData().forEach(contentDataModel -> {
+                ContentData contentData = new ContentData();
+                contentData.setContent(content);
+                contentData.setId(contentDataModel.getId());
+                contentData.setData(contentDataModel.getData());
+                contentData.setType(contentDataModel.getType());
+                contentData.setLastUpdated(contentDataModel.getLastUpdated());
+                contentDatas.add(contentData);
+            });
             contents.add(content);
         });
         contentManager.saveContent(contents);
+        contentManager.saveContentData(contentDatas);
         return this.getContent();
 	}
 
