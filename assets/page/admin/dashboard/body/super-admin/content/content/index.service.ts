@@ -18,28 +18,26 @@ export const useInitData:UseInitDataType = () => {
 	const onValueUpdate = (e, key:number, innerKey?:number) => {
 		const {name, type, checked} = e.target;
 		let {value} = e.target;
-		console.log(name, value, type, key, innerKey);
 		if (type ==="checkbox") {
 			value = checked;
 		}
 		const newData = [...data];
 		const item = newData[key];
-		if (innerKey) {
+		if (innerKey !==undefined && innerKey !== null) {
 			const newContentData = [...item.contentData];
 			const newContent = newContentData[innerKey];
 			newContentData.splice(innerKey, 1, {
 				...newContent,
 				[name]:value
 			});
-			item[key].contentData[innerKey] = newContentData;
-			setData(newData);
+			item.contentData = newContentData;
 		} else {
 			newData.splice(key, 1, {
 				...item,
 				[name]:value
 			});
-			setData(newData);
 		}
+		setData(newData);
 	};
 	return {refresh, data, onValueUpdate};
 };

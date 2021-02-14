@@ -11,9 +11,9 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Checkbox from "@material-ui/core/Checkbox";
 
 import ContentData from "./content-data";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme:Theme) => {
+const useStyles = makeStyles(() => {
 	return createStyles({
 		root: {
 			display:"flex",

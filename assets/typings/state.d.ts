@@ -28,7 +28,7 @@ interface IMisc {
 }
 
 interface IState {
-	pendingTask?:number,
+	pendingTasks?:number,
 	session:ISession;
 	config:IConfig;
 	admin:IAdmin;

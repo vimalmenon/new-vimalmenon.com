@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import SuperAdmin from "./super-admin";
+import Home from "./home";
 
 const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
@@ -28,6 +29,7 @@ const Body:React.FC = () => {
 	return (
 		<section className={classes.root}>
 			<Switch>
+				<Route exact path={`${match.url}`} component={Home} />
 				<Route path={`${match.url}/super_admin`} component={SuperAdmin} />
 			</Switch>
 		</section>
