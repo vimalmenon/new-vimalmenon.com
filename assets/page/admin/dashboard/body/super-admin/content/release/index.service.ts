@@ -1,63 +1,63 @@
+import React from "react";
+
 import {ApiCaller} from "utility";
 import {api} from "model";
 
+
 const {ReleaseApi} = api;
 
-export const onSave = (releases:IReleaseResponse[]):void => {
-	console.log(JSON.stringify(releases));
-};
 
-export const onInit = (setReleases):void => {
+export const apiCall = (setReleases):void => {
 	new ApiCaller<IContentResponse>(new ReleaseApi())
 		.getPromise()
-		.then((data) => {
-			setReleases(JSON.parse(data.data));
+		.then((data) => setReleases(JSON.parse(data.data)));
+};
+
+export const useInitData = () => {
+	const [releases, setReleases] = React.useState<IReleaseResponse[]>([]);
+	React.useEffect(() => apiCall(setReleases),[]);
+	const onDetailAdd = (key:number) => {
+		const newReleases = [...releases];
+		const newRelease = newReleases[key];
+		newReleases.splice(key, 1, {
+			...newRelease,
+			details:[...newRelease.details, ""]
 		});
-};
-
-export const onDeleteDetail:(release:IReleaseResponse[], key:number, innerKey:number) => IReleaseResponse[] = (releases, key, innerKey) => {
-	const newReleases = [...releases];
-	const release = {...newReleases[key]};
-	const newDetail = [...release.details];
-	newDetail.splice(innerKey,1);
-	newReleases.splice(key, 1, {
-		...release,
-		details:[...newDetail]
-	});
-	return newReleases;
-};
-
-export const onVersionNoUpdate:(release:IReleaseResponse[], e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, innerKey:number) => IReleaseResponse[] = (releases, e, key) => {
-	const {name, value} = e.target;
-	const newReleases = [...releases];
-	const release = newReleases[key];
-	newReleases.splice(key, 1, {
-		...release,
-		[name]:value
-	});
-	return newReleases;
-};
-
-export const onVersionDetailUpdate:(release:IReleaseResponse[], e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, innerKey:number) => IReleaseResponse[] = (releases, e, key) => {
-	const {name, value} = e.target;
-	const newReleases = [...releases];
-	const release = {...newReleases[key]};
-	const newDetail = [...release.details];
-	newDetail[parseInt(name)] = value;
-	newReleases.splice(key, 1, {
-		...release,
-		details:[...newDetail]
-	});
-	return newReleases;
-};
-
-export const onDetailAdd:(release:IReleaseResponse[], key:number) => IReleaseResponse[] = (releases, key) => {
-	const newReleases = [...releases];
-	const release = {...newReleases[key]};
-	const newDetail = [...release.details];
-	newReleases.splice(key, 1, {
-		...release,
-		details:[...newDetail, ""]
-	});
-	return newReleases;
+		setReleases(newReleases);
+	};
+	const onDetailDelete = (key:number, innerKey:number) => {
+		const newReleases = [...releases];
+		const release = {...newReleases[key]};
+		const newDetail = [...release.details];
+		newDetail.splice(innerKey,1);
+		newReleases.splice(key, 1, {
+			...release,
+			details:[...newDetail]
+		});
+		setReleases(newReleases);
+	};
+	const onReleaseUpdate = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, key:number, innerkey?:number) => {
+		const {name, value} = e.target;
+		const newReleases = [...releases];
+		const newRelease = newReleases[key];
+		if(innerkey !== undefined) {
+			const release = {...newReleases[key]};
+			const newDetail = [...release.details];
+			newDetail[innerkey] = value;
+			newReleases.splice(key, 1, {
+				...release,
+				details:[...newDetail]
+			});
+		} else {
+			newReleases.splice(key, 1, {
+				...newRelease,
+				[name]:value
+			});
+		}
+		setReleases(newReleases);
+	};
+	const onSave = () => {
+		console.log(JSON.stringify(releases));
+	};
+	return {releases, onReleaseUpdate, onDetailAdd, onDetailDelete, onSave};
 };
