@@ -45,6 +45,9 @@ public class ContentManager {
         }
         return null;
     }
+	public void saveContent(List<Content> contents) {
+        contentRepository.saveAll(contents);
+	}
 
 
 }

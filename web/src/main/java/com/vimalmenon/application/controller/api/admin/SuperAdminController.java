@@ -52,6 +52,11 @@ public class SuperAdminController {
         return new ApiResponseModel<List<ContentModel>>().setData(adminContentService.getContent());
     }
 
+    @PutMapping("/content")
+    public ApiResponseModel<List<ContentModel>> saveContent (@RequestBody List<ContentModel> data) {
+        return new ApiResponseModel<List<ContentModel>>().setData(adminContentService.saveContent(data));
+    }
+
     @GetMapping("/content/{content}")
     public ApiResponseModel<String> getContent(@PathVariable("content") String content) {
         return new ApiResponseModel<String>().setData(adminContentService.getContentByContent(content));

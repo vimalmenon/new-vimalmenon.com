@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme:Theme) => {
 		}
 	});
 });
-const ContentData:React.FC<IContentDataProps> = ({data, parentKey, onValueUpdate}) => {
+const ContentData:React.FC<IContentDataProps> = ({data, parentKey, onValueUpdate, isJson}) => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
@@ -30,6 +30,7 @@ const ContentData:React.FC<IContentDataProps> = ({data, parentKey, onValueUpdate
 						<div>
 							<Select
 								native
+								label="Type"
 								value={value.type}
 								onChange={(e) => onValueUpdate(e, parentKey, key)}
 								inputProps={{
@@ -42,7 +43,8 @@ const ContentData:React.FC<IContentDataProps> = ({data, parentKey, onValueUpdate
 						</div>
 						<Editor
 							value={value.data}
-							className={classes.editor} />
+							className={classes.editor}
+							language={isJson?"javascript":"markdown"} />
 					</div>
 				);
 			})}

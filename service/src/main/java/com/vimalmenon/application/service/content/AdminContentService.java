@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.vimalmenon.application.data.contents.Content;
 import com.vimalmenon.application.data.contents.ContentData;
 import com.vimalmenon.application.manager.database.content.ContentManager;
 import com.vimalmenon.appliction.model.superadmin.ContentDataModel;
@@ -44,6 +45,19 @@ public class AdminContentService {
         });
         return contents;
     }
+    public List<ContentModel> saveContent(List<ContentModel> data) {
+        List<Content> contents = new ArrayList<>();
+        data.forEach(value -> {
+            Content content = new Content();
+            content.setName(value.getName());
+            content.setTitle(value.getTitle());
+            content.setIsJson(value.getIsJson()?1:0);
+            content.setId(value.getId());
+            contents.add(content);
+        });
+        contentManager.saveContent(contents);
+        return this.getContent();
+	}
 
 	public String getContentByContent(String content) {
         return "this is getcontent by content " + content;
@@ -52,5 +66,7 @@ public class AdminContentService {
 	public String saveContentByContent(String content) {
         return "this is getcontent by content " + content;
 	}
+
+	
 
 }

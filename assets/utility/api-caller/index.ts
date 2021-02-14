@@ -13,7 +13,13 @@ class ApiCaller<T> {
 		spinner.startSpinner();
 		this.promise = new Promise<T>((resolve, reject) => {
 			this.isSpinning = true;
-			fetch(data.url, {method: data.method, signal})
+			fetch(data.url, {
+				method: data.method, 
+				signal, 
+				body:data.body,
+				headers: {
+					"Content-Type": "application/json"
+				}})
 				.then((response) => {
 					spinner.stopSpinner();
 					this.isSpinning = false;

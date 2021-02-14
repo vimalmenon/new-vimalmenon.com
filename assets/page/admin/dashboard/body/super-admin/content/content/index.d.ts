@@ -19,10 +19,11 @@ export interface IContent{
 }
 
 type OnValueUpdateType = (e:SelectProps|CheckboxProps, key:number, innerKey?:number) => void;
-type UseInitDataType = () => {refresh:IVoidNoParamMethod, data:IContent[], onValueUpdate:OnValueUpdateType}
+type UseInitDataType = () => {refresh:IVoidNoParamMethod, data:IContent[], onValueUpdate:OnValueUpdateType, onSave:IVoidNoParamMethod}
 
 export interface IContentDataProps {
     data:IContentData[];
     parentKey:number;
     onValueUpdate:OnValueUpdateType;
+    isJson:boolean;
 }

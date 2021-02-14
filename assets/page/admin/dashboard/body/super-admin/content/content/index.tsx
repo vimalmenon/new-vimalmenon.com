@@ -11,9 +11,10 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Checkbox from "@material-ui/core/Checkbox";
 
 import ContentData from "./content-data";
-import { createStyles, makeStyles } from "@material-ui/core/styles";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { Button } from "@material-ui/core";
 
-const useStyles = makeStyles(() => {
+const useStyles = makeStyles((theme:Theme) => {
 	return createStyles({
 		root: {
 			display:"flex",
@@ -23,12 +24,18 @@ const useStyles = makeStyles(() => {
 		accordionDetails : {
 			display:"flex",
 			flexDirection:"column"
+		},
+		row: {
+			margin:theme.spacing(2,0)
+		},
+		footer : {
+			justifyContent:"flex-end"
 		}
 	});
 });
 
 const Content:React.FC = () => {
-	const {data, onValueUpdate} = useInitData();
+	const {data, onValueUpdate, onSave} = useInitData();
 	const [expanded, setExpanded] = React.useState<number|null>(null);
 	const classes = useStyles();
 	return (
@@ -41,37 +48,45 @@ const Content:React.FC = () => {
 							<Typography>{value.title}</Typography>
 						</AccordionSummary>
 						<AccordionDetails className={classes.accordionDetails}>
-							<div>
+							<div className={classes.row}>
 								<TextField
 									name="title"
+									label="Title"
 									color="secondary" 
 									value={value.title}
 									onChange={(e) => onValueUpdate(e, key)}
 									fullWidth/>
 							</div>
-							<div>
+							<div className={classes.row}>
 								<TextField
 									name="name"
+									label="Name"
 									color="secondary" 
 									value={value.name} 
 									onChange={(e) => onValueUpdate(e, key)}
 									fullWidth/>
 							</div>
-							<div>
+							<div className={classes.row}>
 								<Checkbox 
 									checked={value.isJson}
 									value={value.isJson}
 									name="isJson"
 									onChange={(e) => onValueUpdate(e, key)} />
 							</div>
-							<ContentData 
-								data={value.contentData}
-								parentKey={key}
-								onValueUpdate={onValueUpdate}/>
+							<div className={classes.row}>
+								<ContentData 
+									data={value.contentData}
+									parentKey={key}
+									onValueUpdate={onValueUpdate}
+									isJson={value.isJson}/>
+							</div>
 						</AccordionDetails>
 					</Accordion>
 				);
 			})}
+			<div className={classes.footer}>
+				<Button variant="contained" color="secondary" onClick={onSave}>Save</Button>
+			</div>
 		</div>
 	);
 };

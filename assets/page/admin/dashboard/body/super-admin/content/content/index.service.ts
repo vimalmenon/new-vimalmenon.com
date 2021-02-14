@@ -3,10 +3,10 @@ import {api} from "model_admin";
 import {IContent, UseInitDataType} from "./index.d";
 import React from "react";
 
-const {GetSuperAdminContents} = api;
+const {GetSuperAdminContents, SaveSuperAdminContents} = api;
 
 const callApi = (setData) => {
-	new ApiCaller<IContent[]>(new GetSuperAdminContents)
+	new ApiCaller<IContent[]>(new GetSuperAdminContents())
 		.getPromise()
 		.then(setData);
 };
@@ -39,5 +39,10 @@ export const useInitData:UseInitDataType = () => {
 		}
 		setData(newData);
 	};
-	return {refresh, data, onValueUpdate};
+	const onSave = () => {
+		new ApiCaller<IContent[]>(new SaveSuperAdminContents<IContent[]>(data))
+			.getPromise()
+			.then(setData);
+	};
+	return {refresh, data, onValueUpdate, onSave};
 };
