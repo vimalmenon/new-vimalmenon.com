@@ -42,13 +42,14 @@ const tableIcons:Icons = {
 	ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref}/>)
 };
 
-const Table:React.FC<TableProps> = ({data, columns, title}) => {
+const Table:React.FC<TableProps> = ({data, columns, title, editable}) => {
 	return (
 		<MaterialTable
 			icons={tableIcons}
 			title={title}
 			columns={columns}
-			data={data}/>
+			data={data}
+			editable={editable}/>
 	);
 };
 

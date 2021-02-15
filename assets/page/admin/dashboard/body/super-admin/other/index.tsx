@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme:Theme) => {
 
 
 const columns = [
-	{ title: "Id", field: "id" },
+	{ title: "Id", field: "id", editable: 'never'},
 	{ title: "Name", field: "name" },
 	{ title: "Title", field: "title"},
 	{ title: "URL", field: "url"}
@@ -43,7 +43,22 @@ const Other:React.FC = () => {
 			<Table
 				data={links} 
 				columns={columns}
-				title={"URL"}/>
+				title={"URL"}
+				editable={
+					{
+						onRowAdd: newData =>
+							new Promise((resolve, reject) => {
+								console.log(newData);
+							}),
+						onRowUpdate: (newData, oldData) =>
+							new Promise((resolve, reject) => {
+								console.log(newData, oldData);
+							}),
+						onRowDelete: oldData =>
+							new Promise((resolve, reject) => {
+								console.log(oldData);
+							}),
+					}}/>
 		</section>
 	);
 };

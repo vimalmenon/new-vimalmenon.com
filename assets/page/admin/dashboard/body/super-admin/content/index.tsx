@@ -7,6 +7,7 @@ import Release from "./release";
 import ContentComponent from "./content";
 import Tutorial from "./tutorial";
 import Announcement from "./announcement";
+import Link from "./link";
 
 import Box from "@material-ui/core/Box";
 
@@ -56,6 +57,7 @@ const Content:React.FC = () => {
 				<Tab label="Release" />
 				<Tab label="Tutorial" />
 				<Tab label="Announcement" />
+				<Tab label="Link" />
 			</Tabs>
 			<TabPanel value={0} index={value}>
 				<ContentComponent />
@@ -68,6 +70,9 @@ const Content:React.FC = () => {
 			</TabPanel>
 			<TabPanel value={3} index={value}>
 				<Announcement />
+			</TabPanel>
+			<TabPanel value={4} index={value}>
+				<Link />
 			</TabPanel>
 		</div>
 	);

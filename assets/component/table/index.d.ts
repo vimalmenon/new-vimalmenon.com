@@ -7,4 +7,5 @@ export interface TableProps {
     columns:column[];
     data:Object[];
     title:string;
+    editable?:Object
 }
