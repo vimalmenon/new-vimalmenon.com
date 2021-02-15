@@ -53,7 +53,7 @@ const Content:React.FC = () => {
 				onChange={handleChange}>
 				<Tab label="Content" />
 				<Tab label="Release" />
-				<Tab label="Tutorials" />
+				<Tab label="Tutorial" />
 			</Tabs>
 			<TabPanel value={0} index={value}>
 				<ContentComponent />

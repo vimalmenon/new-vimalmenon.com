@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ContentDataRepository extends JpaRepository<ContentData, Integer> {
 
-    public Optional<ContentData> findByContentAndTypeAndIsActive(Content content, String type, int isActive);
+    public Optional<ContentData> findByContentAndType(Content content, String type);
 
     public Optional<List<ContentData>> findByContent(Content content);
 

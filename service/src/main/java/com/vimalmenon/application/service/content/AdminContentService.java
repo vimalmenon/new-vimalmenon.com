@@ -34,7 +34,6 @@ public class AdminContentService {
                     ContentDataModel contentDataModel = new ContentDataModel();
                     contentDataModel.setId(contentData.getId());
                     contentDataModel.setData(contentData.getData());
-                    contentDataModel.setActive(contentData.getIsActive() ==1);
                     contentDataModel.setLastUpdated(contentData.getLastUpdated());
                     contentDataModel.setType(contentData.getType());
                     contentDataModels.add(contentDataModel);

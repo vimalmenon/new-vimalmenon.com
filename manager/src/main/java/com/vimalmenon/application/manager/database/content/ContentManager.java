@@ -39,7 +39,7 @@ public class ContentManager {
         return null;
     }
     public ContentData getContentAndType(Content content, String type) {
-        Optional<ContentData> contentData = contentDataRepository.findByContentAndTypeAndIsActive(content,type,1);
+        Optional<ContentData> contentData = contentDataRepository.findByContentAndType(content,type);
         if (contentData.isPresent()) {
             return contentData.get();
         }

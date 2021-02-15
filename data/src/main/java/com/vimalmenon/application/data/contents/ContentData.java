@@ -26,9 +26,6 @@ public class ContentData {
     @JoinColumn(name="content_id", nullable=false)
     private Content content;
 
-    @Column(nullable = false, name = "is_active")
-    private int isActive;
-
     public int getId() {
         return id;
     }
@@ -67,14 +64,6 @@ public class ContentData {
 
     public void setContent(Content content) {
         this.content = content;
-    }
-
-    public int getIsActive() {
-        return isActive;
-    }
-
-    public void setIsActive(int isActive) {
-        this.isActive = isActive;
     }
 
 }

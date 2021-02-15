@@ -2,14 +2,14 @@ CREATE TABLE content_data (
    id INT NOT NULL AUTO_INCREMENT,
    data text NOT NULL,
    type ENUM ("short", "full") DEFAULT "full",
-   is_active TINYINT NOT NULL,
    last_updated VARCHAR (50) NOT NULL,
    content_id int signed NOT NULL,
    FOREIGN KEY (content_id) REFERENCES contents(id),
+   CONSTRAINT UN_CONTENT_DATA_TYPE_CONTENT_ID UNIQUE(type, content_id),
    PRIMARY KEY (id)
 );
 
-insert into content_data(data, is_active, last_updated, content_id)
+insert into content_data(data, last_updated, content_id)
 select '<div>At VimalMenon, accessible from https://vimalmenon.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by VimalMenon and how we use it.</div>
 
     <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
@@ -83,36 +83,32 @@ select '<div>At VimalMenon, accessible from https://vimalmenon.com, one of our m
     <div>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</div>
 
     <div>VimalMenon does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</div>
-', 1, "30 jan 2021", id from contents where name  = "privacy-policy";
+', "30 jan 2021", id from contents where name  = "privacy-policy";
 
 
-insert into content_data(data, is_active, last_updated, content_id)
+insert into content_data(data, last_updated, content_id)
 select '<p>If you guys have some interesting ideas or projects and you are looking for a way to execute them. 
 		I would love to hear about them and can help you to get them executed.</p>
-		<p>You guys can get in touch with me by either dropping me an email at support@vimalmenon.com or connect with me on one of my below social media.</p>', 1, "30 jan 2021", id from contents where name  = "contact";
+		<p>You guys can get in touch with me by either dropping me an email at support@vimalmenon.com or connect with me on one of my below social media.</p>', "30 jan 2021", id from contents where name  = "contact";
 
 
 
-insert into content_data(data, is_active, last_updated, content_id)
-select '[{"versionNo":"v0.0.5.a","buildDate":"24 Jan 2021","details":["Refactoring"]},{"versionNo":"v0.0.4.a","buildDate":"24 Jan 2021","details":["Fixed image reference issue","Pages: announcements page","Move to top feature added","Added explore section","Added latest section","Refactoring"]},{"versionNo":"v0.0.3.a","buildDate":"16 Jan 2021","details":["New Logo design","New Favicon","GZip enabled","More Meta tag added","Fixed lighthouse issues","Bug Fixes","New Carousel / Hero introduced","Refactoring"]},{"versionNo":"v0.0.2.a","buildDate":"10 Jan 2021","details":["Introduced Service worker","PWA feature","Favicon added","New logo design","Pages: Release page","Pages: Tutorials page","YouTube videos support","Fixed lighthouse issues","Bug fixes"]},{"versionNo":"v0.0.1.a","buildDate":"02 Jan 2021","details":["Website hosted","Added basic page","Alpha version released"]}]', 1, "30 jan 2021", id from contents where name  = "release";
+insert into content_data(data, last_updated, content_id)
+select '[{"versionNo":"v0.0.5.a","buildDate":"24 Jan 2021","details":["Refactoring"]},{"versionNo":"v0.0.4.a","buildDate":"24 Jan 2021","details":["Fixed image reference issue","Pages: announcements page","Move to top feature added","Added explore section","Added latest section","Refactoring"]},{"versionNo":"v0.0.3.a","buildDate":"16 Jan 2021","details":["New Logo design","New Favicon","GZip enabled","More Meta tag added","Fixed lighthouse issues","Bug Fixes","New Carousel / Hero introduced","Refactoring"]},{"versionNo":"v0.0.2.a","buildDate":"10 Jan 2021","details":["Introduced Service worker","PWA feature","Favicon added","New logo design","Pages: Release page","Pages: Tutorials page","YouTube videos support","Fixed lighthouse issues","Bug fixes"]},{"versionNo":"v0.0.1.a","buildDate":"02 Jan 2021","details":["Website hosted","Added basic page","Alpha version released"]}]', "30 jan 2021", id from contents where name  = "release";
 
 
-insert into content_data(data, is_active, last_updated, content_id)
-select '
-    [
-		"My name is <span class="highlight"> Vimal Menon</span>. I am a self-taught developer and have learned it all from YouTube.  I never had any formal education in computer science and, I was still able to make a carrier in software development. I have experience working in both frontend and backend technology and I have worked with leading international banks and other sectors.",
-		"So if you guys want to make a carrier in software development without any degree. I will show you guys everything you need to know to get into this industry.  I am going to start from very basic like how I started and will show you a path to take to get a job as a software engineer."
-	]
-', 1, "30 jan 2021", id from contents where name  = "about-me";
+insert into content_data(data, last_updated, content_id)
+select '[
+	"My name is <span class=\"highlight\"> Vimal Menon</span>. I am a self-taught developer and have learned it all from YouTube.  I never had any formal education in computer science and, I was still able to make a carrier in software development. I have experience working in both frontend and backend technology and I have worked with leading international banks and other sectors.",
+	"So if you guys want to make a carrier in software development without any degree. I will show you guys everything you need to know to get into this industry.  I am going to start from very basic like how I started and will show you a path to take to get a job as a software engineer."
+]', "30 jan 2021", id from contents where name  = "about-me";
 
 
-insert into content_data(data, is_active, last_updated, type, content_id)
-select '
-    [
-		"My name is <span class="highlight"> Vimal Menon</span>. I am a self-taught developer and have learned it all from YouTube.  I never had any formal education in computer science and, I was still able to make a carrier in software development. I have experience working in both frontend and backend technology and I have worked with leading international banks and other sectors.",
-		"So if you guys want to make a carrier in software development without any degree. I will show you guys everything you need to know to get into this industry.  I am going to start from very basic like how I started and will show you a path to take to get a job as a software engineer short."
-	]
-', 1, "30 jan 2021", "short", id from contents where name  = "about-me";
+insert into content_data(data, last_updated, type, content_id)
+select '[
+	"My name is <span class=\"highlight\"> Vimal Menon</span>. I am a self-taught developer and have learned it all from YouTube.  I never had any formal education in computer science and, I was still able to make a carrier in software development. I have experience working in both frontend and backend technology and I have worked with leading international banks and other sectors.",
+	"So if you guys want to make a carrier in software development without any degree. I will show you guys everything you need to know to get into this industry.  I am going to start from very basic like how I started and will show you a path to take to get a job as a software engineer."
+]', "30 jan 2021", "short", id from contents where name  = "about-me";
 
 
 

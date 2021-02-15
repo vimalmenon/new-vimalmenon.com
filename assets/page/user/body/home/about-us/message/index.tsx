@@ -6,12 +6,11 @@ import {
 	createStyles
 } from "@material-ui/core/styles";
 
-import {page, pageConfig, api} from "model";
+import {pageConfig, api} from "model";
 import {ApiCaller} from "utility";
 import {TextFormat} from "component";
 
 const {paragraph} = pageConfig.common;
-const {aboutMe} = page;
 const {AboutMeApi} = api;
 
 
@@ -32,14 +31,17 @@ const useStyles = makeStyles((theme:Theme) => {
 
 const Message:React.FC = () => {
 	const classes = useStyles();
+	const [aboutMe, setAboutMe] = React.useState([])
 	React.useEffect(() => {
-		new ApiCaller(new AboutMeApi(true))
+		new ApiCaller<{data:string}>(new AboutMeApi(true))
 			.getPromise()
-			.then(console.log);
+			.then((data) => {
+				setAboutMe(JSON.parse(data.data))
+			});
 	},[]);
 	return (
 		<div className={classes.root}>
-			{aboutMe.description.map((value, key) => {
+			{aboutMe.map((value, key) => {
 				return (
 					<div key={key} className={classes.items}>
 						<TextFormat text={value} />

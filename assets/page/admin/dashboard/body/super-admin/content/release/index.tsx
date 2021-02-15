@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme:Theme) => {
 		},
 		versionItems : {
 			display:"flex",
-			borderBottom:"1px solid red",
 			flexDirection:"column",
 			padding:theme.spacing(2)
 		},
