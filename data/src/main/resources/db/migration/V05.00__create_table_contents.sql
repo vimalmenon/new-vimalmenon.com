@@ -20,3 +20,7 @@ values("release", "Release and Features",1);
 
 INSERT into contents (name, title, is_json)
 values("about-me", "About Me", 1);
+
+
+INSERT into contents (name, title, is_json)
+values("announcements", "Announcements", 1);

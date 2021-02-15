@@ -31,12 +31,12 @@ const useStyles = makeStyles((theme:Theme) => {
 
 const Message:React.FC = () => {
 	const classes = useStyles();
-	const [aboutMe, setAboutMe] = React.useState([])
+	const [aboutMe, setAboutMe] = React.useState([]);
 	React.useEffect(() => {
 		new ApiCaller<{data:string}>(new AboutMeApi(true))
 			.getPromise()
 			.then((data) => {
-				setAboutMe(JSON.parse(data.data))
+				setAboutMe(JSON.parse(data.data));
 			});
 	},[]);
 	return (
