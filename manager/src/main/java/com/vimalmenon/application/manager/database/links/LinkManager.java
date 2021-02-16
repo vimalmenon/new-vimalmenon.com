@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.vimalmenon.application.data.links.Link;
 import com.vimalmenon.application.data.links.LinkRepository;
+import com.vimalmenon.application.manager.database.others.ConfigManager;
 
 
 
@@ -17,10 +18,11 @@ public class LinkManager {
 	@Autowired
 	private LinkRepository linkRepository;
 
-	private static final String[] SOCIAL_MEDIA_LINKS = { "YouTube", "Twitter", "Instagram" };
+	@Autowired
+	private ConfigManager configManager;
 
 	public List<Link> getSocialMedias() {
-		return linkRepository.findByNameIn(SOCIAL_MEDIA_LINKS);
+		return linkRepository.findByNameIn(configManager.getSocialMedias());
 	}
 
 	public List<Link> getAllLinks () {
