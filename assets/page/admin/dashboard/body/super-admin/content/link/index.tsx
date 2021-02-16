@@ -5,28 +5,18 @@ import {Table} from "component_admin";
 
 
 const Link:React.FC = () => {
-	const {links, columns} = useInitData();
+	const {links, columns, onSave, onEdit, onDelete} = useInitData();
 	return (
 		<div>
 			<Table
 				data={links} 
 				columns={columns}
 				title={"URL"}
-				editable={
-					{
-						onRowAdd: newData =>
-							new Promise((resolve, reject) => {
-								console.log(newData);
-							}),
-						onRowUpdate: (newData, oldData) =>
-							new Promise((resolve, reject) => {
-								console.log(newData, oldData);
-							}),
-						onRowDelete: oldData =>
-							new Promise((resolve, reject) => {
-								console.log(oldData);
-							}),
-					}}/>
+				editable={{
+					onRowAdd: data => onSave(data),
+					onRowUpdate: data =>onEdit(data),
+					onRowDelete: data => onDelete(data),
+				}}/>
 		</div>
 	);
 };

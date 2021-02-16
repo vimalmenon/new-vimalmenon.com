@@ -110,5 +110,10 @@ select '[
 	"So if you guys want to make a carrier in software development without any degree. I will show you guys everything you need to know to get into this industry.  I am going to start from very basic like how I started and will show you a path to take to get a job as a software engineer."
 ]', "30 jan 2021", "short", id from contents where name  = "about-me";
 
+insert into content_data(data, last_updated, content_id)
+select '', "16 Feb 2021", id from contents where name  = "announcements";
 
 
+
+insert into content_data(data, last_updated, content_id)
+select '', "16 Feb 2021", id from contents where name  = "others";

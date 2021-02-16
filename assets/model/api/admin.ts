@@ -8,9 +8,16 @@ class GetSuperAdminLinks extends Api {
 }
 
 class SaveSuperAdminLinks extends Api {
-	constructor (data:ILinkReponse) {
+	constructor (data:ILinkReponse[]) {
 		super("saveSuperAdminLinks", METHODS.PUT, "/api/admin/super/links");
-		this.setBody<ILinkReponse>(data);
+		this.setBody<ILinkReponse[]>(data);
+	}
+}
+
+class DeleteSuperAdminLinks extends Api {
+	constructor (data:ILinkReponse[]) {
+		super("deleteSuperAdminLinks", METHODS.DELETE, "/api/admin/super/links");
+		this.setBody<ILinkReponse[]>(data);
 	}
 }
 
@@ -36,6 +43,7 @@ export default {
 	GetSuperAdminLinks,
 	SaveSuperAdminLinks,
 	GetSuperAdminContents,
+	DeleteSuperAdminLinks,
 	GetSuperAdminTutorials,
 	SaveSuperAdminContents,
 };
