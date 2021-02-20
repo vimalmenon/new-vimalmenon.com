@@ -10,8 +10,6 @@ import com.vimalmenon.application.data.links.LinkRepository;
 import com.vimalmenon.application.manager.database.others.ConfigManager;
 
 
-
-
 @Service
 public class LinkManager {
 

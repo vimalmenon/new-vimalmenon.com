@@ -1,6 +1,6 @@
 package com.vimalmenon.application.service.superadmin;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import com.vimalmenon.application.data.links.Link;
@@ -17,7 +17,7 @@ public class LinkService {
 	private LinkManager linkManager;
 
 	public List<LinkModel> getLinks() {
-		List<LinkModel> links = new ArrayList<>();
+		List<LinkModel> links = new LinkedList<>();
 		linkManager.getAllLinks().forEach(data -> {
 			LinkModel linkModel = new LinkModel();
 			linkModel.setId(data.getId());
@@ -30,7 +30,7 @@ public class LinkService {
 	}
 
 	public List<LinkModel> saveAdminLinks (List<LinkModel> data) {
-		List<Link> links = new ArrayList<>();
+		List<Link> links = new LinkedList<>();
 		data.forEach(value -> {
 			Link link = new Link();
 			link.setId(value.getId());
@@ -44,7 +44,7 @@ public class LinkService {
 	}
 
 	public List<LinkModel> deleteSuperAdminLinks(List<LinkModel> data) {
-		List<Link> links = new ArrayList<>();
+		List<Link> links = new LinkedList<>();
 		data.forEach(value -> {
 			Link link = new Link();
 			link.setId(value.getId());

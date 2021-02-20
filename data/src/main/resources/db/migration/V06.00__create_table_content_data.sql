@@ -114,6 +114,9 @@ insert into content_data(data, last_updated, content_id)
 select '', "16 Feb 2021", id from contents where name  = "announcements";
 
 
+insert into content_data(data, last_updated, content_id)
+select '', "16 Feb 2021", id from contents where name  = "hero";
+
 
 insert into content_data(data, last_updated, content_id)
 select '{"socialMedias": ["YouTube", "Twitter", "Instagram"]}', "16 Feb 2021", id from contents where name  = "others";

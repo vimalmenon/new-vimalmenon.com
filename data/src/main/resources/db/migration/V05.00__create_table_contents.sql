@@ -25,5 +25,9 @@ values("about-me", "About Me", 1);
 INSERT into contents (name, title, is_json)
 values("announcements", "Announcements", 1);
 
+
 INSERT into contents (name, title, is_json)
-values("others", "others", 1);
+values("hero", "Hero", 1);
+
+INSERT into contents (name, title, is_json)
+values("others", "Others", 1);
