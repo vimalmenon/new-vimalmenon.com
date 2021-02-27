@@ -1,0 +1,9 @@
+Adding logic for Login.
+Adding reference for index page.
+Webpack moving of files to static folder.
+Integration with google drive
+Upload the database file to google drive.
+Retrive the database file from google drive.
+Fixing the navigation
+Showing navigation in the responsive page. 
+Need to find place to put youtube script.
