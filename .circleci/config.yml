@@ -1,0 +1,18 @@
+version: 2.1
+jobs:
+  test:
+    docker:
+      - image: node:12.16.1
+    steps:
+      - checkout
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: yarn test
+
+workflows: 
+  ui_test:
+    jobs: 
+      - test
