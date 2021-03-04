@@ -1,17 +1,12 @@
-orbs:
-  node: circleci/node@4.2.0
-
 version: 2.1
-
 jobs:
   test:
     docker:
-      - image: circleci/node:8-browsers
+      - image: node:11.10.1
     steps:
       - checkout
-      - node/install-packages
-      - run: npm install
-      - run: npm run test
+      - run: yarn install
+      - run: yarn test
 
 workflows: 
   test_and_deploy:
