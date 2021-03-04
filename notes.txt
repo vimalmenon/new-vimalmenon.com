@@ -11,3 +11,7 @@ Topic model
 
 Tutorial model
     tutorials
+
+
+Install 
+https://stackoverflow.com/questions/52522565/git-is-not-working-after-macos-update-xcrun-error-invalid-active-developer-pa
