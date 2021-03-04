@@ -9,6 +9,6 @@ jobs:
       - run: yarn test
 
 workflows: 
-  test_and_deploy:
+  ui_test:
     jobs: 
       - test
