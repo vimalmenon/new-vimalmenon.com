@@ -6,7 +6,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: ircleci/node@4.2.0
+      - image: circleci/node@4.2.0
     steps:
       - checkout
       - node/install-packages
