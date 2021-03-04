@@ -1,13 +1,17 @@
 orbs:
-  node: circleci/node@4.0.0
+  node: circleci/node@4.2.0
 
 version: 2.1
 
 jobs:
   test:
+    docker:
+      - image: ircleci/node@4.2.0
     steps:
-    - checkout
-    - run: npm install
+      - checkout
+      - node/install-packages
+      - run:
+          command: npm run test
 
 workflows: 
   test_and_deploy:
