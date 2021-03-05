@@ -119,4 +119,16 @@ select '', "16 Feb 2021", id from contents where name  = "hero";
 
 
 insert into content_data(data, last_updated, content_id)
-select '{"socialMedias": ["YouTube", "Twitter", "Instagram"]}', "16 Feb 2021", id from contents where name  = "others";
+select '
+    {
+        "socialMedias": ["YouTube", "Twitter", "Instagram"],
+        "allowedUserContent" : ["contact", "hero", "privacy-policy", "release", "announcements", "content"]
+    }
+', "16 Feb 2021", id from contents where name  = "others";
+
+insert into content_data(data, last_updated, content_id)
+select '
+    {
+        "disclaimer": "This website is in early release (alpha), so some features might not complete or cemented. Please be aware that some pages might be missing or some features might not work as expected."
+    }
+', "16 Feb 2021", id from contents where name  = "content";

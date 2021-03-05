@@ -7,8 +7,6 @@ const config = require("./webpack/config");
 
 const packageJson = require("./package.json");
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
 
 module.exports = {
     mode: "development",
@@ -117,8 +115,7 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             'VERSION' : `'${packageJson.version}'`
-        }),
-        new BundleAnalyzerPlugin()
+        })
     ],
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".scss"],

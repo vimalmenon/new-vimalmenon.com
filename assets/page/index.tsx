@@ -32,9 +32,7 @@ const Page:React.FC = () => {
 			type:themeType
 		}
 	});
-	React.useEffect(() => {
-		init();
-	}, []);
+	React.useEffect(init,[]);
 	return (
 		<ThemeProvider theme={theme}>
 			{loading? 

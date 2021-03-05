@@ -31,3 +31,6 @@ values("hero", "Hero", 1);
 
 INSERT into contents (name, title, is_json)
 values("others", "Others", 1);
+
+INSERT into contents (name, title, is_json)
+values("content", "Content", 1);

@@ -4,10 +4,10 @@ import {Editor} from "component_admin";
 
 import {IContentDataProps} from "../index.d";
 
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Select from "@material-ui/core/Select";
 
-const useStyles = makeStyles((theme:Theme) => {
+const useStyles = makeStyles(() => {
 	return createStyles({
 		root: {
 			display:"flex",

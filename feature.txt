@@ -7,3 +7,28 @@ Retrive the database file from google drive.
 Fixing the navigation
 Showing navigation in the responsive page. 
 Need to find place to put youtube script.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Bugs
+Build failing while running yarn start:server
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Notes
+https://nightwatchjs.org/gettingstarted/installation/
+https://github.com/garris/BackstopJS
+
+
+
+API Controller model
+    Social Medias
+
+Topic model
+    topics
+
+Tutorial model
+    tutorials
+
+
+Install 
+https://stackoverflow.com/questions/52522565/git-is-not-working-after-macos-update-xcrun-error-invalid-active-developer-pa

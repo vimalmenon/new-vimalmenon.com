@@ -3,7 +3,7 @@ import React from "react";
 import {api, table} from "model_admin";
 import {ApiCaller} from "utility";
 
-const columns = table.links
+const columns = table.links;
 
 const {GetSuperAdminLinks, SaveSuperAdminLinks, DeleteSuperAdminLinks} = api;
 
@@ -29,6 +29,6 @@ export const useInitData = () => {
 		return new ApiCaller<ILinkReponse[]>(new DeleteSuperAdminLinks([data]))
 			.getPromise()
 			.then(setLinks);
-	}
-	return {links, columns, onSave, onEdit, onDelete}
+	};
+	return {links, columns, onSave, onEdit, onDelete};
 };
