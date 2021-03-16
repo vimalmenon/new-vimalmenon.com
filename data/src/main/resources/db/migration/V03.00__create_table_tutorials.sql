@@ -10,6 +10,13 @@ CREATE TABLE tutorials (
    FOREIGN KEY (topic_id) REFERENCES topics(id)
 );
 
+
+insert into tutorials (name, tutorial_id, published_date, topic_id) 
+select "07 - HTML Form and how it works - Part III", "390cZ8nXNm4", "Mar 15, 2021", id from topics where name="HTML Tutorials";
+
+insert into tutorials (name, tutorial_id, published_date, topic_id) 
+select "06 - HTML Form and Form elements - Part II", "CdfopzFEEtk",  "Mar 7, 2021", id from topics where name="HTML Tutorials";
+
 insert into tutorials (name, tutorial_id, published_date, topic_id) 
 select "05 - HTML Form and Form Elements - Part I", "6W7j9jIbZOg", "Jan 8, 2021", id from topics where name="HTML Tutorials";
 insert into tutorials (name, tutorial_id, published_date, topic_id) 
@@ -26,3 +33,6 @@ insert into tutorials (name, tutorial_id, published_date, topic_id)
 select "01 - Introduction to Git and GitHub", "DwRpOkmw33g", "Aug 22, 2020", id from topics where name="Others";
 insert into tutorials (name, tutorial_id, published_date, topic_id) 
 select "Introduction to My Channel", "Wb1uty_bc3c", "Apr 24, 2020", id from topics where name="Others";
+
+
+
